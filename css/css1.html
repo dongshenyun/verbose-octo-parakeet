@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!--css选择器
+        1：标签选择器 div
+        2：id选择器  #id
+        3：class选择器 .class
+        4：后代选择器 （派生） aa bb
+        5：子代选择器  aa>bb
+        6：分组选择器  .aa,p
+        7：伪类选择器  ：hover
+        8：伪元素选择器  ：：first-letter
+    -->
+
+<head>
+    <meta charset="UTF-8">
+    <title>css1</title>
+    <style>
+        div{
+            background: palegoldenrod;
+        }
+        #div1{
+            background: gold;
+        }
+        .li{
+            color: antiquewhite;
+        }
+        div span{
+            background: greenyellow;
+        }
+        div>span{
+            color:deepskyblue;
+        }
+        .li,p{
+            background: purple;
+        }
+        #div1+p{
+            color: aliceblue;
+        }
+        a:hover{
+            color:chocolate;
+        }
+        a:active{
+            color:yellow;
+        }
+        #div3{
+            width: 100px;
+            height:100px;
+            background: deeppink;
+        }
+        #div3::first-line{
+            color:darkolivegreen;
+        }
+        #div4::after{
+            content:'haha';
+            color: red;
+        }
+        #div4::before{
+            content:'ha';
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">q</div>
+    <p>w</p>
+    <div id="div2">e</div>
+    <ul>
+        <li>1</li>
+        <li class="li">2</li>
+        <li class="li">3</li>
+        <li>4</li>
+    </ul>
+    <span>r</span>
+    <div>
+        <span>t</span>
+    </div>
+    <div>
+        <p>
+            <span>y</span>
+        </p>
+    </div>
+    <a href="#">CLICK ME</a>
+    <div id="div3">
+        qwer tyui oplk jhgf dsaz xcvbn mlkj nbfd saq wer tyu
+    </div>
+    <div id="div4">u</div>
+</body>
+</html>
