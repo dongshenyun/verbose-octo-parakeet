@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格</title>
+    <style>
+        table{
+            width: 600px;
+            border-style: dashed;/*虚线*/
+            border-color: #fff98e;
+            table-layout: fixed;
+            border-spacing: 0;
+        }
+         table td{
+             text-align: center;
+             vertical-align: top;
+             /*word-break: break-all;*/
+             /*word-wrap: break-word;*/
+             /*width: 100px;*/
+             height: 30px;
+             line-height: 30px;
+            white-space: nowrap;/*换行之类语法*/
+            overflow: hidden;/*溢出隐藏*/
+            text-overflow: ellipsis;/*省略号*/
+        }
+        #mafan1{
+            background: #ffe0d0;
+        }
+        #mafan2{
+            background: #aaffb0;
+        }
+        #mafan3{
+            background: #e8f6ff;
+        }
+        #mafan4{
+            background: #ffffc0;
+        }
+        #mafan5{
+            background: #dbc5ff;
+        }
+    </style>
+</head>
+<body>
+    <table border="1" cellpadding="10" bgcolor="aqua" ><!--style="table-layout: fixed"-->
+        <caption>卿卿的课表</caption>
+        <tr>
+            <th><!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--></th>
+            <th>星期一</th>
+            <th>星期二</th>
+            <th>星期三</th>
+            <th>星期四</th>
+            <th>星期五</th>
+            <th>星期六</th>
+            <th>星期日</th>
+        </tr>
+        <tr>
+            <th>1</th>
+            <td rowspan="2" id="mafan1">机电传动控制8-c-1</td>
+            <td rowspan="2"></td>
+            <td rowspan="2"></td>
+            <td rowspan="2"></td>
+            <td rowspan="2"></td>
+            <td rowspan="2"></td>
+            <td rowspan="2"></td>
+        </tr>
+        <tr>
+            <th>2</th>
+        </tr>
+        <tr>
+            <th>3</th>
+            <td rowspan="2"></td>
+            <td rowspan="2"></td>
+            <td rowspan="2"></td>
+            <td rowspan="2" id="mafan2">车辆工程2-303</td>
+            <td rowspan="2" id="mafan1">机电传动控制8-A-1</td>
+            <td rowspan="2"></td>
+            <td rowspan="2"></td>
+        </tr>
+        <tr>
+            <th>4</th>
+        </tr>
+        <tr>
+            <th>5</th>
+            <td rowspan="2" id="mafan3">微机原理与接口技术8-B-1</td>
+            <td rowspan="2" id="mafan2">车辆工程3-240</td>
+            <td rowspan="2" id="mafan4">机械制造技术基础8-B-1</td>
+            <td rowspan="2"></td>
+            <td rowspan="2" id="mafan5">数控技术及应用8-B-1</td>
+            <td rowspan="2"></td>
+            <td rowspan="2"></td>
+        </tr>
+        <tr>
+            <th>6</th>
+        </tr>
+        <tr>
+            <th>7</th>
+            <td id="mafan3">微机原理与接口技术8-B-1</td>
+            <td id="mafan2">车辆工程3-240</td>
+            <td id="mafan4">机械制造技术基础8-B-1</td>
+            <td rowspan="2"></td>
+            <td rowspan="2"></td>
+            <td rowspan="2"></td>
+            <td rowspan="2"></td>
+        </tr>
+        <tr>
+            <th>8</th>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>9</th>
+            <td rowspan="2"></td>
+            <td rowspan="2"></td>
+            <td rowspan="2"></td>
+            <td rowspan="2"></td>
+            <td rowspan="2"></td>
+            <td rowspan="2"></td>
+            <td rowspan="2"></td>
+        </tr>
+        <tr>
+            <th>10</th>
+        </tr>
+    </table>
+</body>
+</html>
