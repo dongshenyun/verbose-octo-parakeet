@@ -1,0 +1,26 @@
+*{
+    margin: 0;/*外边距*/
+    padding: 0;/*内边距*/
+}
+body{
+    background: palegreen;
+}
+.container{
+    width: 960px;
+    height: 450px;
+    margin: 60px auto;
+    position: relative;
+    text-align: center;
+    line-height: 450px;
+}
+.pic{
+    width: 200px;
+    height: 200px;
+}
+.container img{
+    display: inline-block;/*行内块元素*/
+    padding: 10px 10px;/*上下 右左*/
+    background: white;
+    border: 1px dashed red;
+    box-shadow: #ffe0d0 2px 2px 3px;rgba(50,50,50,0.4);/*上 右左 下*//*rgba是颜色*/
+}
