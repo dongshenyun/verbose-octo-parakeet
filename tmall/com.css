@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-size: 12px;
+}
+
+.second {
+    width: 1230px;
+    margin: 0 auto; /*块元素居中*/
+    /*background: seagreen;*/
+}
+
+/*tmall nav*/
+.first {
+    background: #f2f2f2;
+    height: 33px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.s-second {
+    height: 32px;
+    line-height: 32px;
+    color: #999;
+}
+
+.s-login a, .s-login span {
+    /*background: #ffffc0;*/
+    float: left;
+}
+
+.s-login a {
+    padding: 0 10px 0 10px;
+    color: #999;
+    /*background: darkturquoise;*/
+}
+
+.s-login a:hover {
+    color: #FF0036;
+}
+
+.s-login .s-l-btn {
+    padding-left: 20px;
+}
+
+.s-menu {
+    float: right;
+    /*background: #fff98e;*/
+}
+
+/*.s-menu>li{*/
+/*float: left;*/
+/*}*/
+.s-menu-1 {
+    float: left;
+}
+
+.s-menu-1 a {
+    color: #999999;
+    padding: 0 14px; /*上右下左*/
+    display: block; /*让链接和div一样高*/
+}
+
+.s-menu-2 {
+    position: relative;
+}
+
+.s-menu-2:hover {
+    background: #fff;
+}
+
+.s-menu-2 a:hover {
+    color: #FF0036;
+    text-decoration: underline;
+}
+
+.s-menu-2:hover::after {
+    transform: rotate(180deg);
+    /*top: 12px;*/
+}
+
+.s-menu-2::after {
+    border: 3px solid;
+    border-color: #999 transparent transparent transparent;
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 6px;
+    top: 15px;
+    transition: all 0.1s linear;
+    transform-origin: 3px 1.5px; /*水平 垂直*/
+}
+#s-menu-3 a:hover {
+    text-decoration: none;
+
+}
+
+/*tmall nav*/

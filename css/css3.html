@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3</title>
+    <style>
+        /*div {*/
+        /*height: 200px;*/
+        /*width: 200px;*/
+        /*background: rosybrown;*/
+        /*padding: 100px;*/
+        /*border: 5px dashed #f1fa70;*/
+        /*margin: 50px;*/
+        /*box-sizing: border-box;!*怪异盒模型*!*/
+        /*box-sizing: content-box;!*<!--默认 标准盒模型-->*!*/
+        /*}*/
+        * {
+            margin: 0;
+            padding: 0px;
+        }
+
+        #div1 {
+            background: lightcoral;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 30px;
+        }
+
+        #div2 {
+            background: gold;
+            width: 100px;
+            height: 100px;
+            margin-top: 50px;
+            position: absolute;
+        }
+
+        #div3 {
+            background: #aaffb0;
+            width: 200px;
+            height: 200px;
+            margin-top: 220px;
+            /*border: 1px solid transparent;*/
+        }
+
+        #div4 {
+            background: lawngreen;
+            width: 100px;
+            height: 100px;
+            margin-top: 90px;
+            float: left;
+            /*position: absolute;*/
+        }
+
+        #div5, #div6, #div7 {
+            background: red;
+            height: 100px;
+            width: 200px;
+            border: 1px solid #fff98e;
+            /*display: inline-block;*/
+            margin-top: 40px;
+        }
+
+        /*#div5{*/
+        /*position: relative;!*相对于原位置 空间不释放*!*/
+        /*left: 30px;*/
+        /*top: 80px;*/
+        /*}*/
+        /*#div6{*/
+        /*position: absolute;!*相对于左上角定位 空间释放 相对于最近已定位的祖先元素 如果没有相对于body定位*!*/
+        /*left: 50px;*/
+        /*top: 10px;*/
+        /*}*/
+        #div7 {
+            position: fixed;
+            right: 50px;
+            bottom: 80px;
+        }
+
+        #div8, #div9, #div10 {
+            background: #016763;
+            width: 100px;
+            height: 100px;
+            border: 1px solid crimson;
+            float: left;
+        }
+        #div50{
+            background: #000000;
+            /*height: 40px;*//*给父元素高或者溢出隐藏或者清除浮动*/
+            overflow: hidden;
+        }
+        #clear{
+            clear: left;
+        }
+        /*#div50::after{*/
+            /*content: "";*/
+            /*display: block;*/
+            /*clear: both;*/
+        /*}*/
+        h3{
+            color: #e8f6ff;
+            background: darkgoldenrod;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body style="height: 1000px">
+<div>jahhkl fasd adf faaasdf af asfd asd fadsf asfdf asf fra fasd asf afsd</div>
+<div id="div1">qqq</div>
+<div id="div2">www</div>
+<div id="div3">
+    <div id="div4">rrr</div>
+</div>
+<div id="div5">5</div>
+<div id="div6">6</div>
+<div id="div7">7</div>
+<div id="div50">
+    <div id="div8">8</div>
+    <div id="div9">9</div>
+    <div id="div10">10</div>
+    <div id="clear"></div>
+</div>
+<h3>嗨jaljsd asdkjljk adskjljk dsa</h3>
+<!--优先级
+    ！important
+    style
+    ID
+    class class aa bb cc (cc>bb>aa)
+    标签
+    *
+    元素自带
+    -->
+</body>
+</head>
+</html>

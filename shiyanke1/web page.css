@@ -44,7 +44,10 @@ hr{
     text-align: left;
     text-indent: 2em;
 }
-a:link{
+a{
+    font-size: 16px;
+}
+a:hover{
     font-size: 16px;
     color: greenyellow;
     text-decoration: underline;/*装饰*/

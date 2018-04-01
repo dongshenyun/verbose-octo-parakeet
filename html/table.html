@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <title>表格</title>
     <style type="text/css">
+        /**{*/
+            /*padding: 0;*/
+            /*margin: 0px;*/
+        /*}*/
         table{
-            width: 600px;
+            width: 602px;
             border-style: dashed;/*虚线*/
             border-color: #fff98e;
             table-layout: fixed;
             border-spacing: 0;
+            table-layout: fixed;
         }
          table td{
-             text-align: center;/*水平居中*/
-             vertical-align: top;/*垂直向上*/
-             /*word-break: break-all;*/
-             /*word-wrap: break-word;*/
-             /*width: 100px;*/
-             /*height: 30px;!*单行文字垂直居中*!*/
-             /*line-height: 30px;*/
-            white-space: nowrap;/*换行之类语法*/
-            overflow: hidden;/*溢出隐藏*/
-            text-overflow: ellipsis;/*省略号*/
+             text-align: left;
         }
+         table .ha{
+             overflow: hidden;/*溢出隐藏*/
+             text-overflow: ellipsis;/*省略号*/
+         }
         .mafan1{
             background: #ffe0d0;
         }
@@ -71,7 +71,7 @@
             <td rowspan="2"></td>
             <td rowspan="2"></td>
             <td rowspan="2"></td>
-            <td rowspan="2" class="mafan2">车辆工程2-303</td>
+            <td rowspan="2" class="mafan2"> <div>车辆工程</div><div>2-303</div></td>
             <td rowspan="2" class="mafan1">机电传动控制8-A-1</td>
             <td rowspan="2"></td>
             <td rowspan="2"></td>
@@ -94,9 +94,9 @@
         </tr>
         <tr>
             <th>7</th>
-            <td class="mafan3">微机原理与接口技术8-B-1</td>
-            <td class="mafan2">车辆工程3-240</td>
-            <td class="mafan4">机械制造技术基础8-B-1</td>
+            <td class="mafan3 ha">微机原理与接口技术8-B-1</td>
+            <td class="mafan2 ha">车辆工程3-240</td>
+            <td class="mafan4 ha">机械制造技术基础8-B-1</td>
             <td rowspan="2"></td>
             <td rowspan="2"></td>
             <td rowspan="2"></td>

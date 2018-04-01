@@ -30,7 +30,7 @@ body{
     background: white;
     border: 1px dashed red;
     box-shadow: #ffe0d0 2px 2px 3px;rgba(50,50,50,0.4);/*上 右左 下*//*rgba是颜色*/
-    -webkit-transition: all 0.5s ease-in;
+    -webkit-transition: all 0.5s ease-in;/*过渡 所有（属性） 0.5s（时间） 慢速到块速（方式） （延迟）*/
     -moz-transition: all 0.5s ease-in;
     -ms-transition: all 0.5s ease-in;
     -o-transition: all 0.5s ease-in;
@@ -39,24 +39,20 @@ body{
 }
 .pic1{
     left: 30px;
-
     transform:rotate(-5deg);
     -weblit-transform:rotate(-5deg);
 }
 .pic2{
     left: 230px;
-
     transform:rotate(-15deg);
     -weblit-transform:rotate(-15deg);}
 .pic3{
     left: 430px;
-
     transform:rotate(-5deg);
     -weblit-transform:rotate(-5deg);
 }
 .pic4{
     left: 630px;
-
     transform:rotate(5deg);
     -weblit-transform:rotate(5deg);
 }
@@ -68,7 +64,6 @@ body{
 }
 .pic6{
     left: 820px;
-
     transform:rotate(10deg);
     -weblit-transform:rotate(10deg);
 }
@@ -80,7 +75,6 @@ body{
 }
 .pic8{
     left: 600px;
-
     transform:rotate(-5deg);
     -weblit-transform:rotate(-5deg);
 }
@@ -98,7 +92,6 @@ body{
 }
 .pic11{
      left: 220px;
-
      transform:rotate(11deg);
      -weblit-transform:rotate(11deg);
  }
