@@ -65,9 +65,12 @@ body {
     float: left;
 }
 
+.s-menu-1 > a {
+    padding: 0 14px; /*上右下左*/
+}
+
 .s-menu-1 a {
     color: #999999;
-    padding: 0 14px; /*上右下左*/
     display: block; /*让链接和div一样高*/
 }
 
@@ -77,10 +80,13 @@ body {
 
 .s-menu-2:hover {
     background: #fff;
+    height: 33px;
 }
 
-.s-menu-2 a:hover {
+.s-menu a:hover{
     color: #FF0036;
+}
+.s-menu-2 a:hover {
     text-decoration: underline;
 }
 
@@ -101,9 +107,38 @@ body {
     transition: all 0.1s linear;
     transform-origin: 3px 1.5px; /*水平 垂直*/
 }
+
 #s-menu-3 a:hover {
     text-decoration: none;
-
 }
 
+.sub-s-menu {
+    background: #fff;
+    border: 1px solid #eee;
+    border-top: none;
+    padding: 10px 8px;
+    position: absolute; /*相对li定位*/
+    left: -1px;
+    top: 33px;
+    width: 74px;
+    display: none; /*隐藏*/
+}
+
+.sub-s-menu-1 {
+    line-height: 18px;
+    height: 18px;
+}
+
+.sub-s-menu-1 a {
+    color: #999;
+}
+
+.s-menu-2:hover .sub-s-menu {
+    display: block;
+}
+
+.icon-gouwuche-copy,.icon-phone,.icon-liebiao{
+    font-size: 14px;
+    color: #FF0036;
+}
 /*tmall nav*/
