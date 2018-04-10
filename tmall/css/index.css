@@ -496,12 +496,61 @@
 .second-super {
     overflow: hidden; /*外边距合并*/
 }
-.second-super .ad{
+
+.second-super .ad {
     margin-top: 10px;
 }
-.second-super .ad img{
-    vertical-align: middle;/*改变图片对齐方式*/
+
+.second-super .ad img {
+    vertical-align: middle; /*改变图片对齐方式*/
 }
+
+.second-super .like {
+    padding-right: 30px;
+    /*width: 1230px;*/
+    margin: 30px auto 0;
+    /*background: #81d439;*/
+    height: 43px;
+}
+
+.second-super .like .guess {
+    font-size: 18px;
+    line-height: 20px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    height: 24px;
+    width: 96px;
+}
+
+.second-super .like .guess:after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 1px;
+    background-color: #979797;
+    top: 10px;
+    right: -38px;
+}
+
+.second-super .like .guess:before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 1px;
+    background-color: #979797;
+    top: 10px;
+    left: -38px;
+}
+
+.second-super .like .guess i {
+    margin-right: -2px;
+    font-size: 20px;
+    color: #ff0036;
+    position: relative;
+    top: 1px;
+}
+
 .super-1 {
     margin-top: 20px;
     width: 100%;
@@ -509,38 +558,51 @@
     padding-right: 30px;
     /*background: #f1fa70;*/
 }
-.super-1 .super-1-tit .icon-vertical_line{
+
+.super-1 .super-1-tit .icon-vertical_line {
     background: #EA5F8D;
     margin-left: -22px;
     margin-right: 10px;
     font-size: 17px;
 }
-.super-1 .super-1-tit .blue{
+
+.super-1 .super-1-tit .blue {
     background: #0AA6E8;
 }
-.super-1 .super-1-tit .green{
+
+.super-1 .super-1-tit .green {
     background: #00b262;
 }
-.super-1 .super-1-tit .red{
+
+.super-1 .super-1-tit .red {
     background: #F15453;
 }
-.super-1 .super-1-tit .cyan{
+
+.super-1 .super-1-tit .cyan {
     background: #19C8A9;
 }
-.super-1 .super-1-tit{
-    margin: 0 10px;
+
+.super-1 .super-1-tit {
+    margin-left: 10px;
     height: 28px;
 }
-.super-1-tit .super-1-tit-bea{
+
+.super-1 .super-1-tit-spe {
+    margin-left: 0;
+}
+
+.super-1-tit .super-1-tit-bea {
     font-size: 18px;
 
 }
-.super-1-tit .super-1-tit-fas{
+
+.super-1-tit .super-1-tit-fas {
     font-size: 14px;
     margin-left: 5px;
     line-height: 24px;
     height: 18px;
 }
+
 .super-1-tit .super-1-tit-img {
     display: inline-block; /*让两个div在一排*/
     padding-top: 2px;
@@ -700,7 +762,7 @@
     position: relative;
 }
 
-.baby-right-ul .baby-right-li-spe-2 .import{
+.baby-right-ul .baby-right-li-spe-2 .import {
     position: absolute;
     top: 20px;
     left: 25px;
@@ -710,7 +772,8 @@
     height: 24px;
     text-align: left;
 }
-.baby-right-ul .baby-right-li-spe-2 .priority{
+
+.baby-right-ul .baby-right-li-spe-2 .priority {
     position: absolute;
     top: 49px;
     left: 25px;
@@ -726,11 +789,11 @@
     border-color: white;
 }
 
-.baby-right-ul .baby-right-li:hover {
-    border-color: red;
+.baby-right-ul .baby-right-li:hover,.hundred .hundred-ul .hundred-li a:hover{
+    border-color: #FF0036;
 }
 
-.baby-right-ul .baby-right-li:hover img {
+.baby-right-ul .baby-right-li:hover img,.hundred .hundred-ul .hundred-li:hover img{
     opacity: 0.7;
 }
 
@@ -744,7 +807,33 @@
     width: 462px;
     height: 225px;
 }
-
+.today-2-slogan{
+    height: 87px;
+    width: 291px;
+    position: absolute;
+    top: 153px;
+    background: url("../img/bg箭头.png" );
+}
+.discount{
+    font-size: 20px;
+    margin-left: 26px;
+    text-align: left;
+    color: #000;
+    letter-spacing: 1px;/*字符间距*/
+    height: 30px;
+}
+.today-2-slogan .today-2-slogan-1{
+    margin-left: 26px;
+    margin-top: 8px;
+    text-align: left;
+    height: 36px;
+}
+.today-2-slogan .today-2-slogan-1 .small-img {
+    width: 23px;
+    height: 23px;
+    margin-top: -10px;
+    vertical-align: middle;
+}
 .baby-right-ul .baby-right-li .shadow .shadow-tit {
     width: 462px;
     height: 57px;
@@ -778,14 +867,20 @@
     line-height: 57px;
 }
 
-.baby-right-li .shadow .shadow-pho .today-2 img {
+.baby-right-li .shadow .shadow-pho .today-2>img {
     height: 200px;
     width: 200px;
     float: right;
     margin-top: 10px;
     margin-right: 30px;
 }
-
+.paper{
+    font-size: 24px;
+    font-weight: 700;
+    color: #00B262;
+    margin-left: 8px;
+    letter-spacing: 1px;
+}
 .baby-right-li .pro-img {
     width: 185px;
     height: 185px;
@@ -815,9 +910,80 @@
     margin: 10px auto;
 }
 
+.hundred {
+    overflow: hidden;
+    width: 1235px;
+}
+
+.hundred .hundred-ul .hundred-li {
+    float: left;
+    width: 239px;
+    height: 315px;
+    margin-right: 8px;
+    margin-bottom: 14px;
+    background: white;
+    text-align: center;
+}
+
+.hundred .hundred-ul .hundred-li a {
+    border: 1px solid #fff;
+    height: 315px;
+    display: block;
+}
+
+
+
+.hundred-ul .hundred-li .hundred-img {
+    width: 185px;
+    height: 185px;
+    margin-top: 20px;
+}
+
+.hundred-ul .hundred-li .hundred-name {
+    height: 40px;
+    line-height: 20px;
+    width: 135px;
+    overflow: hidden;
+    font-size: 14px;
+    color: #333;
+    margin: 8px auto;
+}
+
+.hundred-ul .hundred-li .hundred-pri {
+    height: 33px;
+    line-height: 22px;
+    margin-top: 2px;
+    font-size: 18px;
+    color: #ff0036;
+    text-align: center;
+}
+.end{
+    width: 80px;
+    height: 45px;
+    margin: 0 auto 10px;
+    background: url(../img/end.png) no-repeat;
+    background-size: cover;/*铺满*/
+}
 /*超大div结束*/
 
+/*底部开始*/
+.after-sell{
+    background: white;
+    height: 49px;
+    border-top: 1px solid #D1D7DC;
+}
+.after-sell span{
+    margin: 11px auto;
+    display: block;
+    font-size: 20px;
+    color: #81d439;
+    text-align: center;
+    font-weight: bold;
+}
 
+
+
+/*底部结束*/
 
 
 
