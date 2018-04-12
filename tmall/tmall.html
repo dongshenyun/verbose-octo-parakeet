@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/iconfont.css" type="text/css">
     <link rel="stylesheet" href="css/com.css" type="text/css">
     <link rel="stylesheet" href="css/index.css" type="text/css">
-    <script src = "focus.js.js" type="text/javascript"></script>
+    <!--<script src = "focus.js" type="text/javascript"></script>-->
 </head>
 <body>
 <div class="first">
@@ -53,7 +53,8 @@
     <div class="search">
         <div class="search-1">
             <form action="">
-                <input type="text" class="search-text" placeholder="提示语..."/>
+                <input type="text" class="search-text" placeholder="提示语..." id="name"/>
+                <script>document.getElementById('name').focus();</script>
                 <input type="submit" class="search-btn" value="搜索"/>
             </form>
         </div>

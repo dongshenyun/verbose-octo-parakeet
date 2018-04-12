@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>focus</title>
+</head>
+<body onload=document.user.username.focus()>
+<script type="text/javascript">
+    function setFocus() {
+        document.getElementById('check1').focus()
+    }
+    function loseFocus() {
+        document.getElementById('check1').blur()
+    }
+</script>
+<form name="user">
+    <input type="text" name="username" id="check1" style="width: 200px;height: 100px;"/>
+    <br/>
+    <input type="button" onclick="setFocus()" value="Set focus"/>
+    <input type="button" onclick="loseFocus()" value="Lose focus"/>
+</form>
+</body>
+</html>

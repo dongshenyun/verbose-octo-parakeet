@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coursera | Online Courses From Top Universities. Join for Free</title>
+    <link rel="stylesheet" href="css/Coursera.css" type="text/css">
+    <link rel="stylesheet" href="css/iconfont.css" type="text/css">
+</head>
+<body>
+<div class="out">
+    <div class="nav">
+        <div class="nav-img">
+            <img src="img/Coursera.svg" alt="">
+        </div><!--logo-->
+        <div class="search">
+            <div class="sub-search">
+                <a href="#" class="sea">
+                    探索&nbsp;
+                    <i class="iconfont icon-iconfontjiantou"></i>
+                </a>
+                <!--<ul>-->
+                    <!--<li class=""></li>-->
+                <!--</ul>&lt;!&ndash;隐藏导航栏&ndash;&gt;-->
+            </div>
+            <span class="sea-input">
+                <i class="iconfont icon-search"></i>
+                <input type="text" class="search-text" value="您想学习什么？"
+                       onblur="appear()" onfocus="disappear()" id="name" onBlur="
+                       if(value==defaultValue){value='';this.style.color='#000'}"
+                       onBlur="if(!value){value=defaultValue;this.style.color='#757575'}"
+                       style="color:#757575;font-weight: 500"/><!--提示字体颜色-->
+                	<script>
+		            function disappear() {
+                        var obj = document.getElementById("name");
+                        obj.setAttribute("value", ""); //这句是关键
+                    }
+                    function appear() {
+                        var obj = document.getElementById("name");
+                        obj.setAttribute("value", "您想学习什么？"); //这句是关键
+                    }
+                    </script><!--文本框焦点-->
+                <!--<script>document.getElementById('name').focus();</script>--><!--自动获取焦点-->
+            </span>
+        </div><!--搜索-->
+        <div class="nav-right">
+            <ul class="nav-right-ul">
+                <li class="EE"><a href="#">企业版</a></li>
+                <li class="log-in"><a href="#">登录</a></li>
+                <li class="register"><a href="#">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
