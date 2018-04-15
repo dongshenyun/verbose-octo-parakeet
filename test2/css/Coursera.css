@@ -3,10 +3,12 @@
     padding: 0;
     color: #333;
     font-family: 'OpenSans', Arial, sans-serif;
+    /*font-family: OpenSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;*/
 }
 
 .out {
-    background: #ffa045;
+    /*background: #ffa045;*/
     height: 10000px;
 }
 
@@ -17,6 +19,10 @@ ul {
 a {
     text-decoration: none;
     color: #333;
+}
+
+button:hover {
+    cursor: pointer; /*小手*/
 }
 
 /*导航开始*/
@@ -40,7 +46,6 @@ a {
 .nav .search .sub-search a {
     padding-right: 30px;
     margin-left: 8px;
-    margin-right: 15px;
     font-size: 14px;
     display: block;
     line-height: 65px;
@@ -56,7 +61,171 @@ a {
     display: inline-block;
 }
 
-.search .sub-search:hover a, .search .sub-search:hover a > i {
+.class:hover {
+    border: 1px solid #f3f3f3;
+    border-bottom: none;
+}
+
+.search .sub-search .class {
+    margin-right: 15px;
+    position: relative;
+}
+
+.class:hover .class-ul {
+    display: block;
+}
+
+.class .class-ul {
+    position: absolute;
+    height: 525px;
+    /*width: 560px;*/
+    width: 280px;
+    background: white;
+    font-size: 14px;
+    display: none;
+    top: 63px;
+    border-top: 1px solid #f3f3f3;
+    z-index: 10;
+}
+
+.class-ul .class-li-1 {
+    margin-top: 10px;
+}
+
+.class-ul .class-li:hover {
+    background: #f3f3f3;
+}
+
+.class-li .sub-class-spe {
+    margin-top: 10px;
+}
+
+.class-ul .class-li-1:hover .sub-class-ul-1 {
+    display: block;
+}
+
+.class-ul .class-li-2:hover .sub-class-ul-2 {
+    display: block;
+}
+
+.class-ul .class-li-3:hover .sub-class-ul-3 {
+    display: block;
+}
+
+.class-ul .class-li-4:hover .sub-class-ul-4 {
+    display: block;
+}
+
+.class-ul .class-li-5:hover .sub-class-ul-5 {
+    display: block;
+}
+
+.class-ul .class-li-6:hover .sub-class-ul-6 {
+    display: block;
+}
+
+.class-ul .class-li-7:hover .sub-class-ul-7 {
+    display: block;
+}
+
+.class-ul .class-li-8:hover .sub-class-ul-8 {
+    display: block;
+}
+
+.class-ul .class-li-9:hover .sub-class-ul-9 {
+    display: block;
+}
+
+.class-ul .class-li-10:hover .sub-class-ul-10 {
+    display: block;
+}
+
+.class-ul .class-li-11:hover .sub-class-ul-11 {
+    display: block;
+}
+
+.class-ul .class-li-12:hover .sub-class-ul-12 {
+    display: block;
+}
+
+.class-li .sub-class > a:after {
+    content: "\e62d"; /*箭头右*/
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 10px;
+    color: #757575;
+    position: absolute;
+    left: 250px;
+}
+
+.class .class-ul .class-li a {
+    width: 260px;
+    padding-left: 20px;
+    padding-right: 0px;
+    margin-left: 0;
+    display: inline-block;
+    height: 33px;
+    line-height: 33px;
+}
+
+/*.sub-class .sub-class-ul-2, .sub-class .sub-class-ul-3, .sub-class .sub-class-ul-4,*/
+/*.sub-class .sub-class-ul-5, .sub-class .sub-class-ul-6, .sub-class .sub-class-ul-7,*/
+/*.sub-class .sub-class-ul-8, .sub-class .sub-class-li-9, .sub-class .sub-class-ul-10,*/
+/*.sub-class .sub-class-ul-11, .sub-class .sub-class-ul-12 {*/
+/*display: none;*/
+/*}*/
+
+.sub-class .sub-class-ul {
+    float: right;
+    width: 280px;
+    /*background: grey;*/
+    display: none;
+    position: absolute;
+    left: 280px;
+    top: -1px;
+    background: white;
+    height: 525px;
+    border-top: 1px solid #f3f3f3;
+}
+
+.sub-class .sub-class-ul .sub-class-li {
+    margin-left: 25px;
+}
+
+.sub-class .sub-class-ul a:hover {
+    color: #2a73cc;
+}
+
+.sub-class .sub-class-ul .sub-class-li .look {
+    font-weight: 700;
+}
+
+.sub-class .sub-class-ul .sub-class-li a {
+    padding-left: 0;
+}
+
+h2 {
+    font-weight: 500;
+    font-family: "Microsoft Himalaya";
+    font-size: 22px;
+    margin-bottom: 12px;
+    margin-top: 10px;
+}
+
+.class-li .sub-class .sub-class-ul:before {
+    content: "";
+    height: 500px;
+    width: 1px;
+    background: #dedede;
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+
+.search .sub-search .class:hover > a, .search .sub-search .class:hover i {
     color: #2a73cc;
     font-weight: 700;
 }
@@ -68,13 +237,6 @@ a {
     font-weight: 700;
 }
 
-/*.search .sea-input{*/
-/*border-bottom: 1px solid #757575;*/
-/*float: right;*/
-/*float: right;*/
-/*margin-top: -12.5px;*/
-/*width: 296px;*/
-/*}*/
 .search .sea-input {
     /*background: firebrick;*/
     border-bottom: 1px solid #757575;
@@ -112,7 +274,7 @@ a {
     float: left;
 }
 
-.nav-right .nav-right-ul li:hover a {
+.nav-right-ul .EE #enterprise:hover, .nav-right-ul .log-in #login:hover {
     color: #8099ff;
 }
 
@@ -134,8 +296,15 @@ a {
     font-size: 14px;
 }
 
+.nav-right .nav-right-ul .register:hover a {
+    background-color: #2566b4;
+    border-radius: 100px !important;
+    min-width: 88px !important;
+}
+
 .nav-right .nav-right-ul .register a {
-    color: #fff;;
+    color: #fff;
+    display: block;
 }
 
 .nav-right .nav-right-ul .EE:after {
@@ -150,3 +319,266 @@ a {
 }
 
 /*导航结束*/
+
+/*bg图开始*/
+
+/*.gradient{*/
+/*background: #000000;*/
+/*background: -moz-linear-gradient(top,  #000000 0%, #ffffff 100%);*/
+/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#000000), color-stop(100%,#ffffff));*/
+/*background: -webkit-linear-gradient(top,  #000000 0%,#ffffff 100%);*/
+/*background: -o-linear-gradient(top,  #000000 0%,#ffffff 100%);*/
+/*background: -ms-linear-gradient(top,  #000000 0%,#ffffff 100%);*/
+/*background: linear-gradient(to bottom,  #000000 0%,#ffffff 100%);*/
+/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#ffffff',GradientType=0 );*/
+/*}*//*渐变色*/
+
+.bg {
+    height: 380px;
+    /*background: #b8f57b;*/
+    background: url("../img/woman.png") right 50% no-repeat; /*50%垂直居中 right右对齐*/
+    overflow: hidden;
+    background-color: #00d7dc;
+}
+
+.bg .bg-text {
+    width: 1170px;
+    margin-left: 105px;
+    margin-top: 100px;
+}
+
+.bg .bg-text .bg-text-f {
+    font-size: 42px;
+    line-height: 56px;
+    color: #fff;
+    font-weight: normal;
+    font-family: 'Merriweather-Light', Georgia, serif;
+
+}
+
+.bg .bg-text .bg-text-s {
+    margin-top: 24px;
+}
+
+.bg-text .bg-text-s .free {
+    font-size: 18px;
+    line-height: 24px;
+    font-family: 'OpenSans-Semibold', Arial, sans-serif;
+    border: 1px solid #2073d4;
+    background-color: #2073d4;
+    color: #fff;
+    height: 66px;
+    width: 154px;
+}
+
+/*bg图结束*/
+
+/*university-photo start*/
+.center {
+    width: 1200px;
+    background: white;
+    margin: 0 auto;
+}
+
+.layer-first .some-img {
+    padding-top: 25px;
+    padding-bottom: 27px;
+    /*max-width: 1025px;*/
+    font-size: 0;
+    position: relative;
+}
+
+.some-img .all {
+    position: absolute;
+    top: 15px;
+    right: 0;
+}
+
+.all .look-all { /*all button*/
+    border: 1px solid #6f6f6f;
+    color: #6f6f6f;
+    background: white;
+    padding: 16px 30px;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: 'OpenSans-Semibold', Arial, sans-serif;
+}
+
+.all .look-all:hover { /*all button*/
+    background: #8d8d8d;
+    color: #fff;
+}
+
+.layer-first .some-img img {
+    height: 30px;
+    margin-right: 15px;
+    margin-left: 7px;
+    vertical-align: middle;
+}
+
+.bg2 {
+    background: url("../img/bg2.png") no-repeat;
+    height: 250px;
+    width: 1200px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.bg2 .bg2-text {
+    text-align: center;
+}
+
+.bg2-text .bg2-text-f {
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 2px;
+    margin-top: 70px;
+    font-size: 30px;
+}
+
+.bg2-text .bg2-text-s {
+    color: rgba(0, 0, 0, 0.55);
+    font-size: 16px;
+    line-height: 15px;
+    margin-bottom: 20px;
+    font-family: OpenSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+    font-weight: 500;
+    margin-left: 3px;
+}
+
+.bg2-text .bg2-text-t .known, #sort {
+    border: 1px solid #2073d4;
+    color: white;
+    background-color: #2073d4;
+    width: 130px;
+    height: 46px;
+    font-size: 12px;
+}
+
+.all-sort {
+    text-align: center;
+    margin-top: 55px;
+}
+
+#sort {
+    width: 146px;
+    height: 52px;
+}
+
+.bg2 .bg2-text-t .known:hover, .bg-text .bg-text-s .free:hover, #sort:hover {
+    background-color: #2566b4;
+}
+
+/*university-photo end*/
+
+/*课程开始*/
+.center-1 {
+    width: 1205px;
+    margin-left: 76px;
+}
+
+.layer-second {
+    overflow: hidden;
+}
+
+.layer-second .top {
+    margin-top: 80px;
+    overflow: hidden;
+    position: relative;
+}
+
+.layer-second .top .title {
+    margin-bottom: 23px;
+}
+
+.layer-second .top .title h2 {
+    font-size: 32px;
+    line-height: 36px;
+    margin-top: 17px;
+    text-align: center;
+}
+
+.top .title .all {
+    position: absolute;
+    right: 5px;
+    top: 6px;
+}
+
+.hidden {
+    overflow: hidden;
+    /*background: red;*/
+}
+
+.hidden .over {
+    width: 40000px;
+    height: 350px;
+    /*background: green;*/
+}
+
+.ever-a {
+    position: relative;
+    margin-right: 20px;
+    display: block;
+    width: 218px;
+    float: left;
+}
+
+.over .ever-a .ever-pho {
+    border: 1px solid #dedede;
+    background-color: #fff;
+    width: 216px;
+    height: 328px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ever-a .ever-pho .ever-img {
+    width: 216px;
+    height: 125px;
+    display: block;
+    /*top: -48px;*/
+    /*position: absolute;*/
+}
+
+.ever-a .ever-pho .tit {
+    padding: 10px 15px;
+
+}
+
+.ever-a .ever-pho .tit .small-tit {
+    color: #a07e46;
+    margin: 4px 0 5px;
+    line-height: 17px;
+    font-size: 12px;
+}
+
+.ever-a .ever-pho .tit .big-tit {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 20px;
+}
+
+.ever-a .ever-pho .number-tit {
+    position: absolute;
+    bottom: 12px;
+    left: 15px;
+    color: #757575;
+
+}
+
+#spe {
+    letter-spacing: 2px;
+    font-family: 'Merriweather-Light', Georgia, serif;
+}
+
+/*课程结束*/
+
+/*哈哈哈*/
+.thank {
+    text-align: center;
+    padding: 50px;
+    background: #b8f57b3d;
+    margin: 20px 0;
+    border: 1px solid #b8f57b85;
+    font-size: 30px;
+}
