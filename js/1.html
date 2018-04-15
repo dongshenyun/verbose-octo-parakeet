@@ -3,13 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>test</title>
-    <script src = "1.js" type="text/javascript"></script>
+    <!--<script src="1.js" type="text/javascript"></script>-->
 </head>
 <body>
-<!--<script>-->
-    <!--var num =window.prompt("请输入一个年龄","18");-->
-    <!--console.log("您已经活了"+num*365*24*60*60+"秒");-->
-<!--</script>-->
+<script>
+    var num = window.prompt("请输入一个年龄", "18");
+    console.log("您已经活了" + num * 365 * 24 * 60 * 60 + "秒");
 
+        aa();/*错误 aa() is not a function*/
+        var aa = function () {
+            console.log("hhh");
+        }
+        aa();
+        /*只能在下面调用*/
+
+
+    bb();/*正确*/
+    function bb() {
+        console.log("jjj");
+    }
+//    bb();/*正确*/
+    /*上下都可以 函数提升*/
+
+
+    //    var cc = 4;/*正确*/
+    console.log(cc);
+    var cc = 4;
+    /*变量提升 undefined*/
+</script>
 </body>
 </html>
