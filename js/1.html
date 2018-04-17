@@ -7,29 +7,43 @@
 </head>
 <body>
 <script>
-    var num = window.prompt("请输入一个年龄", "18");
-    console.log("您已经活了" + num * 365 * 24 * 60 * 60 + "秒");
+    //    var num = window.prompt("请输入一个年龄", "18");
+    //    console.log("您已经活了" + num * 365 * 24 * 60 * 60 + "秒");
+    //
+    //        aa();/*错误 aa() is not a function*/
+    //        var aa = function () {
+    //            console.log("hhh");
+    //        }
+    //        aa();
+    //        /*只能在下面调用*/
+    //
+    //
+    //    bb();/*正确*/
+    //    function bb() {
+    //        console.log("jjj");
+    //    }
+    ////    bb();/*正确*/
+    //    /*上下都可以 函数提升*/
+    //
+    //
+    //       var cc = 4;/*正确*/
+    //        console.log(cc);
+    //        var cc = 4;
+    //        /*变量提升 undefined*/
+    var x;
+    function f(x) {
+        return 2 * x * x + 4 * x + 2;
 
-        aa();/*错误 aa() is not a function*/
-        var aa = function () {
-            console.log("hhh");
-        }
-        aa();
-        /*只能在下面调用*/
-
-
-    bb();/*正确*/
-    function bb() {
-        console.log("jjj");
     }
-//    bb();/*正确*/
-    /*上下都可以 函数提升*/
+//
+//    function f(x){
+//        return 4*Math.pow(x,2)+3*x+2;
+//    }
 
+//    console.log(f(prompt('请输入。。。')));
+    prompt('请输入整数');
+    console.log(f(x));
 
-    //    var cc = 4;/*正确*/
-    console.log(cc);
-    var cc = 4;
-    /*变量提升 undefined*/
 </script>
 </body>
 </html>

@@ -7,27 +7,27 @@
 <body>
 <script>
     //1-1000的能被3 5 7一起整除 六个一行
-    //    var count = 0;
-    //    for (var i = 1; i <= 1000; i++) {
-    //        if (i % 3 == 0 && i % 5 == 0 && i % 7 == 0) {
-    //            document.write(i + ",");
-    //            count++;
-    //            if (count % 6 == 0) {
-    //                document.write("<br/>");
-    //            }
-    //        }
-    //    }
+        var count = 0;/*全局变量*/
+        for (var i = 1; i <= 1000; i++) {
+            if (i % 3 == 0 && i % 5 == 0 && i % 7 == 0) {
+                document.write(i + " ");
+                count++;
+                if (count % 6 == 0) {
+                    document.write("<br/>");
+                }
+            }
+        }
     //100-1000的素数 六个一行
     function isPrime(n) {
-        for (i = 2; i <= n; i++) {
+        for (var i = 2; i < n; i++) {
             if (n % i == 0) {
                 return false;
             }
         }
         return true;
     }
-    //    isPrime(console.log(9));
-    var count = 0;
+    console.log(isPrime(5));
+//    var count = 0;
     for (var j = 100; j <= 1000; j++) {
         if (isPrime(j)) {
             document.write(j + ",");
@@ -37,6 +37,37 @@
             }
         }
     }
+
+
+//fibonacci 递归和非递归
+   //递归 调用自身函数
+    function fib(n){
+        if(n<=2){
+            return 1;
+        }
+        return arguments.callee(n-1)+fib(n-2);
+    }
+    console.log(fib(6));
+//arguments.callee 只在递归里用 调用此函数参数 和fib一样
+
+   //非递归
+//    function fib(n){
+//        if(n<=2){
+//            return 1;
+//        }
+//        var f1=1,f2=2;
+//        for(var i=3;i<=n;i++){
+//            temp=f1=f2;
+//            f1=f2;
+//            f2=temp;ddf
+//        }
+//        return temp;
+//    }
+
+
+    //0-9随机数游戏
+    var num=0;
+
 
 
 </script>
