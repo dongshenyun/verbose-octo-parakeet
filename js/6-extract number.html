@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>extract</title>
+</head>
+<body>
+<script>
+    //   4.编制一个从字符串中收集数字字符（"0"',"1"，…"9"）的函数CollectDigits(s)，
+    // 它从字符串s中顺序取出数字，并且合并为一个独立的字符串作为函数的返回值。
+    // 例如函数调用CollectDigits("1abc23def4"）的返回值是字符串"1234"。
+
+
+    function ex(str) {
+        var result = '';
+        /*防止undefined*/
+        for (var i = 0; i < str.length; i++) {
+            var subStr = str.charAt(i);
+            if (subStr >= 0 && subStr <= 9) {
+                result += subStr;
+            }
+        }
+        return result;
+    }
+    console.log(ex('q1w2e3r4t5'));
+
+
+    //5.编制一个将两个字符串交叉合并的函数Merge(s1,s2)，
+    // 例如Merge("123","abc"）的返回结果是"1a2b3c"，如果两个字符串的长度不同，
+    // 那么就将多余部分直接合并到结果字符串的末尾，
+    // 如Merge("123456",''abc''）的返回结果是”1a2b3c456”。
+
+//
+//    function merge(s1, s2) {
+//        var result = '';
+//        var maxlength = Math.max(s1.length, s2.length);
+//        for (var i = 0; i < maxlength; i++) {
+//            if (i < s1.length) {
+//                result += s1.charAt(i);
+//            }
+//            if (i < s2.length) {
+//                result += s2.charAt(i);
+//            }
+//        }
+//        return result;
+//    }
+//    console.log(merge("1234567", "wqw"));
+
+
+</script>
+</body>
+</html>

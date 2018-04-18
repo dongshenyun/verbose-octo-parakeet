@@ -10,8 +10,7 @@
 <button id="but">click me!</button>
 <script type="text/javascript">
     // 画星空
-    var timer;
-    var flag = true;
+    var timer;/*var定时器*/
     function play(){
         // 找到画布
         var canvas = document.getElementById("canvas");
@@ -52,7 +51,7 @@
                 var a = Math.random()*1000;
                 drawStar(context, x, y, r, a);
             }
-        },500);/*??????*/
+        },500);/*500 定时器 毫秒*//*setTimeout(第一个参数 函数，第二个参数 时间)*/
 
         // 绘制五角星
 // 改善后的drawStar使用了渐变色radialGrad(径向渐变)让天空的颜色更加逼真
@@ -103,8 +102,9 @@
         }
     }
 
-    timer = setInterval(function(){play();},500);
-    oBut = document.getElementById('but');
+    var timer = setInterval(function(){play();},500);
+    var oBut = document.getElementById('but');/*var可省略*/
+    var flag = true;
     oBut.onclick = function(){
         if(flag){
             clearInterval(timer);

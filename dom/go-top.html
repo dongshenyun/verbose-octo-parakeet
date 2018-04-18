@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fire</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 20000px;
+        }
+
+        #fire {
+            width: 34px;
+            height: 66px;
+            background: url(go-top.jpeg) -22px -5px no-repeat;
+            position: fixed;
+            right: 30px;
+            bottom: 50px;
+        }
+
+        #fire:hover {
+            background-position: -113px -4px;
+        }
+
+    </style>
+</head>
+<body>
+
+<p>njdklaja</p>
+<p>njdklaja</p>
+<p>njdklaja</p>
+<p>njdklaja</p>
+
+<a href="javascript:;" id="fire"></a><!--页面不跳转-->
+
+<script>
+
+    var oBtn = document.getElementById('fire');
+
+    oBtn.onclick = function () {
+//        window.scrollTo(0,0);/*直接到顶端*/
+
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;/*ie chrome*/
+
+        var timer = setInterval(function () {
+            scrollTop -= 20;
+            window.scrollTo(0, scrollTop);
+            if (scrollTop <= 0) {
+                clearInterval(timer);
+            }
+        }, 20);
+    }
+
+</script>
+
+</body>
+</html>

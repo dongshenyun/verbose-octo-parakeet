@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>day</title>
+</head>
+<body>
+<script>
+
+
+//    8.设计一个函数DayOfYear(d)，它接必一个日期参数d，
+// 返回一个该日期是所在年份的第几天，如DayOfYear(2000,2,8)的返回值是39.
+
+    function dayofyear(year,month,day) {
+        var months=new Array(31,28,31,30,31,30,31,31,30,31,30,31);
+        var days=0;
+        if (year%4==0&&year%100!==0||year%400==0){
+            months[1]=29;
+        }
+        for(var i=1;i<month;i++){
+            days+=months[i-1];
+        }
+        days+=day;
+        return days;
+    }
+    console.log(dayofyear(2018,4,18));
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
