@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #container {
+            border: 1px solid red;
+            width: 200px;
+            margin: 20px auto;
+        }
+
+        h2 {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        ul {
+            display: none;
+        }
+    </style>
+</head>
+<body onselectstart="return false"><!--选中文字事件-->
+<div id="container">
+    <div>
+        <h2>管理区</h2>
+        <ul>
+            <li>001</li>
+            <li>002</li>
+            <li>003</li>
+        </ul>
+    </div>
+    <div>
+        <h2>交流区</h2>
+        <ul>
+            <li>001</li>
+            <li>002</li>
+            <li>003</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    var aH2 = document.getElementsByTagName("h2");
+    var aUl = document.getElementsByTagName("ul");
+    for (i = 0; i < aH2.length; i++) {
+        aH2[i].index = i;
+//        aH2[i].flag=true;//隐藏
+        aH2[i].onclick = function () {
+
+//            if(this.flag){//真 成立
+//                aUl[this.index].style.display = "block";
+//                this.flag=false;
+//            }else{
+//                aUl[this.index].style.display = "none";
+//                this.flag=true;
+//            }
+
+//            oUl = aUl[this.index];
+
+            oUl=next(this);
+            if (oUl.style.display == "none" || oUl.style.display == "") {
+                oUl.style.display = "block";
+            } else {
+                oUl.style.display = "none";
+            }
+        }
+    }
+    function next(ele) {
+        do {
+            ele = ele.nextSibling;
+        } while (ele&&ele.nodeType != 1);//元素存在并且不是元素节点 循环
+        return ele;
+    }
+
+</script>
+</body>
+</html>

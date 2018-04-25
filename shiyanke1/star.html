@@ -5,7 +5,7 @@
     <title>画星星</title>
 </head>
 <body>
-<h1>一闪一闪亮晶晶</h1>
+<!--<h1>一闪一闪亮晶晶</h1>-->
 <canvas id="canvas" style="border:1px solid #aaa;margin: 50px auto;display:block;"></canvas>
 <button id="but">click me!</button>
 <script type="text/javascript">
@@ -15,8 +15,8 @@
         // 找到画布
         var canvas = document.getElementById("canvas");
         // 定义画布的长宽
-        canvas.width = 1000;
-        canvas.height = 800;
+        canvas.width = 700;
+        canvas.height = 300;
         // 上下文，用于绘制
         var context = canvas.getContext("2d");
 
@@ -41,7 +41,7 @@
         //绘制矩形背景
         context.fillRect(0,0,canvas.width,canvas.height);
 
-        setTimeout(function(){
+       // setTimeout(function(){/*只调用一次*/
             for (var i = 0; i < 200; i++) {
                 var r = Math.random() * 5 + 5;
                 var x = Math.random()*canvas.width;
@@ -51,7 +51,7 @@
                 var a = Math.random()*1000;
                 drawStar(context, x, y, r, a);
             }
-        },500);/*500 定时器 毫秒*//*setTimeout(第一个参数 函数，第二个参数 时间)*/
+        //},500);
 
         // 绘制五角星
 // 改善后的drawStar使用了渐变色radialGrad(径向渐变)让天空的颜色更加逼真
@@ -102,9 +102,10 @@
         }
     }
 
-    var timer = setInterval(function(){play();},500);
+    timer = setInterval(function(){play();},500);
+    /*500 定时器 毫秒*//*setTimeout(第一个参数 函数，第二个参数 时间)*/
     var oBut = document.getElementById('but');/*var可省略*/
-    var flag = true;
+    var flag = true;//动
     oBut.onclick = function(){
         if(flag){
             clearInterval(timer);

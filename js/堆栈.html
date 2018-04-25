@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+    var person = {
+        name: "zhangsan",
+        age: "18"
+    }
+    var person1 = person;
+    person.name = "lisi";
+    console.log(person1.name);
+    /*
+     栈中存放对象/数组（引用数据类型）在堆中的地址，改变person.name是改变堆中的值
+     person和person1指向地址一样，所以person1.name值改变
+     */
+
+
+    var person3={
+        name:"huahua",
+        age:"18"
+    }
+    var person4={}
+    person4.name=person3.name;/*基本数据类型*/
+    person3.name="zhouzhou";
+    console.log(person4.name);
+    console.log(person3.name);
+
+
+
+</script>
+</body>
+</html>

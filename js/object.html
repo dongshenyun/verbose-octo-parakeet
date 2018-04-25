@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+</head>
+<body>
+<script>
+
+    //对象：属性、方法
+
+    var stu = new Object();
+    stu.name = "huahua";
+    /*属性*/
+    stu.age = "18";
+    stu.sex = "belle";
+    stu.code = function () {/*方法*/
+        console.log("我爱祖国的蓝天");
+    }
+    stu.code();
+    /*调用方法（方法是函数）*/
+    console.log(stu.age);
+    /*调用属性*/
+
+
+    var cat = new Object();
+    cat.name = "kitty";
+    cat.age = "2";
+    cat.eat = function () {
+        console.log("我爱吃鱼");
+    }
+    cat.eat();
+    console.log(cat.name);
+
+
+    /*对象直接量*/
+    var dog={
+        name:"goofy",
+        age:"3",
+        eat:function () {
+//            console.log(this.name);/*对当前对象的引用*/
+            console.log(this.name+"我不爱吃鱼");
+        }
+    }
+    console.log(dog.name);
+    dog.eat();
+
+
+
+</script>
+</body>
+</html>

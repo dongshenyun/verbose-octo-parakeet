@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>右键菜单</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #ul1 {
+            width: 120px;
+            border: 1px solid #999;
+            border-radius: 10px;
+            list-style: none;
+            display: none;
+            position: absolute;
+        }
+
+        li {
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            color: #555;
+            font-size: 12px;
+        }
+
+        li:hover {
+            background: deepskyblue;
+            color: #fff;
+        }
+
+        #ul1-1:hover {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        #ul1-2:hover {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+<ul id="ul1">
+    <li id="ul1-1">设为代办</li>
+    <li>设为已读</li>
+    <li>置顶邮件</li>
+    <li>添加备注</li>
+    <li id="ul1-2">删除</li>
+</ul>
+<script>
+    var oUl1 = document.getElementById("ul1");
+    var oLi = oUl1.getElementsByTagName("li");
+    document.oncontextmenu= function (e) {
+        oUl1.style.display = "block";
+        var left = e.clientX;
+        var top = e.clientY;
+        oUl1.style.left = left + "px";
+        oUl1.style.top = top + "px";
+        return false;
+        /*阻止默认行为*/
+    };
+    for (i = 0; i < oLi.length; i++) {
+        oLi[i].onclick = function () {
+            console.log(this.innerHTML);/*输出内容*/
+            oUl1.style.display = "none";
+        }
+    }
+    document.onclick=function () {
+        oUl1.style.display = "none";
+    }
+    console.log(oUl1.innerHTML);
+</script>
+
+
+</body>
+</html>

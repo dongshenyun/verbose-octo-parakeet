@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dom</title>
+    <script>
+        window.onload = function () {/*window.onload页面中所有资源加载完再执行*/
+            console.log("我比较慢");
+            ddiv1.onclick = function () {
+                console.log("q");
+                /*点击ddiv1*/
+            }
+        }
+
+
+    </script>
+
+</head>
+<body>
+
+<div id="div1">huahuazuimeini</div>
+<div>huahuazuimeini 1</div>
+<div>huahuazuimeini 2</div>
+<ul id="ul-1">
+    <li>kdl</li>
+    <li class="li-1 bb cc">kdlyio</li>
+    <li>kdl</li>
+    <li class="li-1">kdlkj</li>
+</ul>
+<ul >
+    <li>kdl</li>
+    <li class="li-1 bb cc">kdlyio</li>
+    <li>kdl</li>
+    <li class="li-1">kdlkj</li>
+</ul>
+
+<div class="aaa bbb"></div>
+<div class="aaa"></div>
+<div></div>
+<script>
+//    var qDiv=document.getElementsByClassName("aaa");
+//    console.log(qDiv);/*?*/
+
+
+
+    console.log("我比较块");
+    var ddiv1 = document.getElementById('div1');
+    /*ID取元素*/
+    console.log(ddiv1);
+    /*dom指代HTML中的元素*/
+    var sdiv1 = document.getElementsByTagName('div');
+    /*所有标签*/
+    console.log(sdiv1);
+
+    //    var ali = document.getElementsByClassName('li-1');
+    // /*类 ie6不支持 除了ID都是数组、ID只能从document下获取*/
+
+    //    console.log(ali);
+    //    for(i=0;i<ali.length;i++){/*遍历添加样式*/
+    //        ali[i].style.background="red";
+    //    }
+
+    function getEleByClass(clsName,context) {
+        var result = [];
+//        var aEle = document.getElementsByTagName("*");
+//        if(!context){
+//            context=document;
+//        }
+        context=context||document;/*如果传参数就用context 不传参数就赋值document*/
+        var aEle = context.getElementsByTagName("*");
+        for (var i = 0; i < aEle.length; i++) {/*数组0开始 不能等于*/
+//            if (aEle[i].className == clsName) {
+//                result.push(aEle[i]);
+//            }
+            var str=aEle[i].className;
+            var arr=str.split(" ");/*'li-1','bb','cc'*/
+            for (j=0;j<arr.length;j++){
+                if(arr[j]==clsName){
+                    result.push(aEle[i]);
+                }
+            }
+        }
+        return result;
+    }
+    var aul=document.getElementById("ul-1");
+    var ali = getEleByClass("li-1",aul);/*第二个参数 从aul下找*/
+//    var ali = getEleByClass("li-1");/*不传参数 从document下找 所有*/
+    for (i = 0; i < ali.length; i++) {/*遍历添加样式*/
+        ali[i].style.background = "red";
+    }
+
+</script>
+</body>
+</html>

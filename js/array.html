@@ -7,22 +7,51 @@
 <body>
 
 <script>
-    var array=new Array(/*3 长度；“3” 值*/);
-//    array[0]=1;
-//    array[1]=10;
-//    array[2]=100;
+    var array = new Array(/*3 长度；“3” 值*/);
+    //    array[0]=1;
+    //    array[1]=10;
+    //    array[2]=100;
     console.log(array);
 
 
-    var arr=["1","2","3"];
+    var arr = new Array(3);
+    arr[0] = "George";
+    arr[1] = "John";
+    arr[2] = "Thomas";
 
-//遍历
-//    for (i=0;i<arr.length;i++){
-//        console.log(arr[i]);
-//    }
+    document.write(arr + "<br />");
+    document.write(arr.slice(1) + "<br />");/*不改变原数组*/
+    document.write(arr);
+
+
+    var arr = ["1000", "222", "3"];
+    /*数组直接量*/
 
     console.log(arr);
 
+    console.log(arr.sort(function (x, y) {
+        return x - y;/*<0从小到大*/
+//        return y - x;/*>0从大到小*/
+    }));
+    //遍历
+    //    for (i=0;i<arr.length;i++){
+    //        console.log(arr[i]);
+    //    }
+
+    var arr9=["1","2","3","4","5"];
+    arr9.splice(3,1);/*改变原数组*/
+//    console.log(arr9);
+    arr9.splice(3,0,9);
+    console.log(arr9);
+
+    var arr6=["11","22","33","44"]
+     for(var i=0; i<arr6.length; i++){
+     console.log(arr6[i]);
+     }
+    console.log(arr6);
+    console.log(arr6[2]);
+    console.log(arr6[1]);
+    document.write("<br/>"+arr6[2]);
 
 </script>
 </body>

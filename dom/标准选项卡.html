@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>teach</title>
+    <style>
+        #out {
+            /*background-color: #b8f57b;*/
+            width: 200px;
+            /*height: 200px;*/
+            margin: 50px auto;
+            position: relative;
+        }
+
+        #title {
+            overflow: hidden;
+        }
+
+        #title span {
+            float: left;
+            width: 55px;
+            background: gold;
+            text-align: center;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        #title .tit-1 {
+            background: pink;
+        }
+
+        #content {
+            background: red;
+            height: 180px;
+            width: 200px;
+            position: absolute;
+            left: 0;
+        }
+
+        #content > div {
+            display: none;
+        }
+
+        #content .con-1 {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id="out">
+    <div id="title">
+        <span class="tit-1">1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+    <div id="content">
+        <div class="con-1">111</div>
+        <div>222</div>
+        <div>333</div>
+    </div>
+</div>
+
+<script>
+    var oTitle = document.getElementById("title");
+    var oSpan = oTitle.getElementsByTagName("span");
+    var oContent = document.getElementById("content");
+    var oDiv = oContent.getElementsByTagName("div");
+
+    for (i = 0; i < oSpan.length; i++) {/*页面加载时先绑定事件 i++=3 数组越界 */
+        oSpan[i].index = i;
+        /*每个span的索引*/
+        oSpan[i].onclick = function () {
+            for (j = 0; j < oSpan.length; j++) {
+                oSpan[j].className = '';
+                /*先全部清除class 点击哪个再添加class：tit-1*/
+                oDiv[j].className = '';
+            }
+            this.className = "tit-1";
+            /*对当前对象（oSpan[i]）的引用*/
+
+            var ind = this.index;
+            oDiv[ind].className = "con-1";
+        }
+    }
+</script>
+</body>
+</html>

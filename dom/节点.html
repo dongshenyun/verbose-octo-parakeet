@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节点</title>
+</head>
+<body>
+<div id="div1">你好啊，李银河</div>
+<ul id="ul1">
+    <li>q</li>
+    <li id="li11">w</li>
+    <li >e</li>
+    <li id="li1">r</li>
+</ul>
+<script>
+    //    document.getElementsByClassName();
+    //    document.getElementsByName();
+    var oLi = document.getElementById("li1");
+    var oLi1 = document.getElementById("li11");
+    var oUl1 = document.getElementById("ul1");
+    //    document.getElementsByTagName();
+
+    //    var oDiv=document.querySelector("#div1");
+    //    var oLi=document.querySelector("li");/*多个 找第一个*/
+    //    var aLi=document.querySelectorAll("li");//返回数组
+
+    function next(ele) {
+        do {
+            ele = ele.nextSibling;
+        } while (ele&&ele.nodeType != 1);//元素存在并且不是元素节点 循环
+        return ele;
+    }
+    console.log(next(oLi));
+
+    function prev(ele1) {
+        do {
+            ele1 = ele1.previousSibling;
+        } while (ele1&&ele1.nodeType != 1);//元素存在并且不是元素节点 循环
+        return ele1;
+    }
+    console.log(next(oLi1));
+    function first(elem) {
+        elem=elem.firstChild;
+        if(elem.nodeType!=1){
+            elem=next(elem);
+        }
+        return elem;
+    }
+    console.log(first(oUl1));
+    function last(elem) {
+        elem=elem.lastChild;
+        if(elem.nodeType!=1){
+            elem=prev(elem);
+        }
+        return elem;
+    }
+    console.log(first(oUl1));
+    console.log(last(oUl1));
+    console.log(oUl1.children);//所有浏览器都能用
+</script>
+</body>
+</html>

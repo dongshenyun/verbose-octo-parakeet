@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .out {
+            background-color: #b8f57b;
+            width: 200px;
+            /*height: 200px;*/
+            margin: 50px auto;
+            position: relative;
+        }
+
+        #fir,#sec,#thi {
+            width: 55px;
+            background: red;
+            float: left;
+            margin-right: 10px;
+        }
+
+        #sec #content2, #thi #content3 {
+            display: none;
+        }
+
+        #content1,#content2,#content3 {
+            width: 200px;
+            height: 180px;
+            background: gold;
+        }
+        #sec #content2, #thi #content3{
+            position: absolute;
+            left:0;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="out">
+    <div id="fir">
+        111
+        <div id="content1">
+            aaa
+        </div>
+    </div>
+    <div id="sec">
+        222
+        <div id="content2">
+            bbb
+        </div>
+    </div>
+    <div id="thi">
+        333
+        <div id="content3">
+            ccc
+        </div>
+    </div>
+
+</div>
+<script>
+    var aFir = document.getElementById("fir");
+    var aCon1=document.getElementById("content1");
+    var flag = true;
+    aFir.onclick = function () {
+        if (flag) {
+            aCon1.style.display = "block";
+            aCon2.style.display = "none";
+            aCon3.style.display = "none";
+        }
+    };
+    var aSec = document.getElementById("sec");
+    var aCon2=document.getElementById("content2");
+    var flag = true;
+    aSec.onclick = function () {
+        if (flag) {
+            aCon2.style.display = "block";
+            aCon1.style.display = "none";
+            aCon3.style.display = "none";
+        }
+    };
+    var aThi = document.getElementById("thi");
+    var aCon3=document.getElementById("content3");
+    var flag = true;
+    aThi.onclick = function () {
+        if (flag) {
+            aCon3.style.display = "block";
+            aCon1.style.display = "none";
+            aCon2.style.display = "none";
+        }
+    };
+</script>
+</body>
+</html>

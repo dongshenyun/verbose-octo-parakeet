@@ -3,7 +3,9 @@
     margin: 0;
 }
 body{
-    height: 10000px;
+    /*height: 10000px;*/
+    /*overflow: hidden;*/
+    /*position: relative;*/
 }
 ul {
     list-style: none;
@@ -140,4 +142,14 @@ body {
     font-size: 14px;
     color: #FF0036;
 }
+
 /*tmall nav*/
+
+/*弹层开始*/
+/*#mask{*/
+    /*position: absolute;*/
+    /*background: red;*/
+/*}*/
+
+
+/*弹层结束*/

@@ -40,11 +40,13 @@
 <script>
 
     var oBtn = document.getElementById('fire');
+    /*获取*/
 
-    oBtn.onclick = function () {
+    oBtn.onclick = function () {/*方法*/
 //        window.scrollTo(0,0);/*直接到顶端*/
 
-        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;/*ie chrome*/
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        /*ie chrome兼容 滚动条距离上方高度*/
 
         var timer = setInterval(function () {
             scrollTop -= 20;
@@ -54,7 +56,6 @@
             }
         }, 20);
     }
-
 </script>
 
 </body>
