@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class</title>
+
+    <style type="text.css">
+        .scroll{
+            min-width:360px;
+            background-color:#ffffff;
+            position:fixed;
+            width:100%;
+            left:0px;
+            right:0px;
+            top:0px;
+        }
+
+        .course{
+            width:127px;
+            height:32px;
+        }
+
+        .headlinetext{
+            font-size:20px;
+            font-family:"宋体"
+        }
+
+        .box{
+            display:flex;
+            margin:1.5rem 0;
+            justify-content:center;
+            flex-wrap:wrap;
+            position:relative;
+            min-height:1px;
+            width:100%;
+            padding-left:0px;
+            padding-right:0px;
+            -ms-flex-wrap:wrap;
+            -ms-flex-pack:center;
+            -webkit-box-pack:center;
+            -webkit-box-lines:multiple;
+        }
+
+        .flex{
+            font-size:10px;
+            font-family:"宋体";
+            padding-right: 30px;
+            margin-left: 8px;
+            font-size: 14px;
+            display: block;
+            line-height: 65px;
+        }
+        .startdate{
+            font-size:10px;
+            font-family:"宋体";
+        }
+        .creators{
+            font-size:16px;
+            font-family:"宋体";
+            text-align:left;
+        }
+        .industry-partners{
+            font-size:16px;
+            font-family:"宋体";
+            text-align:left;
+        }
+        .rcbox{
+            font-size:14px;
+            font-family:"宋体";
+            background-position:center;
+        }
+        .description-box{
+            font-size:14px;
+            font-family:"宋体";
+            background-position:center;
+        }
+
+        .description-cont{
+            font-size:18px;
+            font-family:"宋体";
+            background-position:center;
+        }
+        .body{
+            font-size:12px;
+            font-family:"Times New Roman";
+            background-position:center;
+        }
+        .partner{
+            font-size:14px;
+            font-family:"宋体";
+            color:white；
+            text-align:center;
+            line-height:20px;
+        }
+        #creators{
+            font-size:16px;
+            font-family:"宋体";
+            text-align:left;
+            background-position:center;
+            line-height:25px;
+        }
+    </style>
+
+    <script>
+        (function(global, factory) {
+            if (typeof exports === 'object' && typeof module != 'undefined') {
+                module.exports = factory();
+            } else if (typeof define === 'function' && define.amd) {
+                define(factory);
+            } else {
+                global.errorTracker = factory();
+            }
+        }(this, function() {
+
+            var lastError = {};
+
+            function errorEquals(left, right) {
+                return ['message', 'url', 'line', 'column'].every(function(field) {
+                    return left[field] == right[field];
+                });
+            }
+            return function(tracker, options) {
+                options = options || {};
+
+                var logger = options.logger || (window && window.console) || {error: function() {}};
+                var version = options.version || '';
+                var versionTimestamp = options.versionTimestamp || '';
+
+                var stringifyError = function(error) {
+                    var plainObject = {};
+                    if (error && typeof(error) == 'object') {
+                        Object.getOwnPropertyNames(error).forEach(function(key) {
+                            plainObject[key] = error[key];
+                        });
+                    }
+                    return JSON.stringify(plainObject);
+                };
+
+                var logClientSideError = function(message, url, line, column, error) {
+                    if (!url || !column || !line) return;
+
+                    if (message.target && message.type) {
+                        message = message.type;
+                    }
+
+                    var errorStr = stringifyError(error);
+                    var errorDescrip = {
+                        message: message,
+                        script: url,
+                        line: line,
+                        url: window && window.document ? window.document.URL : url,
+                        column: column,
+                        error: errorStr,
+                        version: version,
+                        versionTimestamp: versionTimestamp,
+                        appName: window.appName || 'unknown'
+                    };
+                    logger.error(errorStr);
+                    var trackableUrl = url && (!options.scriptFilter || options.scriptFilter.test(url));
+                    if (trackableUrl) {
+                        var isNewError = !errorEquals(errorDescrip, lastError);
+
+                        if (isNewError) {
+                            lastError = errorDescrip;
+                            tracker(errorDescrip);
+                        }
+                    }
+                };
+                if (typeof window !== 'undefined') {
+                    window.onerror = logClientSideError;
+                    if (window.errorTracker) {
+                        delete window.errorTracker;
+                    }
+                } else {
+                    return logClientSideError;
+                }
+            };
+        }));
+        }</script>
+
+</head>
+<body>
+<div class="box">
+    <div class="sn">
+        <h2 class="headlinetext">
+            <span>Deep Learning 专项课程</span>
+        </h2>
+    </div>
+    <div class="startdate"><span>于Mar 26开始</span>
+    </div>
+    <button disabled="">注册</button>
+</div>
+
+<div class="creators">
+    <p>制作方：</p>
+    <div class="creLogo"><img src="/image/zhizuo.jpg" style="max-width:200px;max-height:100px;"/>
+    </div>
+</div>
+<div class="industry-partners">
+    <p>行业合作伙伴：</p>
+    <img src="/image/partners.jpg" style="max-width:150px;"/>
+</div>
+<div class="rcbox">
+    <img width="72" height="72" src="/image/5course.jpg" alt="courses" />
+    <div class="description-box">
+        <h5>5 courses</h5>
+    </div>
+    <div class="description-box">
+        <h5>项目</h5>
+    </div>
+    <div class="description-box">
+        <h5>证书</h5>
+    </div>
+</div>
+
+<section>
+    <div>
+        <h2 class="course">Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization</h2>
+        <div class="course-start">
+            <span>计划开课班次：March 26</span>
+        </div>
+        <dl>
+            <dt>课程学习时间</dt>
+            <dd>3 weeks, 3-6 hours per week</dd>
+        </dl>
+        <dl>
+            <dt>字幕</dt>
+            <dd>English, Chinese (Traditional), Chinese (Simplified)</dd>
+        </dl>
+        <div class="description-cont">
+            <h3>课程概述</h3>
+            <div class="body">
+                This course will teach you the &quot;magic&quot; of getting deep learning to work well. Rather  than the deep learning process being a black box, you will understand what drives
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="creators">
+    <p class="partner">deeplearning.ai is dedicated to advancing AI by sharing knowledge about the field. We hope to welcome more individuals into deep learning and AI. </p>
+    <div>
+        <img src="/image/Andrew Ng.png" style="max-width:64px;max-height:64px;" alt="Andrew Ng"/>
+        <div class="flex">
+            <h4>Andrew Ng</h4>
+            <h5>Co-founder, Coursera; Adjunct Professor, Stanford University; formerly head of Baidu AI Group/Google Brain</h5>
+        </div>
+    </div>
+    <div>
+        <img src="/image/Mathematical.png" style="max-width:64px;max-height:64px;" alt="Teaching Assistant"/>
+        <div class="flex">
+            <h4>Teaching Assistant - Younes Bensouda Mourri</h4>
+            <h5>Mathematical &amp; Computational Sciences, Stanford University, deeplearning.ai</h5>
+        </div>
+    </div>
+</section>
+
+<div>
+    <div>
+        <h2>FAQs</h2>
+    </div>
+
+    <div>
+        <button data-track="true" aria-expanded="false">
+				<span>
+					<p>退款政策是怎样规定的？</p>
+				</span>
+        </button>
+    </div>
+    <div>
+        <button data-track="true" aria-expanded="false">
+				<span>
+					<p>我可以只学习一门课程吗？我对整个专项课程没有兴趣。</p>
+				</span>
+        </button>
+    </div>
+    <div>
+        <button data-track="true" aria-expanded="false">
+				<span>
+					<p>我可以申请助学金吗？</p>
+				</span>
+        </button>
+    </div>
+    <div>
+        <button data-track="true" aria-expanded="false">
+				<span>
+					<p>What background knowledge is necessary?</p>
+				</span>
+        </button>
+    </div>
+</div>
+
+</body>
+</html>

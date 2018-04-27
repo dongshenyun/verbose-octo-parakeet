@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form id="signupForm" class="regleader" action="<?=base_url() ?>member/resetpassword"  
+      method="post" name="signupForm">
+
+    <tr>      
+        <td width="180" height="40" align="right">输入新密码</td>
+        <td><input type="password" style="width:180px" name="password"
+                   class="inputxt" value="" id="password" required/>
+        </td>
+    </tr>
+    <tr>   
+        <td height="40" align="right">再次确认新密码</td>   
+        <td><input type="password" value="" name="repassword" class="inputxt"
+                   id="repassword" required="" style="width:180px"/></td> 
+    </tr>
+    <tr>    
+        <td></td>   
+        <td>
+            <button type="submit" class="btn btn-primary" id="login" style="width:200px"  
+                    onclick="return insertManager()"> 下一步
+            </button>
+                  &nbsp;&nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td height="10" colspan="2"></td>
+    </tr>
+
+    <tr>
+        <td height="10" colspan="3"></td>
+    </tr>
+    </table>
+</form>
+
+<div>
+     
+     
+     
+</div>
+
+   </div>
+  </div>  
+</div>
+           
+            
+                        
+
+</div>
+
+</div>
+
+<script type="text/javascript">
+    function insertManager() {
+        var password = document.getElementById("password").value;
+        var repassword = document.getElementById("repassword").value;
+        if (password != repassword) {
+            window.alert("您输入的新密码与确认密码确认不一致");
+            signupForm.repassword.focus();
+            return false;
+
+        }
+        return true;
+    }
+</script>
+</body>
+</html>

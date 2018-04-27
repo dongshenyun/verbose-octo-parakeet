@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="#ffffff" onload="loadedvar=true;" style="text-align: center">
+<textarea cols="100" rows="30" wrap="hard" readonly="yes" style="border: 2px solid red">
+    欢迎注册，请详细阅读本协议，需同意以后方能继续。
+    【审慎阅读】您在申请注册流程中点击同意前，应当认真阅读以下协议。请您务必审慎阅读、充分理解协议中相关条款内容，其中包括：
+
+1、与您约定免除或限制责任的条款；
+
+2、与您约定法律适用和管辖的条款；
+
+3、其他以粗体下划线标识的重要条款。
+
+如您对协议有任何疑问，可向平台客服咨询。
+
+【特别提示】当您按照注册页面提示填写信息、阅读并同意协议且完成全部注册程序后，即表示您已充分阅读、理解并接受协议的全部内容。如您因平台服务与淘宝发生争议的，适用《淘宝平台服务协议》处理。如您在使用平台服务过程中与其他用户发生争议的，依您与其他用户达成的协议处理。
+
+阅读协议的过程中，如果您不同意相关协议或其中任何条款约定，您应立即停止注册程序。
+</textarea>
+<form name="terms" action="register.html" method="get">
+    我同意: <input type="checkbox" name="agree" value="ON">
+    <input onclick="if (loadedvar) {
+        if (document.terms.agree.checked) {
+            document.terms.submit();
+        } else {window.alert('必须先同意才能跳转')}
+    } else {window.alert('请稍等...')}" type="button" value="继续">
+    <input type="button" value="退出" onclick="document.location.href='../tmall.html';">
+</form>
+</body>
+</html>

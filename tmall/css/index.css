@@ -1047,7 +1047,7 @@
     /*display: none;*/
     position: absolute;
     background: white;
-    z-index: 1000;
+    z-index: 200;
 }
 
 #ul1 li {

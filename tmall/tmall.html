@@ -6,22 +6,42 @@
     <link rel="stylesheet" href="css/iconfont.css" type="text/css">
     <link rel="stylesheet" href="css/com.css" type="text/css">
     <link rel="stylesheet" href="css/index.css" type="text/css">
+    <!--<script src = "jquery.min.js"></script>-->
     <!--<script src = "focus.js"></script>-->
 </head>
-<body> <!-- onmousedown="show(event)"-->
+<body id="body"> <!-- onmousedown="show(event)"-->
 
-<!--<div id="mask">-->
-    <!--<div id="mask-1">-->
-        <!--<img src="img/1.png" alt="">-->
-    <!--</div>-->
-<!--</div>-->
+<a href="javascript:;" id="fire"></a>
+
+<div id="mask"></div>
+<img id="mask-1" src="img/erweima.png" alt=""> <!-- 手机版-->
+<div id="login">
+    <span style="cursor:pointer;position: absolute;color: red;width: 50px;height: 50px;font-size: 18px"
+          onClick="disappear();">关闭</span>
+    <img id="login-bg" src="img/bgsaoma.png" alt="">
+    <div id="log">
+        <div id="login-code">
+            <div id="login-code-sao">扫码登录</div>
+            <img src="img/saoma.png" alt="">
+            <div class="login-input"><a href="#" onclick="mima()">密码登录</a><a href="login/agree.html">免费注册</a></div>
+        </div>
+        <div id="login-text">
+            <div id="login-code-mi">密码登录</div>
+            <input type="text" placeholder="用户名"/>
+            <input type="password" placeholder="密码"/>
+            <input id="denglu" type="submit" value="登录"/>
+            <div class="login-input"><a href="#" onclick="saoma()">扫码登录</a><a href="login/agree.html">免费注册</a></div>
+        </div>
+    </div>
+</div>
+
 
 <div class="first">
     <div class="second s-second">
         <div class="s-login">
             <span>喵，欢迎来天猫</span>
-            <a href="#" class="s-l-btn">请登录</a>
-            <a href="#">免费注册</a>
+            <a href="#" id="s-l-btn">请登录</a>
+            <a href="login/agree.html">免费注册</a>
         </div>
         <ul class="s-menu">
             <li class="s-menu-1 s-menu-2">
@@ -38,7 +58,7 @@
                 </a>
             </li>
             <li class="s-menu-1 s-menu-2"><a href="#">收藏夹</a></li>
-            <li class="s-menu-1">
+            <li class="s-menu-1" id="pop-up">
                 <a href="#">
                     <i class="iconfont icon-phone"></i>
                     手机版
@@ -4925,8 +4945,8 @@
         if (left > 1120) {
             oUl1.style.left = left - 220 + "px";
         }
-        if(top1>500){
-            oUl1.style.top = top-200+ "px";
+        if (top1 > 500) {
+            oUl1.style.top = top - 200 + "px";
         }
         console.log(e.clientY);
 //        alert(top);
@@ -4962,6 +4982,86 @@
         }
     }
     //隐藏列表结束
+
+    /*弹层开始*/
+
+    /*手机版弹层开始*/
+    var oPopUp = document.getElementById("pop-up");
+    var oMask = document.getElementById("mask");
+    var oMask1 = document.getElementById("mask-1");
+    oPopUp.flag = true;//隐藏
+
+    function show()  //显示隐藏层和弹出层
+    {
+        oMask.style.display = "block";  //显示隐藏层
+        oMask1.style.display = "block";  //显示弹出层
+    }
+    function hide()  //去除隐藏层和弹出层
+    {
+        oMask.style.display = "none";
+        oMask1.style.display = "none";
+    }
+    oPopUp.onclick = function () {
+        if (this.flag) {//真 成立
+            show();
+            this.flag = false;
+        } else {
+            hide();
+            this.flag = true;
+        }
+    }
+    oMask.onclick=function () {
+        oMask.style.display = "none";
+        oMask1.style.display = "none";
+    }
+
+    /*登录弹层开始*/
+    var oLogin = document.getElementById("login");
+    var oPlease = document.getElementById("s-l-btn");
+
+    oPlease.onclick = function () {
+        oMask.style.display = "block";  //显示隐藏层
+        oLogin.style.display = 'block';
+
+    }
+    function disappear() {
+        oMask.style.display = "none";
+        oLogin.style.display = 'none';
+    }
+    function mima() {
+        document.getElementById('login-text').style.display = "block";
+        document.getElementById('login-code').style.display = "none";
+    }
+    function saoma() {
+        document.getElementById('login-text').style.display = "none";
+        document.getElementById('login-code').style.display = "block";
+    }
+    if(oMask.style.display =="block"){
+        document.getElementById("body").style.overflow ="hidden";/*隐藏滚动条*/
+        document.getElementById("body").style.position="relative";/*隐藏滚动条*/
+    }
+    /*弹层结束*/
+
+    /*小火箭开始*/
+
+    var oBtn = document.getElementById('fire');
+    /*获取*/
+
+    oBtn.onclick = function () {/*方法*/
+//        window.scrollTo(0,0);/*直接到顶端*/
+
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        /*ie chrome兼容 滚动条距离上方高度*/
+
+        var timer = setInterval(function () {
+            scrollTop -= 20;
+            window.scrollTo(0, scrollTop);
+            if (scrollTop <= 0) {
+                clearInterval(timer);
+            }
+        }, 2);
+    }
+    /*小火箭结束*/
 </script>
 
 </body>
