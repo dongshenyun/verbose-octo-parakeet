@@ -1020,51 +1020,6 @@
 
 /*超大div结束*/
 
-/*底部开始*/
-.after-sell {
-    background: white;
-    height: 49px;
-    border-top: 1px solid #D1D7DC;
-}
-
-.after-sell span {
-    margin: 11px auto;
-    display: block;
-    font-size: 20px;
-    color: #81d439;
-    text-align: center;
-    font-weight: bold;
-}
-
-/*底部结束*/
-
-/*右键*/
-#ul1 {
-    width: 220px;
-    border: 1px solid #999;
-    /*border-radius: 10px;*/
-    list-style: none;
-    /*display: none;*/
-    position: absolute;
-    background: white;
-    z-index: 200;
-}
-
-#ul1 li {
-    padding-left: 40px;
-    height: 30px;
-    line-height: 30px;
-    text-align: left;
-    color: #555;
-    font-size: 12px;
-}
-
-#ul1 li:hover {
-    background: deepskyblue;
-    color: #fff;
-}
-
-/*右键结束*/
 
 
 
