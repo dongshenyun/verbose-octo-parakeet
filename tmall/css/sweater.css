@@ -1,0 +1,347 @@
+
+a {
+    text-decoration: none;
+    color: #999;
+}
+
+a:hover {
+    color: #FF0036;
+}
+
+.search {
+    margin: 38px 0 0 320px;
+    float: left;
+    /*background: red;*/
+
+}
+
+.search-text {
+    width: 491px;
+    height: 36px;
+    border: 2px solid red;
+    outline: none; /*去掉蓝边*/
+    float: left; /*去掉与搜索按钮间的空隙*/
+    opacity: 0.5;
+}
+
+.search-1 {
+
+}
+
+.search-btn {
+    background: #FF0036;
+    color: #fff;
+    float: left;
+    width: 134px;
+    height: 40px;
+    border: none;
+    font-size: 18px;
+}
+
+.sub-nav {
+    position: relative;
+}
+
+.sub-nav li {
+    float: left;
+    margin-right: 11px;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.sub-nav li:after {
+    content: '';
+    width: 1px;
+    height: 15px;
+    background-color: #979797;
+    position: absolute;
+    top: 44px;
+    margin-left: 5px;
+}
+
+/*table text开始*/
+.second {
+    overflow: hidden;
+}
+
+#table {
+    border: 2px solid #D1CCC7;
+    position: absolute;
+    top: 160px;
+    width: 1186px;
+    background: white;
+}
+
+#text {
+    width: 1190px;
+    height: 175px;
+    margin-top: 151px;
+}
+#text li:hover {
+    color: #FF0036;
+    cursor: pointer;
+}
+
+#img {
+    float: right;
+    width: 849px;
+    margin: 5px 180px 5px 0;
+    overflow: hidden;
+    height: 105px;
+}
+
+#img img {
+    cursor: pointer;
+    padding: 0;
+    line-height: 52px;
+    height: 50px;
+    width: 102px;
+    overflow: hidden;
+    float: left;
+    border: 1px solid #e1e1e1;
+
+}
+
+#img img:hover {
+    border: 2px solid red;
+    height: 48px;
+    width: 100px;
+}
+
+#more1 {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+#spe-lef {
+    padding-top: 15px;
+    padding-left: 15px;
+    width: 119px;
+    display: inline-block;
+    background: #f7f5f5;
+    height: 103px;
+    color: #999;
+}
+
+.text-1 {
+    overflow: hidden;
+    height: 34px;
+    line-height: 34px;
+    border: 1px solid #d1ccc7;
+    border-top: none;
+}
+
+.text-1 ul li {
+    float: left;
+    margin-left: 25px;
+    color: #806f66;
+}
+
+.left {
+    float: left;
+    padding-right: 70px;
+    padding-left: 15px;
+    width: 50px;
+    background: #f7f5f5;
+    color: #999;
+}
+
+/*table text结束*/
+
+/*sub-nav开始*/
+#tit {
+    color: #999;
+    width: 1190px;
+    font-size: 14px;
+    margin: 10px 0;
+    background: #cccccc;
+    height: 30px;
+    line-height: 30px;
+}
+
+#pattern-box {
+    display: inline-block;
+}
+
+#pattern-box span {
+    border: 1px solid #fff9a8;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#arrow-box {
+    display: inline-block;
+    float: right;
+}
+
+#arrow-box span {
+    margin-right: 3px;
+    text-align: center;
+    padding: 0 4px;
+    background: white;
+    border: 1px solid #fff9a8;
+
+}
+
+#num {
+    margin-left: 970px;
+}
+
+/*sub-nav结束*/
+
+/*photo开始*/
+
+/*大开始*/
+#photo-box {
+    padding-left: 5px;
+    overflow: hidden;
+}
+
+#photo-box a:hover {
+    text-decoration: underline;
+}
+#big{
+    display: none;
+}
+.padding {
+    margin-right: 20px;
+    float: left;
+    margin-bottom: 13px;
+    border: 2px solid white;
+}
+.padding:hover{
+    border: 2px solid red;
+}
+.pho {
+    padding: 4px 4px 0;
+    border: 1px solid #f5f5f5;
+    border-radius: 3px;
+    /*font-size: 0;*/
+    display: inline-block;
+}
+
+.pho .big-img {
+    width: 210px;
+}
+
+.price {
+    /*float: left;*/
+    font-family: arial;
+    font-weight: 400;
+    font-size: 20px;
+    color: #ff0036;
+    margin: 0 0 5px;
+}
+
+.price span {
+    margin-right: 2px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.pho .depict {
+    margin-bottom: 3px;
+}
+
+.pho .depict > a {
+    font-size: 12px;
+    font-family: \5FAE\8F6F\96C5\9ED1;
+    line-height: 14px;
+    color: #333;
+}
+
+.pho .store {
+    margin-bottom: 8px;
+}
+
+.pho .store > a {
+    text-decoration: underline
+}
+.pho .comment{
+    border-top:1px solid #eee ;
+    height: 37px;
+    color: #999;
+    line-height: 37px;
+}
+.pho .comment .month{
+    border-right: 1px solid #eee;
+    padding: 10px 1px;
+}
+.comment .gold{
+    color: #b57c5b;
+    font-weight: 700;
+    margin-left: 6px;
+}
+.pho .comment .com-com{
+    border-right: 1px solid #eee;
+    margin-left: 6px;
+    padding: 10px 1px;
+}
+.comment .com-com>a{
+    color: #2c97de;
+    margin-left: 4px;
+    margin-right:20px;
+}
+
+.comment .ww {
+    width: 16px;
+    height: 16px;
+    margin-left: 6px;
+}
+
+/*小开始*/
+#small{
+    /*display: none;*/
+}
+
+.padding-1{
+    padding: 10px 0;
+    float: left;
+}
+.pho-1{
+    padding: 8px 10px;
+    border: 3px solid white;
+    display: inline-block;
+    width: 368px;
+}
+.pho-1:hover{
+    border: 3px solid #f1edec;
+}
+.lay1{
+    border-bottom: 1px dashed #666;
+    padding-bottom: 4px;
+}
+.lay1 >img{
+    float: left;
+    width: 80px;
+}
+.lay1 .lay1-right{
+    margin-left: 90px;
+    position: relative;
+}
+.comment .spe-com>a{
+     color: #568396;
+ }
+.pho-1 .comment{
+    color: #999;
+}
+.pho-1 .comment .month{
+    border-right: 1px solid #666;
+}
+.lay2{
+    height: 22px;
+    line-height: 30px;
+}
+.lay2 a{
+    color: #568396;
+}
+
+.comment .spe-ww{
+    margin-left: -18px;
+    position: absolute;
+    right: 100px;
+    display: block;
+}
+
+/*photo结束*/

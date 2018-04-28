@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="i" style="width:80px;height:40px;overflow:hidden;margin-left:100px;position:absolute;">
+    <img src="img/1.png"/>
+</div>
+<script>
+//    setTimeout("jump()",5);
+    var t=0,a=40,v=t*a,s=10,updown=true;// s路程,a加速度,t时间,updown判断上升还是下降
+    function jump(){
+        if(t<=0){
+            updown=true;
+        }else if(t*t*a>=s){
+            updown=false;
+        }
+        if(updown){
+            t=t+0.01
+        }else{
+            t=t-0.01;
+        }
+//        $("#i").css("top",(t*t*a)+"px");// 设置图片的top值
+        document.getElementById("i").style.top=t*t*a+"px";
+//        setTimeout("jump()",5);
+    }
+    setInterval(function(){jump()},1);
+
+</script>
+</body>
+</html>
