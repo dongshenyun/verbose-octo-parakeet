@@ -104,8 +104,8 @@ function saoma() {
     document.getElementById('login-code').style.display = "block";
 }
 if(oMask.style.display =="block"){
-    document.getElementById("body").style.overflow ="hidden";/*隐藏滚动条*/
-    document.getElementById("body").style.position="relative";/*隐藏滚动条*/
+    // document.getElementById("body").style.overflow ="hidden";/*隐藏滚动条*/
+    document.getElementById("body").style.position="relative";
 }
 /*弹层结束*/
 

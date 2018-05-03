@@ -4,7 +4,6 @@
 var oMore1 = document.getElementById("more1");
 var oImg = document.getElementById("img");
 var oSpe = document.getElementById("spe-lef");
-console.log(oSpe);
 var flag = true;//more
 oMore1.onclick = function () {
     if (this.flag) {//真 成立
@@ -53,3 +52,45 @@ function jump(){
 //        setTimeout("jump()",5);
 }
 setInterval(function(){jump()},1);
+
+//图标闪烁
+// var hot=document.getElementsByTagName('b');
+// console.log(hot[3]);
+//
+//     function running(){
+//         for(i=0;i<hot.length;i++){
+//         if(hot[i].style.display=="none"){
+//             hot[i].style.display="block";
+//         }else{
+//             hot[i].style.display="none";
+//         }
+//     }
+// }
+//
+// setInterval("running()",5);/*图标闪烁*/
+
+//ww图标跳动
+
+/*大小店铺开始*/
+var oSort=document.getElementById("pattern-box");
+var oPho=document.getElementById("photo-box");
+var aSpan=oSort.getElementsByClassName("button");
+var aBlock=oPho.getElementsByClassName("block");
+console.log(aBlock);
+
+for (i = 0; i < aSpan.length; i++) {/*页面加载时先绑定事件 i++=3 数组越界 */
+    aSpan[i].index = i;
+    /*每个span的索引*/
+    aSpan[i].onclick = function () {
+        for (j = 0; j < aSpan.length; j++) {
+            aSpan[j].className="button";
+            aBlock[j].className="block";
+        }
+       this.className = "button spe-button";
+
+        var ind=this.index;
+        aBlock[ind].className = "block spe-block";
+    }
+}
+
+/*大小店铺结束*/

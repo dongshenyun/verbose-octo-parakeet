@@ -24,10 +24,6 @@ a:hover {
     opacity: 0.5;
 }
 
-.search-1 {
-
-}
-
 .search-btn {
     background: #FF0036;
     color: #fff;
@@ -58,6 +54,13 @@ a:hover {
     top: 44px;
     margin-left: 5px;
 }
+/*logo*/
+#home_page{
+    position: absolute;
+    top: 84px;
+    left: 84px;
+}
+/*logo*/
 
 /*table text开始*/
 .second {
@@ -163,7 +166,9 @@ a:hover {
 #pattern-box {
     display: inline-block;
 }
-
+#pattern-box .spe-button{
+    background: gold;
+}
 #pattern-box span {
     border: 1px solid #fff9a8;
     cursor: pointer;
@@ -196,13 +201,17 @@ a:hover {
 #photo-box {
     padding-left: 5px;
     overflow: hidden;
+    position: relative;
+}
+.block{
+    display: none;
+}
+.spe-block{
+    display: block;
 }
 
 #photo-box a:hover {
     text-decoration: underline;
-}
-#big{
-    display: none;
 }
 .padding {
     margin-right: 20px;
@@ -291,9 +300,6 @@ a:hover {
 }
 
 /*小开始*/
-#small{
-    /*display: none;*/
-}
 
 .padding-1{
     padding: 10px 0;
@@ -308,7 +314,7 @@ a:hover {
 .pho-1:hover{
     border: 3px solid #f1edec;
 }
-.lay1{
+.pho-1 .lay1{
     border-bottom: 1px dashed #666;
     padding-bottom: 4px;
 }
@@ -329,7 +335,7 @@ a:hover {
 .pho-1 .comment .month{
     border-right: 1px solid #666;
 }
-.lay2{
+.pho-1 .lay2{
     height: 22px;
     line-height: 30px;
 }
@@ -340,8 +346,139 @@ a:hover {
 .comment .spe-ww{
     margin-left: -18px;
     position: absolute;
-    right: 100px;
+    right: 10px;
     display: block;
+}
+
+/*店铺开始*/
+.lay1{
+    overflow: hidden;
+}
+.lay1 .shop-img{
+    padding: 18px 35px 20px 15px;
+}
+.lay1 .shop-fir{
+    width: 380px;
+    color: #595959;
+    margin-top: 15px;
+    line-height: 20px;
+}
+.lay1 .shop-fir .flagshop{
+    text-decoration: none;
+    margin-right: 5px;
+    font-size: 15px;
+    color: #806f66;
+    font-weight: 600;
+}
+.lay1 .shop-fir .band{
+    background: url(../s_img/xuebi.png) 9999px 9999px no-repeat;
+     background-position: -18px -112px;
+    width: 58px;
+    height: 18px;
+    line-height: 50px;
+    display: block;
+    float: right;
+    margin-right: 205px;
+}
+.lay1 .shop-sec{
+    margin-top: 15px;
+    width: 200px;
+    height: 81px;
+    line-height: 24px;
+    color: #666;
+    padding: 0 50px;
+}
+.lay1 .shop-sec>p{
+    height: 20px;
+    font-weight: 700;
+}
+.lay1 .shop-sec>li{
+    height: 22px;
+}
+.lay1 .shop-sec li em{
+    color: #407e8f;
+    font-weight: 700;
+}
+.lay1 .shop-sec li b{
+    margin: 0 5px 0 13px;
+    line-height: 15px;
+    padding: 1px 2px 1px 3px;
+    font-weight: 400;
+     border-radius: 2px;
+    color: #fff;
+    background: #ff0036;
+}
+.lay1 .shop-thi{
+    padding-left: 140px;
+    margin: 22px auto 0;
+}
+.lay1 .shop-thi .enter{
+    margin-bottom: 20px;
+    width: 119px;
+    padding-left: 60px;
+    height: 24px;
+    line-height: 24px;
+    background-color: #806f66;
+    border: 1px solid #6b635f;
+}
+.lay1 .shop-thi .enter a{
+    color: white;
+}
+.lay1 .shop-thi .relevant{
+    border: 1px solid #EAE5E1;
+    text-align: center;
+    background-color: #F7F5F5;
+    color: #595959;
+    line-height: 20px;
+}
+.lay1>div{
+    float: left;
+}
+.padding-2{
+    padding: 5px;
+}
+.pho-2 .lay2{
+    background: #f2f2f2;
+    margin-left: 130px;
+    width: 1048px;
+    border: 3px solid #e6e2e1;
+}
+.pho-2 .lay2 .pho{
+    width: 185px;
+    height: 287px;
+    margin: 10px 4px 20px;
+    padding: 5px;
+    background: white;
+}
+.pho-2 .lay2 .pho .big-img{
+    width: 160px;
+    height: 160px;
+    margin: 5px auto;
+    display: block;
+}
+
+.pho-2 .lay2 .pho .depict{
+    overflow: hidden;
+    height: 20px;
+}
+.store-com1{
+    border-top: 1px solid #eeeeee;
+}
+.pho .store-com1 .month,.store-com1 .pingjia{
+    line-height: 20px;
+    border-right: 1px solid #eeeeee;
+    margin:0 auto;
+    padding: 0 20px;
+}
+.store-com1 .month .gold{
+    margin-left: 0;
+}
+.store-com1 .ww{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.store-com1>span {
+    float: left;
 }
 
 /*photo结束*/

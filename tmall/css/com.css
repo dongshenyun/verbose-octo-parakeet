@@ -132,6 +132,7 @@ body {
 
 .s-menu-2:hover .sub-s-menu {
     display: block;
+    z-index: 1000;
 }
 
 .icon-gouwuche-copy,.icon-phone,.icon-liebiao{

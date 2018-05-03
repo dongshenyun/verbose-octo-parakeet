@@ -1,5 +1,5 @@
-
 //轮播图开始
+
 var oCont = document.getElementById("container");
 var oBut = document.getElementById("but");
 var aButLi = oBut.getElementsByTagName("li");
@@ -90,51 +90,6 @@ oTit.onmouseout = function () {
 }
 //选项卡结束
 
-//右键菜单开始
-var oUl1 = document.getElementById("ul1");
-var oLi = oUl1.getElementsByTagName("li");
-//
-//    function show(event)
-//    {
-//        oUl1.style.display = "block";
-//        var left = event.clientX;
-//        var top = event.clientY;
-//        oUl1.style.left = left + "px";
-//        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-//        top+=scrollTop;
-//        oUl1.style.top = top + "px";
-//        return false;
-//    }
-document.oncontextmenu = function (e) {
-    oUl1.style.display = "block";
-    var left = e.clientX;
-    var top1 = e.clientY;
-    oUl1.style.left = left + "px";
-    var top = top1 + document.documentElement.scrollTop || document.body.scrollTop;
-    /*窗体滚动了*/
-    oUl1.style.top = top + "px";
-    if (left > 1120) {
-        oUl1.style.left = left - 220 + "px";
-    }
-    if (top1 > 500) {
-        oUl1.style.top = top - 200 + "px";
-    }
-    console.log(e.clientY);
-//        alert(top);
-    return false;
-    /*阻止默认行为*/
-};
-for (i = 0; i < oLi.length; i++) {
-    oLi[i].onclick = function () {
-//            console.log(this.innerHTML);/*输出内容*/
-        oUl1.style.display = "none";
-    }
-}
-document.onclick = function () {
-    oUl1.style.display = "none";
-};
-//右键菜单结束
-
 //隐藏列表开始
 var oNone = document.getElementById("sub-sub-classify");
 var aNone = oNone.getElementsByClassName("sub-sub-classify1");
@@ -154,82 +109,20 @@ for (i = 0; i < aNone.length; i++) {
 }
 //隐藏列表结束
 
-/*弹层开始*/
+/*垂直导航栏开始*/
+var color=["#64c333","#ff0036","#ea5f8d","#0aa6e8","#00b262","#f15453","#19c8a9","#000"];
+var arr=["1460","2150","2935","3620","4330","5014","5725","6410","0"];
+var navVer=document.getElementsByClassName("com-nav1");
+// var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+for (i=0;i<navVer.length;i++){
+    navVer[i].index=i;
+    navVer[i].onclick=function () {
+        document.documentElement.scrollTop=arr[this.index];
+        for(j=0;j<navVer.length-1;j++){/*遍历添加样式 是数组*/
+           navVer[j].style.background="#666666";
+        }
+        this.style.background=color[this.index];
 
-/*手机版弹层开始*/
-var oPopUp = document.getElementById("pop-up");
-var oMask = document.getElementById("mask");
-var oMask1 = document.getElementById("mask-1");
-oPopUp.flag = true;//隐藏
-
-function show()  //显示隐藏层和弹出层
-{
-    oMask.style.display = "block";  //显示隐藏层
-    oMask1.style.display = "block";  //显示弹出层
-}
-function hide()  //去除隐藏层和弹出层
-{
-    oMask.style.display = "none";
-    oMask1.style.display = "none";
-}
-oPopUp.onclick = function () {
-    if (this.flag) {//真 成立
-        show();
-        this.flag = false;
-    } else {
-        hide();
-        this.flag = true;
     }
 }
-oMask.onclick=function () {
-    oMask.style.display = "none";
-    oMask1.style.display = "none";
-}
-
-/*登录弹层开始*/
-var oLogin = document.getElementById("login");
-var oPlease = document.getElementById("s-l-btn");
-
-oPlease.onclick = function () {
-    oMask.style.display = "block";  //显示隐藏层
-    oLogin.style.display = 'block';
-
-}
-function disappear() {
-    oMask.style.display = "none";
-    oLogin.style.display = 'none';
-}
-function mima() {
-    document.getElementById('login-text').style.display = "block";
-    document.getElementById('login-code').style.display = "none";
-}
-function saoma() {
-    document.getElementById('login-text').style.display = "none";
-    document.getElementById('login-code').style.display = "block";
-}
-if(oMask.style.display =="block"){
-    document.getElementById("body").style.overflow ="hidden";/*隐藏滚动条*/
-    document.getElementById("body").style.position="relative";/*隐藏滚动条*/
-}
-/*弹层结束*/
-
-/*小火箭开始*/
-
-var oBtn = document.getElementById('fire');
-/*获取*/
-
-oBtn.onclick = function () {/*方法*/
-//        window.scrollTo(0,0);/*直接到顶端*/
-
-        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        /*ie chrome兼容 滚动条距离上方高度*/
-
-        var timer = setInterval(function () {
-            scrollTop -= 20;
-            window.scrollTo(0, scrollTop);
-            if (scrollTop <= 0) {
-                clearInterval(timer);
-            }
-        }, 2);
-    }
-    /*小火箭结束*/
+/*垂直导航栏结束*/

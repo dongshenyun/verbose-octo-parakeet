@@ -201,6 +201,7 @@
     position: absolute;
     left: 200px;
     top: 0;
+    z-index: 1000;
     background: #ffffff;
 }
 
@@ -1020,7 +1021,57 @@
 
 /*超大div结束*/
 
+/*垂直导航栏开始*/
+#ver-nav{
+    position: fixed;
+    bottom: 50px;
+    left: 5px;
+}
 
+.com-nav{
+    width: 35px;
+    height: 36px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 12px;
+    margin: 2px 0;
+    background-color: rgba(0,0,0,.6);
+}
+#ver-nav .spe-com-nav1{
+background: red;
+    line-height: 36px;
+}
+#ver-nav .spe-com-nav10{
+    background-color: rgba(0,0,0,.3);
+    line-height: 36px;
+}
+#ver-nav .spe-com-nav2:hover{
+    background: #64c333;
+}
+#ver-nav .spe-com-nav3:hover{
+    background: #ff0036;
+}
+#ver-nav .spe-com-nav4:hover{
+    background: #ea5f8d;
+}
+#ver-nav .spe-com-nav5:hover{
+    background: #0aa6e8;
+}
+#ver-nav .spe-com-nav6:hover{
+    background: #00b262;
+}
+#ver-nav .spe-com-nav7:hover{
+    background: #f15453;
+}
+#ver-nav .spe-com-nav8:hover{
+    background: #19c8a9;
+}
+#ver-nav .spe-com-nav9:hover{
+    background: #000;
+}
+/*垂直导航栏结束*/
 
 
 
