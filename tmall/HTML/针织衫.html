@@ -6,6 +6,36 @@
     <link rel="stylesheet" href="../css/sweater.css">
     <link rel="stylesheet" href="../css/com.css">
     <link rel="stylesheet" href="../css/iconfont.css" type="text/css">
+
+    <style>
+
+        .qq{
+            margin: 50px;
+        }
+        .q:hover{
+            background-color:#ff6700;
+            cursor: pointer;
+        }
+        .qq .q{
+            height: 20px;
+            background-color: #fff;
+            border:1px solid #ccc;
+            display: inline-block;
+            vertical-align: top;
+            line-height: 20px;
+            text-align: center;
+        }
+        .list_btn{
+            width: 60px;
+        }
+        .page_num{
+            width:20px;
+        }
+        .action{
+            background-color: #ff6700;
+        }
+
+    </style>
 </head>
 <body><!--style="height: 2000px"-->
 <a href="javascript:;" id="fire"></a>
@@ -3318,10 +3348,88 @@
         <span>感谢观看</span>
     </div><!--底部-->
 
+    <ul class="qq">
+        <li class="q list_btn">上一页</li>
+        <li class="q page_num"></li>
+        <li class="q page_num"></li>
+        <li class="q page_num action" ></li>
+        <li class="q page_num"></li>
+        <li class="q page_num"></li>
+        <li class="q list_btn">下一页</li>
+    </ul><!--分页-->
+
 
     <script src="../js/com.js"></script>
     <script src="../js/sweater.js"></script>
 
-
+    <script>
+        var aPad=document.getElementsByClassName("padding");
+        console.log(aPad);
+        function Paging(list_num,ali,btn){
+            this.list_num=list_num;
+            this.ali=ali;
+            this.btn=btn;
+            this.page=1;//定义一个当前页面的全局变量
+            this.num=25;//每页文章数目
+            this.page_num=Math.ceil(this.list_num/this.num);//根据文章数和每页显示数，向上取整算出页码数
+            this.drc=[this.page-2,this.page-1,this.page,this.page+1,this.page+2];
+        }
+        Paging.prototype={
+            init:function(){
+                var self=this;
+                //ali事件
+                for(var i=0,len=ali.length;i<len;i++){
+                    //给ali添加innertext
+                    if(this.drc[i]>0&&this.drc[i]<=this.page_num){
+                        ali[i].innerText=this.drc[i];
+                    }else{
+                        ali[i].innerText='*';
+                    }
+                    ali[i].onclick=function(){
+                        var val=this.innerText;
+                        if(val%1===0){
+                            self.page=parseInt(val);
+                        }else{
+                            alert('请单击正确的页码');
+                            return;
+                        }
+                        self.render();
+                    }
+                }
+                btn[0].onclick=function(){
+                    self.page--;
+                    self.render();
+                }
+                btn[1].onclick=function(){
+                    self.page++;
+                    self.render();
+                }
+            },
+            render:function(){
+                if(this.page<=0){
+                    alert('已经是列表的首页');
+                }else if(this.page>this.page_num){
+                    alert('已经是列表的最后一页');
+                }else{
+                    this.drc=[this.page-2,this.page-1,this.page,this.page+1,this.page+2];
+                    for(var i=0,len=ali.length;i<len;i++){
+                        if(this.drc[i]<=0||this.drc[i]>this.page_num){
+                            ali[i].innerText='*';
+                        }else{
+                            ali[i].innerText=this.drc[i];
+                        }
+                    }
+                }
+            }
+        }
+        //文章数目，定义50篇
+        var list_num=aPad.length;
+        //ali，获取页码的DOM
+        var ali=document.getElementsByClassName('page_num');
+        //btn，获取上下2页的按钮
+        var btn=document.getElementsByClassName('list_btn');
+        var paging=new Paging(list_num,ali,btn);
+        paging.init();
+    </script>
 </body>
 </html>

@@ -54,7 +54,7 @@
     var aUl = document.getElementsByTagName("ul");
     for (i = 0; i < aH2.length; i++) {
         aH2[i].index = i;
-//        aH2[i].flag=true;//隐藏
+//        aH2[i].flag=true;//隐藏/*给每个元素循环加标识*/
         aH2[i].onclick = function () {
 
 //            if(this.flag){//真 成立
@@ -64,9 +64,9 @@
 //                aUl[this.index].style.display = "none";
 //                this.flag=true;
 //            }
+            //this.flag=!this.flag;
 
 //            oUl = aUl[this.index];
-
             oUl=next(this);
             if (oUl.style.display == "none" || oUl.style.display == "") {
                 oUl.style.display = "block";

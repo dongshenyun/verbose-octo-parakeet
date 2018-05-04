@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="div1">
+    111
+</div>
+
+<script>
+
+    var oDiv=document.getElementById("div1");
+    var oSpan=document.createElement("span");
+    oSpan.innerHTML="haha";
+
+    oDiv.appendChild(oSpan);
+    oSpan.setAttribute("index","100");
+    console.log(oSpan.getAttribute("index"));
+
+
+</script>
+</body>
+</html>

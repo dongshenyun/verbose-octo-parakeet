@@ -49,7 +49,6 @@ function jump(){
         aSpeWw[i].style.top=t*t*a+57+"px";
     }
 
-//        setTimeout("jump()",5);
 }
 setInterval(function(){jump()},1);
 

@@ -27,7 +27,7 @@
             position: absolute;
             left: 0px;
             top: 0px;
-            transition: left 0.5s linear; /*left 动画效果 时间 匀速 改变left值时才运动*/
+            /*transition: left 0.5s linear; !*left 动画效果 时间 匀速 改变left值时才运动*!*/
         }
 
         #img-box a {
@@ -101,67 +101,6 @@
 </div>
 
 <script>
-    //    var oContainer = document.getElementById('container');
-    //    var oBtnBox = document.getElementById('btn-box');
-    //    var aBtn = oBtnBox.getElementsByTagName('li');
-    //    var oImgBox = document.getElementById('img-box');
-    //    var oNext = document.getElementById('next');
-    //    var oPrev = document.getElementById('prev');
-    //    var count = 0;
-    //    var timer;
-    //
-    //    /*点击按钮的索引：  0  1       2       3        i
-    //     div挪动的left值：0  -1*img  -2*img  -3*img   -i*img
-    //
-    //     */
-    //    for(var i=0; i<aBtn.length; i++){  //i=5
-    //        aBtn[i].index = i;
-    //        aBtn[i].onclick = function(){
-    //            //点击事件中i=5
-    //            change(this.index);
-    //            count = this.index;/*该li的count索引*/
-    //        }
-    //    }
-    //    oNext.onclick = function(){
-    //        count++;
-    //        if(count == aBtn.length){
-    //            count = 0;
-    //        }
-    //        change(count);
-    //    };
-    //    oPrev.onclick = function(){
-    //        count--;
-    //        if(count == -1){
-    //            count = aBtn.length-1;
-    //        }
-    //        change(count);
-    //    };
-    //
-    //    function change(idx){
-    //        for(var j=0; j<aBtn.length; j++){
-    //            aBtn[j].className = '';
-    //        }
-    //        // this.className = 'selected';
-    //        aBtn[idx].className = 'selected';
-    //
-    //        oImgBox.style.left = -idx * 750+"px";
-    //    };
-    //
-    //    run();
-    //
-    //    oContainer.onmouseover = function(){
-    //        clearInterval(timer);
-    //    }
-    //
-    //    oContainer.onmouseout = function(){
-    //        run();
-    //    };
-    //    //开启定时器
-    //    function run(){
-    //        timer = setInterval(function(){
-    //            oNext.onclick();
-    //        },2000);
-    //    };
     var oBtnBox = document.getElementById("btn-box");
     var aLi = oBtnBox.getElementsByTagName("li");
     var oImgBox = document.getElementById("img-box");
@@ -174,11 +113,6 @@
     for (i = 0; i < aLi.length; i++) {/*数组越界 用this*/
         aLi[i].index = i;
         aLi[i].onclick = function () {
-//            for (j = 0; j < aLi.length; j++) {
-//                aLi[j].className = "";
-//            }
-//            this.className = "selected";
-//            oImgBox.style.left = -this.index * 750 + 'px';
             change(this.index);
             count=this.index;
         }
@@ -189,11 +123,6 @@
             count = 0;
         }
         change(count);
-//        for (j = 0; j < aLi.length; j++) {
-//            aLi[j].className = "";
-//        }
-//        aLi[count].className = "selected";
-//        oImgBox.style.left = -count * 750 + 'px';
     }
     oPrev.onclick = function () {
         count--;
@@ -201,21 +130,18 @@
             count=aLi.length-1;
         }
         change(count);
-//        for (j = 0; j < aLi.length; j++) {
-//            aLi[j].className = "";
-//        }
-//        aLi[count].className = "selected";
-//        oImgBox.style.left = -count * 750 + 'px';
     }
     function change(x) {
         for(j=0;j<aLi.length;j++){
             aLi[j].className="";
         }
+        animate(oImgBox,{left:-x* 750});
         aLi[x].className="selected";
-        oImgBox.style.left=-x*750+"px";
+//        oImgBox.style.left=-x*750+"px";
     }
 
 
 </script>
+<script src="jslib.js"></script>
 </body>
 </html>

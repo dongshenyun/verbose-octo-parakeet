@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <style>
+        #div1{
+            background: gold;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 0;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    你好啊
+</div>
+
+<script>
+    var oDiv1=document.getElementById("div1");
+    oDiv1.onmousedown=function (e) {
+        var disX=e.clientX-oDiv1.offsetLeft;
+        var disY=e.clientY-oDiv1.offsetTop;
+        document.onmousemove=function (e) {//document
+            oDiv1.style.left=e.clientX-disX+"px";
+            oDiv1.style.top=e.clientY-disY+"px";
+        }
+        oDiv1.onmouseup=function () {
+            document.onmousemove=null;
+        }
+    }
+</script>
+</body>
+</html>

@@ -32,11 +32,11 @@
     }
     console.log(next(oLi));
 
-    function prev(ele1) {
+    function prev(ele) {
         do {
-            ele1 = ele1.previousSibling;
-        } while (ele1&&ele1.nodeType != 1);//元素存在并且不是元素节点 循环
-        return ele1;
+            ele = ele.previousSibling;
+        } while (ele&&ele.nodeType != 1);//元素存在并且不是元素节点 循环
+        return ele;
     }
     console.log(next(oLi1));
     function first(elem) {
@@ -46,7 +46,6 @@
         }
         return elem;
     }
-    console.log(first(oUl1));
     function last(elem) {
         elem=elem.lastChild;
         if(elem.nodeType!=1){

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>放大镜</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #box{
+            overflow: hidden;
+        }
+
+        #left img {
+            width: 400px;
+            height:400px;
+        }
+        #left{
+            width: 400px;
+            height: 400px;
+        }
+        #mask{
+            width: 200px;
+            height: 200px;
+            background:white;
+            opacity: 0.5;
+            position: absolute;
+            left: 0;
+            top:0;
+            display: none;
+        }
+        #right{
+            background: url(../shiyanke1/photo/i.jpg) no-repeat;
+            width: 400px;
+            height: 400px;
+            display: none;
+            position: absolute;
+            left: 400px;
+            top:0;
+        }
+    </style>
+
+</head>
+<body>
+<div id="box">
+    <div id="left">
+        <img src="../shiyanke1/photo/i.jpg" alt="">
+        <div id="mask"></div>
+    </div>
+    <div id="right"></div>
+</div>
+
+<script>
+    var oLeft=document.getElementById("left");
+    var oRight=document.getElementById("right");
+    var oMask=document.getElementById("mask");
+    oLeft.onmouseover=function () {
+        oMask.style.display="block";
+        oRight.style.display="block";
+    }
+    oLeft.onmousemove=function (e) {
+        var left=e.clientX-oMask.offsetWidth/2;
+        var top=e.clientY-oMask.offsetHeight/2;
+        if (left<=0){
+            left=0;
+        }
+        var leftMax=oLeft.offsetWidth-oMask.offsetWidth;
+        if(left>leftMax){
+            left=leftMax;
+        }
+        if (top<=0){
+            top=0;
+        }
+        var topMax=oLeft.offsetHeight-oMask.offsetHeight;
+        if(top>topMax){
+            top=topMax;
+        }
+        oMask.style.left=left+"px";
+        oMask.style.top=top+"px";
+
+        var ratioX=left/leftMax;
+        var ratioY=top/topMax;
+
+        var bleft=ratioX*2*leftMax;
+        var btop=ratioY*2*topMax;
+
+        oRight.style.left=-bleft+400+"px";
+        oRight.style.top=-btop+"px";
+    }
+    oLeft.onmouseout=function () {
+        oMask.style.display="none";
+        oRight.style.display="none";
+    }
+</script>
+</body>
+</html>

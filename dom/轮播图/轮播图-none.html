@@ -110,12 +110,6 @@
         aLi[i].onmouseover = function () {
             iNow=this.index;/*找到当前索引 赋值给iNow oNext.onclick时 iNow++*/
             change(this.index);
-//            for(j=0;j<aLi.length;j++){
-//                aLi[j].className='';/*先清空*/
-//                aImg[j].className="";
-//            }
-//            aLi[this.index].className='selected';/*this*//*aLi[this.index]=this 为了封装*/
-//            aImg[this.index].className="select-img";
         }
     }
     oNext.onclick = function () {
@@ -125,12 +119,6 @@
             iNow = 0;
         }
         change(iNow);
-//        for(j=0;j<aLi.length;j++){
-//            aLi[j].className='';
-//            aImg[j].className="";
-//        }
-//        aLi[iNow].className='selected';
-//        aImg[iNow].className="select-img";
     };
     oPrev.onclick = function () {
         iNow--;
@@ -166,6 +154,5 @@
     }
 
 </script>
-
 </body>
 </html>

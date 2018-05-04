@@ -4,29 +4,33 @@
     <meta charset="UTF-8">
     <title></title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
-        ul{
+
+        ul {
             list-style: none;
         }
-        #content{
+
+        #content {
             width: 400px;
             height: 200px;
-            border:1px solid #000;
-            margin:100px auto;
+            border: 1px solid #000;
+            margin: 100px auto;
             overflow: hidden;
             position: relative;
         }
-        ul{
+
+        ul {
             width: 520px;
             overflow: hidden;
             position: absolute;
-            left:0px;
-            top:0px;
+            left: 0px;
+            top: 0px;
         }
-        li{
+
+        li {
             width: 120px;
             height: 120px;
             background: pink;
@@ -37,12 +41,14 @@
             font-size: 40px;
             color: #fff;
         }
-        #btn{
+
+        #btn {
             /*margin-top:15px;*/
-            margin:135px auto 0;
+            margin: 135px auto 0;
             width: 210px;
         }
-        #btn span{
+
+        #btn span {
             display: inline-block;
             width: 100px;
             height: 50px;
@@ -66,34 +72,78 @@
         <span id="right">向右</span>
     </div>
 </div>
-<!--<script>-->
+<script>
 
+    //
     <!--var oImgBox = document.getElementById('img-box');-->
-    <!--var oLeft = document.getElementById('left');-->
-    <!--var oRight = document.getElementById('right');-->
+    //
+    var oLeft = document.getElementById('left');
+    var oRight = document.getElementById('right');
+    //
     <!--var speed = -3;-->
+    //
     <!--var timer;-->
+    //
     <!--oImgBox.innerHTML += oImgBox.innerHTML;-->
+    //
     <!--oImgBox.style.width = oImgBox.offsetWidth *2 +"px";-->
+    //
     <!--function run(){-->
-        <!--timer = setInterval(function(){-->
-
-            <!--if(oImgBox.offsetLeft <= -oImgBox.offsetWidth/2){-->
-                <!--oImgBox.style.left = 0;-->
-            <!--}-->
-            <!--if(oImgBox.offsetLeft > 0){-->
-                <!--oImgBox.style.left = -oImgBox.offsetWidth/2 +"px";-->
-            <!--}-->
-            <!--oImgBox.style.left = oImgBox.offsetLeft + speed +'px';-->
-        <!--},20);-->
+    //
+    <!--timer = setInterval(function(){-->
+    //
+    //
+    <!--if(oImgBox.offsetLeft <= -oImgBox.offsetWidth/2){-->
+    //
+    <!--oImgBox.style.left = 0;-->
+    //
     <!--}-->
+    //
+    <!--if(oImgBox.offsetLeft > 0){-->
+    //
+    <!--oImgBox.style.left = -oImgBox.offsetWidth/2 +"px";-->
+    //
+    <!--}-->
+    //
+    <!--oImgBox.style.left = oImgBox.offsetLeft + speed +'px';-->
+    //
+    <!--},20);-->
+    //
+    <!--}-->
+    //
     <!--run();-->
+    //
     <!--oRight.onmouseover = function(){-->
-        <!--speed = 3;-->
+    //
+    <!--speed = 3;-->
+    //
     <!--}-->
+    //
     <!--oLeft.onmouseover = function(){-->
-        <!--speed = -3;-->
+    //
+    <!--speed = -3;-->
+    //
     <!--}-->
-<!--</script>-->
+    var oImgBox = document.getElementById("img-box");
+    oImgBox.innerHTML += oImgBox.innerHTML;
+    oImgBox.style.width = oImgBox.offsetWidth * 2 + "px";
+    var speed = -3;
+
+    timer = setInterval(function () {
+        if (oImgBox.offsetLeft <= -oImgBox.offsetWidth / 2) {
+            oImgBox.style.left = 0;
+        }
+        if (oImgBox.offsetLeft > 0) {
+            oImgBox.style.left = -oImgBox.offsetWidth / 2 + "px";
+        }
+        oImgBox.style.left = oImgBox.offsetLeft + speed + "px";
+    }, 20);
+    oRight.onmouseover = function () {
+        speed = 3;
+    }
+    oLeft.onmouseover = function () {
+        speed = -3;
+    }
+</script>
 </body>
 </html>
