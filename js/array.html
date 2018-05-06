@@ -53,6 +53,13 @@
     console.log(arr6[1]);
     document.write("<br/>"+arr6[2]);
 
+    function aaa(a,b) {
+        console.log(a,b);
+        console.log(arguments);
+        console.log(arguments.callee);/*取函数*/
+    }
+    aaa("1",2,3);
+
 </script>
 </body>
 </html>

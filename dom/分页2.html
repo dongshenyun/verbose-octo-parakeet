@@ -46,7 +46,7 @@
     <li class="list_btn">下一页</li>
 </ul>
 <script>
-    function Paging(list_num,ali,btn){
+    function Paging(list_num,ali,btn){//类
     this.list_num=list_num;
     this.ali=ali;
     this.btn=btn;
@@ -55,7 +55,7 @@
     this.page_num=Math.ceil(this.list_num/this.num);//根据文章数和每页显示数，向上取整算出页码数
     this.drc=[this.page-2,this.page-1,this.page,this.page+1,this.page+2];
 }
-Paging.prototype={
+Paging.prototype={//原型对象
     init:function(){
         var self=this;
         //ali事件

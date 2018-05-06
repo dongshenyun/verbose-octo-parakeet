@@ -34,7 +34,7 @@ document.oncontextmenu = function (e) {
     if (top1 > 500) {
         oUl1.style.top = top - 200 + "px";
     }
-    console.log(e.clientY);
+    console.log(e.clientX);
 //        alert(top);
     return false;
     /*阻止默认行为*/

@@ -15,11 +15,13 @@
         #left img {
             width: 400px;
             height:400px;
+            display: block;
         }
         #left{
             width: 400px;
-            height: 400px;
+            height:400px;
         }
+
         #mask{
             width: 200px;
             height: 200px;
@@ -32,6 +34,7 @@
         }
         #right{
             background: url(../shiyanke1/photo/i.jpg) no-repeat;
+            background-size: 800px 800px;
             width: 400px;
             height: 400px;
             display: none;
@@ -48,7 +51,9 @@
         <img src="../shiyanke1/photo/i.jpg" alt="">
         <div id="mask"></div>
     </div>
-    <div id="right"></div>
+    <div id="right">
+        <!--<img src="../shiyanke1/photo/i.jpg" alt="">-->
+    </div>
 </div>
 
 <script>
@@ -66,7 +71,7 @@
             left=0;
         }
         var leftMax=oLeft.offsetWidth-oMask.offsetWidth;
-        if(left>leftMax){
+        if(left>=leftMax){
             left=leftMax;
         }
         if (top<=0){
@@ -82,11 +87,11 @@
         var ratioX=left/leftMax;
         var ratioY=top/topMax;
 
-        var bleft=ratioX*2*leftMax;
-        var btop=ratioY*2*topMax;
+        var bleft=ratioX*leftMax*2;
+        var btop=ratioY*topMax*2;
 
-        oRight.style.left=-bleft+400+"px";
-        oRight.style.top=-btop+"px";
+        oRight.style.backgroundPositionX=-bleft+"px";
+        oRight.style.backgroundPositionY=-btop+"px";
     }
     oLeft.onmouseout=function () {
         oMask.style.display="none";

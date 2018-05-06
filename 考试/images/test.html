@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        /**{*/
+        /*padding: 0;*/
+        /*margin: 0;*/
+        /*}*/
+        #box {
+            position: relative;
+        }
+
+        #big {
+            width: 400px;
+            margin: 100px 467px;
+            /*position: absolute;*/
+            /*overflow: hidden;*/
+        }
+
+        #arr-1 {
+            float: left;
+            height: 320px;
+            width: 200px;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            position: relative;
+            z-index: 20000;
+        }
+
+        #arr-2 {
+            float: left;
+            height: 320px;
+            width: 200px;
+            opacity: 0;
+            position: relative;
+            z-index: 20000;
+            /*filter: alpha(opacity = 0);*/
+        }
+
+        #bgl {
+            width: 60px;
+            height: 60px;
+            display: inline-block;
+            overflow: hidden;
+            margin-top: 130px;
+            margin-left: 10px;
+            position: absolute;
+        }
+
+        #bgr {
+            width: 60px;
+            height: 60px;
+            display: inline-block;
+            overflow: hidden;
+            margin-top: 130px;
+            margin-left: 130px;
+            position: absolute;
+        }
+
+        #bgr > img {
+            position: absolute;
+            top: -60px;
+            right: 0px;
+        }
+
+        #big > img {
+            /*display: none;*/
+            position: absolute;
+        }
+
+        #small {
+            position: absolute;
+            top: 320px;
+            left: 467px;
+            overflow: hidden;
+            width: 400px;
+            height: 114px;
+        }
+
+        #hidden {
+            background: gray;
+            overflow: hidden;
+            width: 800px;
+            position: relative;
+        }
+
+        .opacity {
+            opacity: 0.5;
+            width: 120px;
+            height: 94px;
+            margin: 10px 0 10px 10px;
+            display: block;
+            float: left;
+        }
+
+        .spe {
+            opacity: 1;
+        }
+
+        #text {
+            position: absolute;
+            top: 300px;
+            background: red;
+            height: 20px;
+            line-height: 20px;
+            z-index: 20000;
+            left: 467px;
+        }
+
+        .block {
+            position: relative;
+            z-index: 1;
+        }
+        #arrow{
+            width: 400px;
+            position: absolute;
+            left: 467px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="big">
+        <img src="1.jpg" height="320" width="400" alt="1111111" class="img block"/>
+        <img src="2.jpg" height="320" width="400" alt="2222222" class="img"/>
+        <img src="3.jpg" height="320" width="400" alt="3333333" class="img"/>
+        <img src="4.jpg" height="320" width="400" alt="4444444" class="img"/>
+        <img src="5.jpg" height="320" width="400" alt="5555555" class="img"/>
+        <img src="6.jpg" height="320" width="400" alt="6666666" class="img"/>
+    </div>
+    <div id="arrow">
+        <div id="arr-1">
+            <span id="bgl"><img src="btn.gif" alt=""></span>
+        </div>
+        <div id="arr-2">
+            <span id="bgr"><img src="btn.gif" alt=""></span>
+        </div>
+    </div>
+    <div id="text">
+        <span id=txt>i</span>
+        <div id="num">
+            <span id="i-num">d</span>/
+            <span>6</span>
+        </div>
+    </div>
+
+    <div id="small">
+        <div id="hidden">
+            <img class="opacity spe" src="1.jpg" height="320" width="400"/>
+            <img class="opacity" src="2.jpg" height="320" width="400"/>
+            <img class="opacity" src="3.jpg" height="320" width="400"/>
+            <img class="opacity" src="4.jpg" height="320" width="400"/>
+            <img class="opacity" src="5.jpg" height="320" width="400"/>
+            <img class="opacity" src="6.jpg" height="320" width="400"/>
+        </div>
+    </div>
+</div>
+
+<script>
+    var oHidden = document.getElementById("hidden");
+    var aSmall = oHidden.getElementsByTagName("img");
+    var oBig = document.getElementById("big");
+    var aBig = oBig.getElementsByTagName("img");//made
+
+    var oLeft = document.getElementById("arr-1");
+    var oRight = document.getElementById("arr-2");
+    var iNow = 0;
+    var zIndex = 1;
+
+    var oTxt = document.getElementById('txt');
+    var oNum = document.getElementById('i-num');
+//    var txt = aBig[iNow].getElementsByTagName('img')[0].alt;
+
+    oLeft.onmouseover = oRight.onmouseover = function () {
+        animate(this, {opacity: 100});
+    }
+    oLeft.onmouseout = oRight.onmouseout = function () {
+        animate(this, {opacity: 0});
+    }
+
+    oRight.onclick = function () {
+        iNow++;
+        if (iNow == aBig.length) {
+            iNow = 0;
+        }
+        change(iNow);
+    }
+    oLeft.onclick = function () {
+        iNow--;
+        if (iNow == -1) {
+            iNow = aBig.length - 1;
+        }
+        change(iNow);
+    }
+
+    for (i = 0; i < aSmall.length; i++) {
+        aSmall[i].index = i;
+        aSmall[i].onmouseover = function () {
+            this.className = 'opacity spe';
+        }
+        aSmall[i].onmouseout = function () {
+            if (this.index != iNow) {
+                this.className = 'opacity';
+            }
+        }
+        aSmall[i].onclick = function () {
+            iNow = this.index;
+            change(this.index);
+        }
+    }
+
+    function change(x) {
+//        var txt = aBig[x].getElementsByTagName('img')[0].alt;
+//        oTxt.innerHTML = txt;
+//        oNum.innerHTML = idx + 1;
+
+        for (j = 0; j < aSmall.length; j++) {
+//            aBig[j].className = "";
+            aSmall[j].className = "opacity";
+        }
+        aSmall[x].className = "opacity spe";
+
+        aBig[x].style.zIndex = ++zIndex;
+        aBig[x].style.height = 0;
+        animate(aBig[x], {height: 320});
+//        aBig[x].className = "block";
+
+        if (x == 0) {
+            animate(oHidden, {
+                left: 0
+            });
+        } else if (x == aSmall.length - 1) {
+            animate(oHidden, {
+                left: -(x - 2) * 130
+            });
+        } else {
+            animate(oHidden, {
+                left: -(x - 1) * 130
+            });
+        }
+//            oHidden.style.left = -(this.index - 1) * 130 + 'px';
+    }
+</script>
+
+<script src="jslib.js"></script>
+
+</body>
+</html>

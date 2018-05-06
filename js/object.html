@@ -42,9 +42,46 @@
             console.log(this.name+"我不爱吃鱼");
         }
     }
+    var key ="name";
+    console.log(dog[key]);/*属性是变量 用[]*/
     console.log(dog.name);
     dog.eat();
+    for(key in dog){
+        console.log(key,dog);
+        console.log(key,dog[key]);/*对象 值*/
+    }
 
+    var dog1={};
+    for (key in  dog){/*克隆对象*/
+        dog1[key]=dog[key];
+    }
+    console.log(dog1);
+    dog.name="wangcai";
+    console.log(dog.name);
+    console.log(dog1.name);
+
+    var per={
+        name:"hh",
+        sex:"girl",
+        age:'18',
+        father:{
+            name:"zz"
+        }
+    }
+    function clone(obj) {
+        var obj1={};
+        for (key in obj){
+            if (obj[key] instanceof Object){/*判断是否是对象类的实例化*/
+                obj1[key]=clone(obj[key]);
+            }else {
+                obj1[key]=obj[key];
+            }
+        }
+        return obj1;
+    }
+    var  per1=clone(per);
+    per.father.name="cc";
+    console.log(per1.father.name);
 
 
 </script>

@@ -131,16 +131,18 @@
             width: 520px;
             margin:60px auto;
         }
-        #commodity>img{
-            width: 250px;
+        #left>img{
+            width: 200px;
+            height: 200px;
             border: 1px solid #8f8f8f;
+            display: block;
         }
         #detail{
             float: right;
             color: #999;
             font-size: 12px;
             text-align: left;
-            margin: 0 0 0 8px;
+            margin: -200px 0 0 8px;
         }
         #detail>div{
             margin-bottom: 10px;
@@ -207,6 +209,34 @@
             width:20px;
             margin:0 auto;
         }
+        /*放大镜*/
+
+        #left{
+            width: 200px;
+            height:200px;
+            position: relative;
+        }
+
+        #mask1{
+            width: 100px;
+            height: 100px;
+            background:white;
+            opacity: 0.5;
+            position: absolute;
+            left: 0;
+            top:0;
+            display: none;
+        }
+        #right{
+            background: url(m.jpg) no-repeat;
+            background-size: 400px 400px;
+            width: 200px;
+            height: 200px;
+            display: none;
+            position: absolute;
+            top: 261px;
+            left: 215px;
+        }
     </style>
     <link rel="stylesheet" href="../css/com.css" type="text/css">
 
@@ -218,7 +248,7 @@
         <span>购物车</span>
     </div>
 </div>
-<!--<a href="javascript:;" id="fire"></a>-->
+<a href="javascript:;" id="fire"></a>
 <div id="mask"></div>
 <img id="mask-1" src="../img/erweima.png" alt=""> <!-- 手机版-->
 <div id="login">
@@ -328,7 +358,15 @@
     <li class="nav">羊毛衫</li>
 </ul><!--nav-->
 <div id="commodity">
-    <img src="m.jpg" alt="">
+    <div id="box">
+        <div id="left">
+            <img src="m.jpg" alt="">
+            <div id="mask1"></div>
+        </div>
+        <div id="right">
+            <!--<img src="../shiyanke1/photo/i.jpg" alt="">-->
+        </div>
+    </div>
     <div id="detail"  class="box">
         <div class="price">价格 &nbsp;&nbsp; <span>380.00</span></div>
         <div class="discount">促销价 &nbsp;&nbsp; <span>199.00</span></div>
@@ -358,6 +396,7 @@
 <script src="../js/jquery-2.1.0.min.js"></script>
 <script src="../js/jquery.fly.min.js"></script>
 <script>
+    //购物车
     $(function () {
         var offset=$('#end').offset();
 
@@ -385,6 +424,50 @@
             })
         })
     })
+
+    //放大镜
+    var oLeft=document.getElementById("left");
+    var oRight=document.getElementById("right");
+    var oMask1=document.getElementById("mask1");
+    oLeft.onmouseover=function () {
+        oMask1.style.display="block";
+        oRight.style.display="block";
+    }
+    oLeft.onmousemove=function (e) {
+        var left=e.clientX-oLeft.offsetLeft;
+        var top=e.clientY-oLeft.offsetTop;
+        console.log(e.clientX);
+
+        if (left<=0){
+            left=0;
+        }
+        var leftMax=oLeft.offsetWidth-oMask1.offsetWidth;
+        if(left>leftMax){
+            left=leftMax;
+        }
+        if (top<=0){
+            top=0;
+        }
+        var topMax=oLeft.offsetHeight-oMask1.offsetHeight;
+        if(top>topMax){
+            top=topMax;
+        }
+        oMask1.style.left=left+"px";
+        oMask1.style.top=top+"px";
+
+        var ratioX=left/leftMax;
+        var ratioY=top/topMax;
+
+        var bleft=ratioX*leftMax*2;
+        var btop=ratioY*topMax*2;
+
+        oRight.style.backgroundPositionX=-bleft+"px";
+        oRight.style.backgroundPositionY=-btop+"px";
+    }
+    oLeft.onmouseout=function () {
+        oMask1.style.display="none";
+        oRight.style.display="none";
+    }
 </script>
 </body>
 </html>

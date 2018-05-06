@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+</ul>
+
+<script>
+
+    var aLi=document.getElementsByTagName("li");
+    for (i=0;i<aLi.length;i++){
+        (function (idx) {
+            aLi[idx].onclick=function () {
+                console.log(idx);
+            }
+        })(i);
+    }
+
+</script>
+</body>
+</html>
