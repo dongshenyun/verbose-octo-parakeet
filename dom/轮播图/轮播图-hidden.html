@@ -22,7 +22,7 @@
         }
 
         #img-box {
-            width: 3750px;
+            width: 4500px;
             overflow: hidden;
             position: absolute;
             left: 0px;
@@ -85,7 +85,9 @@
         <a href="#">
             <img src="img/5.jpg" alt=""/>
         </a>
-
+        <a href="#">
+            <img src="img/1.jpg" alt=""/>
+        </a>
     </div>
     <ul id="btn-box">
         <li class="selected">1</li>
@@ -104,7 +106,7 @@
     var oBtnBox = document.getElementById("btn-box");
     var aLi = oBtnBox.getElementsByTagName("li");
     var oImgBox = document.getElementById("img-box");
-    //    var aImg=oImgBox.getElementsByTagName("img");
+        var aImg=oImgBox.getElementsByTagName("img");
     var oNext = document.getElementById("next");
     var oPrev = document.getElementById("prev");
     var count = 0;
@@ -119,8 +121,9 @@
     }
     oNext.onclick = function () {
         count++;
-        if (count == aLi.length) {
-            count = 0;
+        if (count == aImg.length) {
+            count = 1;
+            oImgBox.style.left = 0;
         }
         change(count);
     }
@@ -135,8 +138,9 @@
         for(j=0;j<aLi.length;j++){
             aLi[j].className="";
         }
+        aLi[x == aLi.length? 0: x].className = 'selected';
         animate(oImgBox,{left:-x* 750});
-        aLi[x].className="selected";
+//        aLi[x].className="selected";
 //        oImgBox.style.left=-x*750+"px";
     }
 

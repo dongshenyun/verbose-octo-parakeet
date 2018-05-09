@@ -56,7 +56,7 @@ document.onclick = function () {
 var oPopUp = document.getElementById("pop-up");
 var oMask = document.getElementById("mask");
 var oMask1 = document.getElementById("mask-1");
-oPopUp.flag = true;//隐藏
+var flag = true;//隐藏  //oPopup.flag
 
 function show()  //显示隐藏层和弹出层
 {
@@ -69,12 +69,12 @@ function hide()  //去除隐藏层和弹出层
     oMask1.style.display = "none";
 }
 oPopUp.onclick = function () {
-    if (this.flag) {//真 成立
+    if (flag) {//真 成立  //this.flag
         show();
-        this.flag = false;
+        flag = false;
     } else {
         hide();
-        this.flag = true;
+        flag = true;
     }
 }
 oMask.onclick=function () {

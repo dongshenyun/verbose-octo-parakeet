@@ -4,7 +4,8 @@
 var oMore1 = document.getElementById("more1");
 var oImg = document.getElementById("img");
 var oSpe = document.getElementById("spe-lef");
-var flag = true;//more
+oMore1.flag = true; //more  //this.flag
+// var flag=true;  //flag
 oMore1.onclick = function () {
     if (this.flag) {//真 成立
         more();
