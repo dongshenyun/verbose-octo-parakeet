@@ -1,3 +1,18 @@
+var container = $("#content");
+
+//页面可视区域
+var visualWidth = container.width();
+var visualHeight = container.height();
+
+//获取数据
+var getValue = function (className) {
+    var $elem = $('' + className + '');
+    // 走路的路线坐标
+    return {
+        height: $elem.height(),
+        top: $elem.position().top
+    };
+}
 
 // 飘云
 $(".cloud:first").addClass('cloud1Anim');
@@ -54,28 +69,37 @@ function shutDoor() {
 }
 
 
-var instanceX;
 
+
+// 动画结束事件
+var animationEnd = (function() {
+    var explorer = navigator.userAgent;
+    if (~explorer.indexOf('WebKit')) {
+        return 'webkitAnimationEnd';
+    }
+    return 'animationend';
+})();
 /**
  * 小孩走路
  * @param {[type]} container [description]
  */
 function BoyWalk() {
 
-    var container = $("#content");
-    // 页面可视区域
-    var visualWidth = container.width();
-    var visualHeight = container.height();
 
+    // 页面可视区域
+    // var visualWidth = container.width();
+    // var visualHeight = container.height();
+    //
     // 获取数据
-    var getValue = function (className) {
-        var $elem = $('' + className + '');
-        // 走路的路线坐标
-        return {
-            height: $elem.height(),
-            top: $elem.position().top
-        };
-    }
+    // var getValue = function (className) {
+    //     var $elem = $('' + className + '');
+    //     // 走路的路线坐标
+    //     return {
+    //         height: $elem.height(),
+    //         top: $elem.position().top
+    //     };
+    // }
+
     // 路的Y轴
     var pathY = function () {
         var data = getValue('.a_background_middle');
@@ -83,7 +107,7 @@ function BoyWalk() {
     }();
 
     var $boy = $("#boy");
-    var boyWidth = $boy.width();
+     boyWidth = $boy.width();//呸
     var boyHeight = $boy.height();
 
     // 设置下高度
@@ -223,9 +247,35 @@ function BoyWalk() {
             $boy.css('background-color', value)
         },
         //取花
-        talkFlower: function () {
-            return talkFlower();
-        }
+        // talkFlower: function () {
+        //     return talkFlower();
+        // },
+        // 获取男孩的宽度
+        getWidth: function() {
+            return $boy.width();
+        },
+        // 复位初始状态
+        resetOriginal: function() {
+            this.stopWalk();
+            // 恢复图片
+            $boy.removeClass('slowWalk slowFlolerWalk').addClass('boyOriginal');
+        },
+        setFlolerWalk:function(){
+            $boy.addClass('slowFlowerWalk');
+        },
+        // 转身动作
+        rotate: function(callback) {
+            restoreWalk();
+            $boy.addClass('boy-rotate');
+            // 监听转身完毕
+            if (callback) {
+                $boy.on(animationEnd, function() {
+                    callback();
+                    $(this).off();
+                })
+            }
+        },
+
     }
 
 }
