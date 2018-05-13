@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script src="练习/jquery-2.1.0.min.js"></script>
+<!--
+    <script>
+        window.onload=function(){  //页面所有（包括图片等资源）加载后执行 最后
+            console.log('qqq');
+        };
+        window.onload=function(){  //覆盖
+            console.log('qqqqqqq');
+        };
+        $(document).ready(function () {  //...（不包括资源）先执行
+            console.log('www');
+        });
+        $(function () {  //不覆盖
+           console.log('eee');
+        });
+
+    </script>
+-->
+</head>
+<body>
+<div class="aa cc">
+    div
+</div>
+<span class="aa bb">huahuazuimeini</span>
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+<script>
+    $(".aa").css("background","red");
+    $(".bb").css("color","green");
+//    $("div[class~='cc']").css("color","white");
+    $(".cc").css("color","white");
+
+    $("ul li:first-child").css("background","yellow");
+//    $("ul :first-child").css("background","yellow");
+//    $("ul li:first-of-type").css("background","yellow");//找第一个li类型的
+    $("ul :last-child").css("background","blue");
+</script>
+</body>
+</html>
