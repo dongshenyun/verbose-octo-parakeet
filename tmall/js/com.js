@@ -1,8 +1,8 @@
 /**
  * Created by Administrator on 2018/4/27 0027.
  */
-document.getElementById('name').focus();
-/*获取焦点*/
+// document.getElementById('name').focus();
+// /*获取焦点*/
 
 
 //右键菜单开始

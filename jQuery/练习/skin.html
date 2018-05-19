@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+            float: left;
+            background: url('images/theme.gif');
+            width: 15px;
+            height: 15px;
+            margin: 7px;
+        }
+        #img{
+            width: 200px;
+            height: 30px;
+            line-height: 40px;
+            text-align: center;
+            background: red;
+        }
+        li:nth-child(1){
+            background-position: 0 0;
+        }
+        li:nth-child(1).active{
+            background-position: 0 -15px;
+        }
+        li:nth-child(2){
+            background-position: -20px 0;
+        }
+        li:nth-child(2).active{
+            background-position: -20px -15px;
+        }
+        li:nth-child(3){
+            background-position: -40px 0;
+        }
+        li:nth-child(3).active{
+            background-position: -40px -15px;
+        }
+        li:nth-child(4){
+            background-position: -60px 0;
+        }
+        li:nth-child(4).active{
+            background-position: -60px -15px;
+        }
+        li:nth-child(5){
+            background-position: -80px 0;
+        }
+        li:nth-child(5).active{
+            background-position: -80px -15px;
+        }
+        li:nth-child(6){
+            background-position: -100px 0;
+        }
+        li:nth-child(6).active{
+            background-position: -100px -15px;
+        }
+        #color{
+            width: 150px;
+            height: 40px;
+            margin: 5px;
+            line-height: 40px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+<div id="img">
+    <ul>
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<div id="color">
+    你好啊 李银河
+</div>
+<script src="cookie.js"></script>
+<script src="jquery-2.1.0.min.js"></script>
+<script>
+
+    var color=["#9e9e9e",'#b2d600','#f8b646','#08bece','#e3165c','#bb3bd9'];
+$('li').on('click',function () {
+    $(this).addClass('active').siblings().removeClass('active');
+    $("#color").css('background',color[$(this).index()]);
+    setCookie('skin',$(this).index(),7);
+}).eq(getCookie('skin')).trigger('click');
+    //    $('.news').attr('class','news skin'+$(this).index());
+
+</script>
+</body>
+</html>

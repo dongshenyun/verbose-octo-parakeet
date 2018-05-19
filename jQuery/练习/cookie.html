@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cookie</title>
+</head>
+<body>
+<script>
+    //    var date=new Date();
+    //    date.setDate(29);
+    //    document.cookie="name=zs;expires="+date;
+
+    function setCookie(key, val, day) {
+        var str = key + "=" + val + ';';
+        if (day) {
+            var d = new Date();
+            d.setDate(d.getDate() + day);
+            str += "expires=" + d;
+        }
+        document.cookie = str;
+    }
+
+    setCookie('name', "huahua", 2);
+    setCookie('age', 18, 6);
+    setCookie('sex', '女');
+
+    function getCookie(key) {
+        var aCookie = document.cookie;
+        var arr = aCookie.split('; ');
+        for (i = 0; i < arr.length; i++) {//再分割数组中每个
+            var arr1 = arr[i].split('=');
+            if (arr1[0] == key) {
+                return arr1[1];
+            }
+        }
+    }
+    console.log(getCookie('sex'));
+    function removeCookie(key) {
+        setCookie(key,'',)
+    }
+    removeCookie('name');
+
+</script>
+</body>
+</html>

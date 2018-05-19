@@ -6,10 +6,8 @@ $(document).ready(function(){
 		//设置其他li的背景颜色和边框
 		$("li").not(this).css("background-color","#aaa").css("border","1px solid white");
 		//获得当前li的索引值
-		var index = $('li').index(this);
+		var index = $(this).index();
 		//隐藏所有的div		
-		$("div").hide();
-		//显示对应的div
 		$("div").eq(index).show();
 		
 	});
