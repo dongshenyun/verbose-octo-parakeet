@@ -11,8 +11,8 @@ $(function(){
 });
 
 function switchSkin(skinName){
-		$("#"+skinName).addClass("selected")                //当前<li>元素选中
-					   .siblings().removeClass("selected");  //去掉其他同辈<li>元素的选中
+		$("#"+skinName).addClass("selected").siblings().removeClass("selected");
+		//去掉其他同辈<li>元素的选中
 	    $("#cssfile").attr("href","styles/skin/"+ skinName +".css"); //设置不同皮肤
 		$.cookie( "MyCssSkin" ,  skinName , { path: '/', expires: 10 });
 }
