@@ -8,7 +8,7 @@
             padding: 0;
             margin: 0;
         }
-        li{
+        #skin-ul li{
             list-style: none;
             float: left;
             background: url('images/theme.gif');
@@ -16,47 +16,47 @@
             height: 15px;
             margin: 7px;
         }
-        #img{
+        #skin{
             width: 200px;
             height: 30px;
             line-height: 40px;
             text-align: center;
             background: red;
         }
-        li:nth-child(1){
+        #skin-ul li:nth-child(1){
             background-position: 0 0;
         }
-        li:nth-child(1).active{
+        #skin-ul li:nth-child(1).active{
             background-position: 0 -15px;
         }
-        li:nth-child(2){
+        #skin-ul li:nth-child(2){
             background-position: -20px 0;
         }
-        li:nth-child(2).active{
+        #skin-ul li:nth-child(2).active{
             background-position: -20px -15px;
         }
-        li:nth-child(3){
+        #skin-ul li:nth-child(3){
             background-position: -40px 0;
         }
-        li:nth-child(3).active{
+        #skin-ul li:nth-child(3).active{
             background-position: -40px -15px;
         }
-        li:nth-child(4){
+        #skin-ul li:nth-child(4){
             background-position: -60px 0;
         }
-        li:nth-child(4).active{
+        #skin-ul li:nth-child(4).active{
             background-position: -60px -15px;
         }
-        li:nth-child(5){
+        #skin-ul li:nth-child(5){
             background-position: -80px 0;
         }
-        li:nth-child(5).active{
+        #skin-ul li:nth-child(5).active{
             background-position: -80px -15px;
         }
-        li:nth-child(6){
+        #skin-ul li:nth-child(6){
             background-position: -100px 0;
         }
-        li:nth-child(6).active{
+        #skin-ul li:nth-child(6).active{
             background-position: -100px -15px;
         }
         #color{
@@ -70,8 +70,8 @@
 
 </head>
 <body>
-<div id="img">
-    <ul>
+<div id="skin">
+    <ul id="skin-ul">
         <li class="active"></li>
         <li></li>
         <li></li>
@@ -88,7 +88,7 @@
 <script>
 
     var color=["#9e9e9e",'#b2d600','#f8b646','#08bece','#e3165c','#bb3bd9'];
-$('li').on('click',function () {
+$('#skin-ul li').on('click',function () {
     $(this).addClass('active').siblings().removeClass('active');
     $("#color").css('background',color[$(this).index()]);
     setCookie('skin',$(this).index(),7);
