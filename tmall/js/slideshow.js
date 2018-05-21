@@ -1,3 +1,32 @@
+/**
+ * Created by Administrator on 2018/5/21 0021.
+ */
+/**
+ * Created by Administrator on 2018/5/13 0013.
+ */
+
+function removeCookie(key) {
+    setCookie(key,'',)
+}
+function getCookie(key) {
+    var aCookie = document.cookie;
+    var arr = aCookie.split('; ');
+    for (i = 0; i < arr.length; i++) {//再分割数组中每个
+        var arr1 = arr[i].split('=');
+        if (arr1[0] == key) {
+            return arr1[1];
+        }
+    }
+}
+function setCookie(key, val, day) {
+    var str = key + "=" + val + ';';
+    if (day) {
+        var d = new Date();
+        d.setDate(d.getDate() + day);
+        str += "expires=" + d;
+    }
+    document.cookie = str;
+}
 //轮播图开始
 
 var oCont = document.getElementById("container");
@@ -116,16 +145,16 @@ var navVer = document.getElementsByClassName("com-nav1");
 var nav = document.getElementById("ver-nav");
 // var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
-    for (i = 0; i < navVer.length; i++) {
-        navVer[i].index = i;
-        navVer[i].onclick = function () {
-            scr = arr[this.index];
-            for (j = 0; j < navVer.length - 1; j++) {/*遍历添加样式 是数组*/
-                navVer[j].style.background = "#666666";
-            }
-            this.style.background = color[this.index];
-
+for (i = 0; i < navVer.length; i++) {
+    navVer[i].index = i;
+    navVer[i].onclick = function () {
+        scr = arr[this.index];
+        for (j = 0; j < navVer.length - 1; j++) {/*遍历添加样式 是数组*/
+            navVer[j].style.background = "#666666";
         }
+        this.style.background = color[this.index];
+
     }
+}
 
 /*垂直导航栏结束*/
