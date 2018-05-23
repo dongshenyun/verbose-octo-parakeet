@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="div1">dxfcgjhkll</div>
+
+
+<!-- jq最核心的是$,他是一个函数.函数中返回一个自定义的jq对象,她是一个类,
+ 在这个类的原形下有许多jq自定义的方法.每次调用$返回一个新的jq对象,
+ 同时在Jquery类中根据传入参数的类型,函数或者字符串.
+ // 把选中的元素存在数组中,遍历这个数组,取出每个元素进行dom操作.
+ // 在每一个方法中,return this,this就是在$函数中返回的jq对象..链式操作-->
+
+<script>
+    function $(selector) {
+        return new Jquery(selector);
+    }
+
+    function Jquery(sele) {
+//        var elem=[];//局部 所以用自定义属性
+        this.elem = [];//自定义属性
+        if (typeof sele == 'string') {
+            if (sele.charAt(0) == '#') {
+                this.elem.push(document.getElementById(sele.substring(1)));
+                //放进（ push（） ）elem数组 下面遍历添加css等
+            } else if (sele.charAt(0) == '.') {
+                this.elem = document.getElementsByClassName(sele.substring(1));
+            }
+        }
+        if (typeof sele == 'function') {
+            document.addEventListener('DOMContentLoaded', sele, false);//false冒泡
+        }
+    }
+
+    Jquery.prototype.css = function (attr, val) {
+        for (i = 0; i < this.elem.length; i++) {//循环添加样式
+            if (typeof attr == 'string' && typeof val == 'string') {
+                this.elem[i].style[attr] = val;//变量属性[]  //数组中每一个
+            } else if (typeof attr == 'object' && typeof val == 'undefined') {//!val
+                for (key in attr) {//循环遍历对象 for/in
+                    this.elem[i].style[key] = attr[key];//取对象中值 对象.属性 这里是attr[key]
+                    console.log(key, attr, attr[key]);
+                }
+            }
+        }
+        return this;//返回Jquery对象 链式操作
+    };
+
+    Jquery.prototype.on = function (eve, fn) {
+        for (var i = 0; i < this.elem.length; i++) {
+            this.elem[i].addEventListener(eve, fn, false);
+        }
+        return this;
+    };
+
+    //        $('#div1').css('background','red');
+    $('#div1').css({
+        width: '300px',
+        height: '400px',
+        background: 'red'
+    }).on('click', function () {
+        alert('111');
+    });
+
+    $(function () {
+        alert('你好');
+    })
+
+</script>
+
+</body>
+</html>
