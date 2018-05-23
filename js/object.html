@@ -46,9 +46,9 @@
     console.log(dog[key]);/*属性是变量 用[]*/
     console.log(dog.name);
     dog.eat();
-    for(key in dog){
+    for(key in dog){//循环遍历对象 key/in
         console.log(key,dog);
-        console.log(key,dog[key]);/*对象 值*/
+        console.log(key,dog[key]);/*属性，值（对象.属性）*/
     }
 
     var dog1={};
@@ -71,7 +71,7 @@
     function clone(obj) {
         var obj1={};
         for (key in obj){
-            if (obj[key] instanceof Object){/*判断是否是对象类的实例化*/
+            if (obj[key] instanceof Object){/*判断obj[key]（值才是对象）是否是对象的实例化*/
                 obj1[key]=clone(obj[key]);
             }else {
                 obj1[key]=obj[key];
@@ -79,6 +79,7 @@
         }
         return obj1;
     }
+
     var  per1=clone(per);
     per.father.name="cc";
     console.log(per1.father.name);
