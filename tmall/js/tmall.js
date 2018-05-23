@@ -124,7 +124,6 @@ var nav = document.getElementById("ver-nav");
                 navVer[j].style.background = "#666666";
             }
             this.style.background = color[this.index];
-
         }
     }
 
