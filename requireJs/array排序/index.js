@@ -12,3 +12,18 @@ require(['sort'],function (sort) {
     console.log(sort(str));
     console.log(sort(dog));
 })
+
+/*seaJs*/
+/*define(function(require){
+
+ var arr1 = [1,23,4,13,8,10];
+ var str = 'sdfghjk';
+ var obj = {
+ name:'22',
+ age:10
+ }
+
+ var sort = require('sort');
+ console.log( sort(obj)  );
+
+ });*/
