@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2018/5/25 0025.
  */
-define(function () {
+define(['jquery'],function ($) {
     function Dialog(obj) {
         var _this=this;
         this.$dialogMask=$('<div class="dialog-mask"></div>').on('click',function () {

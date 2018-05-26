@@ -644,12 +644,12 @@ ul.rating li.five a:hover {background-position:0 -160px}
 	display:none;
 }
 /* imgHover */
-.imageMask{
-	background-color:#ffffff; 
-	filter:alpha(opacity=0);
-	opacity: 0;	
-	cursor: pointer;
-}
+/*.imageMask{*/
+	/*background-color:#ffffff; */
+	/*filter:alpha(opacity=0);*/
+	/*opacity: 0;	*/
+	/*cursor: pointer;*/
+/*}*/
 .imageOver{
 	background:url(../images/zoom.gif) no-repeat 50% 50%;	
 	filter:alpha(opacity=60);

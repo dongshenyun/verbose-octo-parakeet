@@ -684,6 +684,8 @@
         $(el).data("jqzoom", obj);
     };
     //es. $.jqzoom.disable('#jqzoom1');
+
+
     $.jqzoom = {
         defaults: {
             zoomType: 'standard',

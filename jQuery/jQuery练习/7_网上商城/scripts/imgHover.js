@@ -7,7 +7,7 @@ $(function(){
 		var spanHtml = '<span style="position:absolute;top:0;left:5px;width:'+img_w+'px;height:'+img_h+'px;" class="imageMask"></span>';
 		$(spanHtml).appendTo(this);
 	})
-	$("#jnBrandList").delegate(".imageMask", "hover", function(){
+	$("#jnBrandList").delegate("#jnBrandList ul li", "hover", function(){
 		$(this).toggleClass("imageOver");
 	});
 	
