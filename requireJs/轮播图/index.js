@@ -27,4 +27,11 @@ require(['car'],function(Carousel){
         selector:'#content1',
         imgData:['img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg']
     });
+    var carousel2=new Carousel();
+    carousel2.init({
+        buttonType:'squire',
+        btnPos:'bottom',
+        selector:'#content1',
+        imgData:['img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg']
+    });
 });
