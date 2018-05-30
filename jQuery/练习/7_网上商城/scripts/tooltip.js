@@ -24,11 +24,21 @@
 // 	});
 // })
 
+
 $(function () {
-
-
-
-
-
-
+    $('.tooltip').on('mouseover', function (e) {
+        this._title=$(this).attr('title');
+        // $(this).attr('_title',$(this).attr('title'));Jquery写法
+        $(`<div id="tooltip">${this._title}</div>`).appendTo('body');
+        //取值attr('title') 没有title可以用html()
+        $(this).attr('title','');
+    }).on('mousemove',function (e) {
+        $('#tooltip').css({//offset
+            left: e.pageX + 20,
+            top: e.pageY + 20
+        });
+    }).on('mouseout',function (e) {
+        $('#tooltip').remove();
+        $(this).attr('title',this._title);
+    })
 })

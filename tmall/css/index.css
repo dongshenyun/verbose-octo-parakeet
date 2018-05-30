@@ -159,15 +159,15 @@
 }
 
 /*.sub-sub-classify1:hover .fir {*/
-    /*display: block; !*hover li=sub-sub-classify1显示div=fir*!*/
+/*display: block; !*hover li=sub-sub-classify1显示div=fir*!*/
 /*}*/
 
-#sub-sub-classify .sub-sub-classify1:hover>a, #sub-sub-classify .sub-sub-classify1:hover>i {
+#sub-sub-classify .sub-sub-classify1:hover > a, #sub-sub-classify .sub-sub-classify1:hover > i {
     color: #ff6a6b;
     font-weight: 700;
 }
 
-#sub-sub-classify .sub-sub-classify1-1:hover>a, #sub-sub-classify .sub-sub-classify1-1:hover>i {
+#sub-sub-classify .sub-sub-classify1-1:hover > a, #sub-sub-classify .sub-sub-classify1-1:hover > i {
     color: #84b5ff;
     font-weight: 700;
 }
@@ -255,6 +255,7 @@
 .all-div .all-ul .all-li-1 a {
     color: #ff6a6b;
 }
+
 .sub-sub-classify1-1 .all-div .all-ul .all-li-1 a {
     color: #84b5ff;
 }
@@ -1022,14 +1023,14 @@
 /*超大div结束*/
 
 /*垂直导航栏开始*/
-#ver-nav{
+#ver-nav {
     position: fixed;
     bottom: 50px;
     left: 5px;
-    /*display: none;*/
+    display: none;
 }
 
-.com-nav{
+.com-nav {
     width: 35px;
     height: 36px;
     text-align: center;
@@ -1038,40 +1039,55 @@
     cursor: pointer;
     font-size: 12px;
     margin: 2px 0;
-    background-color: rgba(0,0,0,.6);
+    background-color: rgba(0, 0, 0, .6);
 }
-#ver-nav .spe-com-nav1{
-background: red;
+
+#spe-com-nav {
+    background: red;
     line-height: 36px;
 }
-#ver-nav .spe-com-nav10{
-    background-color: rgba(0,0,0,.3);
+
+#spe-com-top {
     line-height: 36px;
 }
-#ver-nav .spe-com-nav2:hover{
+
+#ver-nav ul .spe-com-nav8 {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+#ver-nav ul .spe-com-nav0 {
     background: #64c333;
 }
-#ver-nav .spe-com-nav3:hover{
+/*#q:hover {*/
+    /*background: #64c333;*/
+/*}*/
+#ver-nav ul .spe-com-nav1 {
     background: #ff0036;
 }
-#ver-nav .spe-com-nav4:hover{
+#ver-nav ul .spe-com-nav2 {
     background: #ea5f8d;
 }
-#ver-nav .spe-com-nav5:hover{
+
+#ver-nav ul .spe-com-nav3 {
     background: #0aa6e8;
 }
-#ver-nav .spe-com-nav6:hover{
+
+#ver-nav ul .spe-com-nav4 {
     background: #00b262;
 }
-#ver-nav .spe-com-nav7:hover{
+
+#ver-nav ul .spe-com-nav5 {
     background: #f15453;
 }
-#ver-nav .spe-com-nav8:hover{
+
+#ver-nav ul .spe-com-nav6 {
     background: #19c8a9;
 }
-#ver-nav .spe-com-nav9:hover{
+
+#ver-nav ul .spe-com-nav7 {
     background: #000;
 }
+
 /*垂直导航栏结束*/
 
 

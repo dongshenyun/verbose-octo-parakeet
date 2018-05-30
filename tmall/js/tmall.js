@@ -108,23 +108,3 @@ for (i = 0; i < aNone.length; i++) {
     }
 }
 //隐藏列表结束
-
-/*垂直导航栏开始*/
-var color = ["#64c333", "#ff0036", "#ea5f8d", "#0aa6e8", "#00b262", "#f15453", "#19c8a9", "#000"];
-var arr = ["1460", "2150", "2935", "3620", "4330", "5014", "5725", "6410", "0"];
-var navVer = document.getElementsByClassName("com-nav1");
-var nav = document.getElementById("ver-nav");
-// var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-
-    for (i = 0; i < navVer.length; i++) {
-        navVer[i].index = i;
-        navVer[i].onclick = function () {
-            scr = arr[this.index];
-            for (j = 0; j < navVer.length - 1; j++) {/*遍历添加样式 是数组*/
-                navVer[j].style.background = "#666666";
-            }
-            this.style.background = color[this.index];
-        }
-    }
-
-/*垂直导航栏结束*/

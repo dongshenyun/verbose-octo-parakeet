@@ -35,7 +35,7 @@
     var oDiv1 = document.getElementById('div1');
     var oDiv2 = document.getElementById('div2');
     var oDiv3 = document.getElementById('div3');
-    //      事件流-》  冒泡 （从里到外）捕获（从外到里）
+    //      事件流：  冒泡 （从里到外）捕获（从外到里）
     //        先捕获 后冒泡
     oDiv1.addEventListener('click',function(){
         console.log('div1捕获');
@@ -55,11 +55,15 @@
     },false);
     oDiv3.addEventListener('click',function(e){
         e.stopPropagation();
-        e.cancelable = true;
+        e.cancelBubble = true;
         console.log('div3冒泡');
     },false);
 
 
+    //js阻止事件冒泡
+    //            oEvent.cancelBubble = true;/*IE*/
+    //            oEvent.stopPropagation();/*W3C*/
+    //            return false;
 
 
 </script>
