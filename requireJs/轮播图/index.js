@@ -31,7 +31,7 @@ require(['car'],function(Carousel){
     carousel2.init({
         buttonType:'squire',
         btnPos:'bottom',
-        selector:'#content1',
+        selector:'#content2',
         imgData:['img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg']
     });
 });

@@ -1,6 +1,7 @@
 /**
  * Created by Administrator on 2018/5/26 0026.
  */
+
 define(['jquery'], function ($) {
     function Carousel() {
         this.$container = $('<div class="carousel-container"></div>');
@@ -14,7 +15,7 @@ define(['jquery'], function ($) {
         var _this=this;
         var iNow=0;
         this.default = {
-            buttonType: 'squire',//circle squire
+            buttonType: 'square',//circle square
             btnPos: 'bottom', //center bottom
             speed: '1000'
         };
@@ -33,7 +34,7 @@ define(['jquery'], function ($) {
         $('li',this.$tab).on('click',function () {
             iNow=$(this).index();
             change($(this).index());
-        })
+        });
         function change(idx) {
             $('li',_this.$tab).eq(idx).addClass('selected').siblings().removeClass('selected');
             $('img',_this.$imgBox).eq(idx).addClass('selected').siblings().removeClass('selected');
