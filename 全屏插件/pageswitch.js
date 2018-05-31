@@ -205,7 +205,7 @@
 	})();
 
 	$.fn.PageSwitch = function(options){
-		return this.each(function(){
+		return this.each(function(){//链式操作
 			var me = $(this),
 				instance = me.data("PageSwitch");
 
