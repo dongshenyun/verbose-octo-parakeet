@@ -1,6 +1,4 @@
-/**
- * Created by Administrator on 2018/5/25 0025.
- */
+
 define(['jquery'],function ($) {
     function Dialog(obj) {
         var _this=this;
@@ -19,7 +17,7 @@ define(['jquery'],function ($) {
             remove(_this);
         });
     }
-    
+
     function remove(x) {
         x.$dialogMask.remove();
         x.$dialogBox.remove();
