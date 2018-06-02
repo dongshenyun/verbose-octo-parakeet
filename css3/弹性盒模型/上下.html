@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body,html{
+            height: 100%;/*不然父元素高为0*/
+        }
+        #contain{
+            display: flex;
+            flex-direction: column;
+            height: 100%;/*不然父元素高为0*/
+        }
+        #top{
+           height: 200px;
+            background: red;
+        }
+        #center {
+            flex: 1;
+            background: blue;
+        }
+        #bottom{
+            height: 100px;
+            background: green;
+        }
+    </style>
+
+</head>
+<body>
+<div id="contain">
+    <div id="top">你好</div>
+    <div id="center">你好</div>
+    <div id="bottom">你也好</div>
+</div>
+</body>
+</html>
+

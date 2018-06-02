@@ -1027,7 +1027,7 @@
     position: fixed;
     bottom: 50px;
     left: 5px;
-    /*display: none;*/
+    display: none;
 }
 
 .com-nav {
