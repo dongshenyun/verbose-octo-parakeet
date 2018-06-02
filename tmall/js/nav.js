@@ -21,6 +21,6 @@ $(".com-nav1").hover(function () {
         $(window).scrollTop(arr[$(this).index()]);
 });
 
-//滚动事件？
+//页面滚动事件
 
 /*垂直导航栏结束*/
