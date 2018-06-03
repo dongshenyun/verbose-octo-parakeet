@@ -74,72 +74,24 @@
 </div>
 <script>
 
-    //
-    <!--var oImgBox = document.getElementById('img-box');-->
-    //
-    var oLeft = document.getElementById('left');
-    var oRight = document.getElementById('right');
-    //
-    <!--var speed = -3;-->
-    //
-    <!--var timer;-->
-    //
-    <!--oImgBox.innerHTML += oImgBox.innerHTML;-->
-    //
-    <!--oImgBox.style.width = oImgBox.offsetWidth *2 +"px";-->
-    //
-    <!--function run(){-->
-    //
-    <!--timer = setInterval(function(){-->
-    //
-    //
-    <!--if(oImgBox.offsetLeft <= -oImgBox.offsetWidth/2){-->
-    //
-    <!--oImgBox.style.left = 0;-->
-    //
-    <!--}-->
-    //
-    <!--if(oImgBox.offsetLeft > 0){-->
-    //
-    <!--oImgBox.style.left = -oImgBox.offsetWidth/2 +"px";-->
-    //
-    <!--}-->
-    //
-    <!--oImgBox.style.left = oImgBox.offsetLeft + speed +'px';-->
-    //
-    <!--},20);-->
-    //
-    <!--}-->
-    //
-    <!--run();-->
-    //
-    <!--oRight.onmouseover = function(){-->
-    //
-    <!--speed = 3;-->
-    //
-    <!--}-->
-    //
-    <!--oLeft.onmouseover = function(){-->
-    //
-    <!--speed = -3;-->
-    //
-    <!--}-->
     var oImgBox = document.getElementById("img-box");
-    oImgBox.innerHTML += oImgBox.innerHTML;
-    oImgBox.style.width = oImgBox.offsetWidth * 2 + "px";
-    var speed = -3;
+    var oRight = document.getElementById("right");
+    var oLeft= document.getElementById("left");
+    oImgBox.innerHTML += oImgBox.innerHTML;/*两套li 让显示的时候衔接上*/
+    oImgBox.style.width = oImgBox.offsetWidth * 2 + "px"; /*oImgBox宽度*2*/
+    var speed = -3;/*初始向左滚动*/
 
     timer = setInterval(function () {
-        if (oImgBox.offsetLeft <= -oImgBox.offsetWidth / 2) {
-            oImgBox.style.left = 0;
+        if (oImgBox.offsetLeft <= -oImgBox.offsetWidth / 2) {/*offsetWidth获取宽度 offsetLeft获取left*/
+            oImgBox.style.left = 0;/*当left<=oImgBox宽度的一半时 让其left值为0*/
         }
-        if (oImgBox.offsetLeft > 0) {
+        if (oImgBox.offsetLeft > 0) {/*同理*/
             oImgBox.style.left = -oImgBox.offsetWidth / 2 + "px";
         }
         oImgBox.style.left = oImgBox.offsetLeft + speed + "px";
     }, 20);
     oRight.onmouseover = function () {
-        speed = 3;
+        speed = 3;  /*正值向右*/
     }
     oLeft.onmouseover = function () {
         speed = -3;

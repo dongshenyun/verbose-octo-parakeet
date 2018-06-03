@@ -10,6 +10,7 @@
         }
         #box{
             overflow: hidden;
+            width: 400px;
         }
 
         #left img {
@@ -34,7 +35,7 @@
         }
         #right{
             background: url(../shiyanke1/photo/i.jpg) no-repeat;
-            background-size: 800px 800px;
+            background-size: 800px 800px; /*注意遮罩层、图片、放大图片的宽高比例 1/2/4*/
             width: 400px;
             height: 400px;
             display: none;
@@ -60,40 +61,40 @@
     var oLeft=document.getElementById("left");
     var oRight=document.getElementById("right");
     var oMask=document.getElementById("mask");
-    oLeft.onmouseover=function () {
+    oLeft.onmouseover=function () { /*鼠标滑入 显示遮罩层和放大图片*/
         oMask.style.display="block";
         oRight.style.display="block";
     }
-    oLeft.onmousemove=function (e) {
+    oLeft.onmousemove=function (e) {  /*鼠标移动  遮罩层距离图片左边距离是鼠标X轴位置减去遮罩层宽度一半*/
         var left=e.clientX-oMask.offsetWidth/2;
         var top=e.clientY-oMask.offsetHeight/2;
-        if (left<=0){
+        if (left<=0){ /*当left小于零时 left=0  防止左侧遮罩层溢出*/
             left=0;
         }
-        var leftMax=oLeft.offsetWidth-oMask.offsetWidth;
+        var leftMax=oLeft.offsetWidth-oMask.offsetWidth;/*同理 右侧*/
         if(left>=leftMax){
             left=leftMax;
         }
-        if (top<=0){
+        if (top<=0){/*同理 上侧*/
             top=0;
         }
-        var topMax=oLeft.offsetHeight-oMask.offsetHeight;
+        var topMax=oLeft.offsetHeight-oMask.offsetHeight;/*同理 下侧*/
         if(top>topMax){
             top=topMax;
         }
-        oMask.style.left=left+"px";
+        oMask.style.left=left+"px";/*设置遮罩层left和top*/
         oMask.style.top=top+"px";
 
-        var ratioX=left/leftMax;
+        var ratioX=left/leftMax;/*计算比例  移动的距离和可以移动距离的比例*/
         var ratioY=top/topMax;
 
-        var bleft=ratioX*leftMax*2;
-        var btop=ratioY*topMax*2;
+        var bleft=ratioX*oRight.offsetWidth/*  本例子是二倍关系也可以直接left*2  */
+        var btop=top*2;
 
-        oRight.style.backgroundPositionX=-bleft+"px";
+        oRight.style.backgroundPositionX=-bleft+"px";/*设置放大图片的背景图片位置*/
         oRight.style.backgroundPositionY=-btop+"px";
-    }
-    oLeft.onmouseout=function () {
+    };
+    oLeft.onmouseout=function () {/*鼠标滑出隐藏*/
         oMask.style.display="none";
         oRight.style.display="none";
     }

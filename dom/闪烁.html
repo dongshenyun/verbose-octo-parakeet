@@ -6,14 +6,18 @@
 </head>
 <body>
 <div id="net_nav" style="position:relative;">
-    <img id="hot" src="img/1.png"  style="position:absolute; top:-4px; left:293px; z-index:999999;" />
+    <img id="hot" src="img/1.png" style="position:absolute; top:-4px; left:293px; z-index:999999;"/>
 </div>
 <script type="text/javascript">
-    var hot=document.getElementById('hot');
-    function run(){
-        if(hot.style.display=="none"){hot.style.display="block";}else{hot.style.display="none";}
+    var hot = document.getElementById('hot');
+    function run() {
+        if (hot.style.display == "none") {
+            hot.style.display = "block";
+        } else {
+            hot.style.display = "none";
+        }
     }
-    setInterval("run();",500);
+    setInterval("run();", 500);
 </script>
 
 </body>
