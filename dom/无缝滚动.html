@@ -85,13 +85,13 @@
         if (oImgBox.offsetLeft <= -oImgBox.offsetWidth / 2) {/*offsetWidth获取宽度 offsetLeft获取left*/
             oImgBox.style.left = 0;/*当left<=oImgBox宽度的一半时 让其left值为0*/
         }
-        if (oImgBox.offsetLeft > 0) {/*同理*/
+        if (oImgBox.offsetLeft > 0) {
             oImgBox.style.left = -oImgBox.offsetWidth / 2 + "px";
         }
         oImgBox.style.left = oImgBox.offsetLeft + speed + "px";
     }, 20);
     oRight.onmouseover = function () {
-        speed = 3;  /*正值向右*/
+        speed = 3;
     }
     oLeft.onmouseover = function () {
         speed = -3;
