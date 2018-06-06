@@ -35,16 +35,36 @@
             height: 125px;
             display: block;
         }
+        #prev,#next{
+            width: 40px;
+            height: 80px;
+            position: absolute;
+            top:50%;
+            margin-top: -40px;
+            display: none;
+        }
+        #prev{
+            background: #fff url("img/prev.png") center center no-repeat;
+            left:0;
+            border-radius: 0px 10px 10px 0;
+        }
+        #next{
+            background: #fff url("img/next.png") center center no-repeat;
+            right:0;
+            border-radius: 10px 0 0 10px;
+        }
     </style>
 </head>
 <body>
 
-<div id="container">
+<div id="container"></div>
+<span id="prev"></span>
+<span id="next"></span>
 
-
-</div>
 <script>
     var oContainer = document.getElementById('container');
+    var oNext=document.getElementById('next');
+    var oPrev=document.getElementById('prev');
     var count = 0;
     /*计数*/
     for (var i = 0; i < 24; i++) {
@@ -103,6 +123,7 @@
                 /*随机角度 -20到20*/
                 aDiv[k].style.left = (aDiv[k].col + 1) * iSpaceX + aDiv[k].col * 135 + "px";
                 aDiv[k].style.top = (aDiv[k].row + 1) * iSpaceY + aDiv[k].row * 135 + "px";
+
             }
 
             var iLeft = (oContainer.offsetWidth - 127 * 6) / 2;
@@ -111,12 +132,14 @@
             var iTop = (oContainer.offsetHeight - 127 * 4) / 2;
             /*上下空隙*/
 
+            var aSpan=oContainer.getElementsByTagName('span');/*重新获取span*/
             var flag = true;
+            var iNow=0;
             /*判断是否打开 打开*/
             function fn() {
                 for (i = 0; i < aDiv.length; i++) {
-                    var oSpan = aDiv[i].getElementsByTagName('span')[0];
-                    if (flag) {
+                    var oSpan = aDiv[i].getElementsByTagName('span')[0];/*每一个span*/
+                    if (flag) {/*合并*/
                         aDiv[i].style.webkitTransitionDelay = '0ms';
                         /*取消动画延迟*/
                         aDiv[i].style.webkitTransform = 'rotate(0deg)';
@@ -132,19 +155,44 @@
                         oSpan.style.background = 'url(img/' + this.index + '.jpg)'
                             + posLeft + 'px ' + posTop + 'px no-repeat';
                         /*注意两个值之间空格*/
+                        oNext.style.display='block';
+                        oPrev.style.display='block';
+                        iNow=this.index;/*之前自定义的索引属性 1-24*/
                     } else {
+                        aSpan[i].style.webkitTransitionDelay = '0ms';
                         aDiv[i].style.border = '5px solid #fff';
                         aDiv[i].style.webkitTransform = 'rotate(' + (Math.random() - 0.5) * 40 + 'deg)';
                         aDiv[i].style.left = (aDiv[i].col + 1) * iSpaceX + aDiv[i].col * 135 + "px";
                         aDiv[i].style.top = (aDiv[i].row + 1) * iSpaceY + aDiv[i].row * 135 + "px";
                         oSpan.style.opacity = 0;
+                        oNext.style.display='none';
+                        oPrev.style.display='none';
                     }
                 }
                 flag = !flag;
             }
+            oNext.onclick=function () {
+                iNow++;
+                if(iNow==25){
+                    iNow=1;
+                }
+                for(i=0;i<aSpan.length;i++){
+                    aSpan[i].style.webkitTransitionDelay=Math.random()*500+'ms';
+                    aSpan[i].style.backgroundImage='url(img/'+iNow+'.jpg)';
+                }
+            };
+            oPrev.onclick=function () {
+                iNow--;
+                if(iNow==0){
+                    iNow=24;
+                }
+                for(i=0;i<aSpan.length;i++){
+                    aSpan[i].style.webkitTransitionDelay=Math.random()*500+'ms';
+                    aSpan[i].style.backgroundImage='url(img/'+iNow+'.jpg)';
+                }
+            };
         }
     }
-
 
 </script>
 </body>
