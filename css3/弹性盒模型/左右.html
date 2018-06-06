@@ -4,31 +4,33 @@
     <meta charset="UTF-8">
     <title></title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
-        #contain{
-            display: flex;
+
+        #contain {
+            display: flex; /*父元素设置该属性*/
         }
-        #left{
+
+        #left {
             width: 100px;
             height: 200px;
             background: #fff8a8;
             margin-right: 10px;
         }
-        #right{
-            flex: 1;
+
+        #right {
+            flex: 1; /*所占比例/份数*/
             height: 200px;
             background: #ff9bad;
         }
-
     </style>
 </head>
 <body>
-    <div id="contain">
-        <div id="left"></div>
-        <div id="right"></div>
-    </div>
+<div id="contain">
+    <div id="left"></div>
+    <div id="right"></div>
+</div>
 </body>
 </html>

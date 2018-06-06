@@ -4,72 +4,135 @@
     <meta charset="UTF-8">
     <title></title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
-        html,body{
-           height: 100%;
-        }
-        #container{
+
+        html, body {
             height: 100%;
-            background: #999   ;
         }
-        .img{
+
+        #container {
+            height: 100%; /*该元素及其父元素和html、body都设置100% 才能全屏效果*/
+            background: #999;
+        }
+
+        .img {
             width: 125px;
             height: 125px;
-            border:5px solid #fff;
+            border: 5px solid #fff;
+            position: absolute; /*定位后修改left、top值才会生效*/
+            left: -135px; /*初始隐藏在左上角*/
+            top: -135px;
+            -webkit-transition: all 1.5s ease 1s; /*值改变时才生效*/
+        }
+
+        .span {
+            opacity: 0;
+            background: red;
+            width: 125px;
+            height: 125px;
+            display: block;
         }
     </style>
 </head>
 <body>
 
-    <div id="container">
+<div id="container">
 
 
+</div>
+<script>
+    var oContainer = document.getElementById('container');
+    var count = 0;
+    /*计数*/
+    for (var i = 0; i < 24; i++) {
+        var oImg = new Image();
+        oImg.onload = function () {/*预加载*/
+            count++;
+            if (count == 48) {/*如果加载完成 执行函数*/
+                loadSuccess();
+            }
+        };
+        oImg.src = 'img/thumbs/' + (i + 1) + '.jpg';
+    }
+    for (var i = 0; i < 24; i++) {
+        var oImg = new Image();
+        oImg.onload = function () {
+            count++;
+            if (count == 48) {
+                loadSuccess();
+            }
+        };
+        oImg.src = 'img/' + (i + 1) + '.jpg';
+    }
 
-    </div>
-    <script>
-        var oContainer = document.getElementById('container');
-        var count = 0;
-        for(var i=0; i<24; i++){
-            var oImg = new Image();
-            oImg.onload = function(){
-                count++;
-                if(count == 48){
-                    loadSuccess();
-                }
-            };
-            oImg.src = 'img/thumbs/'+(i+1)+'.jpg';
-        }
-        for(var i=0; i<24; i++){
-            var oImg = new Image();
-            oImg.onload = function(){
-                count++;
-                if(count == 48){
-                    loadSuccess();
-                }
-            };
-            oImg.src = 'img/'+(i+1)+'.jpg';
-        }
+    var index = 0;
+    /*计数 循环次数*/
+    function loadSuccess() {
+        for (var i = 0; i < 4; i++) { //行
+            for (j = 0; j < 6; j++) {  //列
+                index++;
+                var oDiv = document.createElement('div');
+                oDiv.innerHTML = `<span class="span"></span>`;
+                oDiv.row = i;
+                oDiv.col = j;
+                /*自定义属性 行 列*/
+                oDiv.className = 'img';
+                oDiv.style.background = 'url(img/thumbs/' + index + '.jpg)';
+                oDiv.index = index;
+                /*自定义属性 索引 1-24*/
+                oDiv.onclick = fn;
+                oContainer.appendChild(oDiv);
+                /*插入元素*/
+            }
 
-        var index = 0;
-        function loadSuccess(){
-            for(var i=0; i<4; i++){ //行
-                for(j=0; j<6;j++){  //列
-                    index++;
-                    var oDiv = document.createElement('div');
-                    oDiv.className = 'img';
-                    oDiv.style.background = 'url(img/thumbs/'+index+'.jpg)';
-                    oContainer.appendChild(oDiv);
+            var iSpaceX = (oContainer.offsetWidth - 135 * 6) / 7;
+            /*列空隙*/
+            var iSpaceY = (oContainer.offsetHeight - 135 * 4) / 5;
+            /*行空隙*/
+            /*这两个语句位置不能变 在两个循环之间 否则transition不能执行*/
+
+            var aDiv = oContainer.getElementsByTagName('div');
+            /*重新获取元素 因为里面有图片并且插入到container中了*/
+            for (var k = 0; k < aDiv.length; k++) {
+                aDiv[k].style.webkitTransitionDelay = (23 - k) * 100 + 'ms';
+                /*动画延迟 最后一个先出来所以 23-k*/
+                aDiv[k].style.webkitTransform = 'rotate(' + (Math.random() - 0.5) * 40 + 'deg)';
+                /*随机角度 -20到20*/
+                aDiv[k].style.left = (aDiv[k].col + 1) * iSpaceX + aDiv[k].col * 135 + "px";
+                aDiv[k].style.top = (aDiv[k].row + 1) * iSpaceY + aDiv[k].row * 135 + "px";
+            }
+
+            var iLeft = (oContainer.offsetWidth - 127 * 6) / 2;
+            /*border变为1px 两个空隙*/
+            /*左右空隙*/
+            var iTop = (oContainer.offsetHeight - 127 * 4) / 2;
+            /*上下空隙*/
+            function fn() {
+                for (i = 0; i < aDiv.length; i++) {
+                    aDiv[i].style.webkitTransitionDelay = '0ms';
+                    /*取消动画延迟*/
+                    aDiv[i].style.webkitTransform = 'rotate(0deg)';
+                    /*取消随机角度*/
+                    aDiv[i].style.left = aDiv[i].col * 127 + iLeft + "px";
+                    aDiv[i].style.top = aDiv[i].row * 127 + iTop + "px";
+                    aDiv[i].style.border='1px solid #fff';
+                    var oSpan = aDiv[i].getElementsByTagName('span')[0];
+                    oSpan.style.opacity = 1;
+
+                    /* var spanRow=-aDiv[i].row;*/
+                    var posTop = -aDiv[i].row * 125;
+                    var posLeft = -aDiv[i].col * 125;
+                    oSpan.style.background='url(img/'+this.index+'.jpg)'+posLeft+'px '+posTop+'px no-repeat';
+                    /*注意两个值之间空格*/
                 }
             }
         }
+    }
 
 
-
-
-
-    </script>
+</script>
 </body>
 </html>
