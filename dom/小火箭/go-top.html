@@ -15,43 +15,37 @@
 
         #fire {
             width: 34px;
-            height: 66px;
+            height: 100px;
             background: url(go-top.jpeg) -22px -5px no-repeat;
             position: fixed;
             right: 30px;
             bottom: 50px;
         }
-
-        #fire:hover {
-            background-position: -113px -4px;
-        }
-
     </style>
 </head>
 <body>
-
 <a href="javascript:;" id="fire"></a><!--页面不跳转-->
-
 <script>
 
     var oBtn = document.getElementById('fire');
-    /*获取*/
 
-    oBtn.onclick = function () {/*方法*/
-//        window.scrollTo(0,0);/*直接到顶端*/
-
+    oBtn.onclick = function () {
+        oBtn.style.backgroundPosition = '-199px -2px';
         var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
         /*ie chrome兼容 滚动条距离上方高度*/
 
         var timer = setInterval(function () {
             scrollTop -= 20;
             window.scrollTo(0, scrollTop);
-            if (scrollTop <= 0) {
+            /*（x,y）*/
+            if (scrollTop <= 0) {/*滚动距离小于等于0 清除定时器*/
                 clearInterval(timer);
+                var timer1 = setTimeout(function () {
+                    oBtn.style.backgroundPosition = '-22px -5px';
+                }, 1000);
             }
-        }, 20);
+        }, 2);
     }
 </script>
-
 </body>
 </html>

@@ -53,27 +53,25 @@
 <script>
     var oUl1 = document.getElementById("ul1");
     var oLi = oUl1.getElementsByTagName("li");
-    document.oncontextmenu= function (e) {
-        oUl1.style.display = "block";
-        var left = e.clientX;
+    document.oncontextmenu= function (e) {/*document下的右键菜单事件*/
+        oUl1.style.display = "block";/*显示菜单*/
+        var left = e.clientX;/*鼠标点击位置x坐标*/
         var top = e.clientY;
-        oUl1.style.left = left + "px";
+        oUl1.style.left = left + "px";/*设置给left*/
         oUl1.style.top = top + "px";
         return false;
-        /*阻止默认行为*/
+        /*阻止默认行为 默认菜单*/
     };
-    for (i = 0; i < oLi.length; i++) {
-        oLi[i].onclick = function () {
-            console.log(this.innerHTML);/*输出内容*/
+    for (i = 0; i < oLi.length; i++) {/*循环数组*/
+        oLi[i].onclick = function () {/*点击某个li时 隐藏ul*/
+            console.log(this.innerHTML);/*控制台输出内容*/
             oUl1.style.display = "none";
         }
     }
-    document.onclick=function () {
+    document.onclick=function () {/*点击整个dom对象都可以隐藏*/
         oUl1.style.display = "none";
     }
-    console.log(oUl1.innerHTML);
 </script>
-
 
 </body>
 </html>

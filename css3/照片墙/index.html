@@ -110,24 +110,37 @@
             /*左右空隙*/
             var iTop = (oContainer.offsetHeight - 127 * 4) / 2;
             /*上下空隙*/
+
+            var flag = true;
+            /*判断是否打开 打开*/
             function fn() {
                 for (i = 0; i < aDiv.length; i++) {
-                    aDiv[i].style.webkitTransitionDelay = '0ms';
-                    /*取消动画延迟*/
-                    aDiv[i].style.webkitTransform = 'rotate(0deg)';
-                    /*取消随机角度*/
-                    aDiv[i].style.left = aDiv[i].col * 127 + iLeft + "px";
-                    aDiv[i].style.top = aDiv[i].row * 127 + iTop + "px";
-                    aDiv[i].style.border='1px solid #fff';
                     var oSpan = aDiv[i].getElementsByTagName('span')[0];
-                    oSpan.style.opacity = 1;
+                    if (flag) {
+                        aDiv[i].style.webkitTransitionDelay = '0ms';
+                        /*取消动画延迟*/
+                        aDiv[i].style.webkitTransform = 'rotate(0deg)';
+                        /*取消随机角度*/
+                        aDiv[i].style.left = aDiv[i].col * 127 + iLeft + "px";
+                        aDiv[i].style.top = aDiv[i].row * 127 + iTop + "px";
+                        aDiv[i].style.border = '1px solid #fff';
+                        oSpan.style.opacity = 1;
 
-                    /* var spanRow=-aDiv[i].row;*/
-                    var posTop = -aDiv[i].row * 125;
-                    var posLeft = -aDiv[i].col * 125;
-                    oSpan.style.background='url(img/'+this.index+'.jpg)'+posLeft+'px '+posTop+'px no-repeat';
-                    /*注意两个值之间空格*/
+                        /* var spanRow=-aDiv[i].row;*/
+                        var posTop = -aDiv[i].row * 125;
+                        var posLeft = -aDiv[i].col * 125;
+                        oSpan.style.background = 'url(img/' + this.index + '.jpg)'
+                            + posLeft + 'px ' + posTop + 'px no-repeat';
+                        /*注意两个值之间空格*/
+                    } else {
+                        aDiv[i].style.border = '5px solid #fff';
+                        aDiv[i].style.webkitTransform = 'rotate(' + (Math.random() - 0.5) * 40 + 'deg)';
+                        aDiv[i].style.left = (aDiv[i].col + 1) * iSpaceX + aDiv[i].col * 135 + "px";
+                        aDiv[i].style.top = (aDiv[i].row + 1) * iSpaceY + aDiv[i].row * 135 + "px";
+                        oSpan.style.opacity = 0;
+                    }
                 }
+                flag = !flag;
             }
         }
     }
