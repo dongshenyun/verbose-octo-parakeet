@@ -35,22 +35,25 @@
             height: 125px;
             display: block;
         }
-        #prev,#next{
+
+        #prev, #next {
             width: 40px;
             height: 80px;
             position: absolute;
-            top:50%;
+            top: 50%;
             margin-top: -40px;
             display: none;
         }
-        #prev{
+
+        #prev {
             background: #fff url("img/prev.png") center center no-repeat;
-            left:0;
+            left: 0;
             border-radius: 0px 10px 10px 0;
         }
-        #next{
+
+        #next {
             background: #fff url("img/next.png") center center no-repeat;
-            right:0;
+            right: 0;
             border-radius: 10px 0 0 10px;
         }
     </style>
@@ -63,19 +66,20 @@
 
 <script>
     var oContainer = document.getElementById('container');
-    var oNext=document.getElementById('next');
-    var oPrev=document.getElementById('prev');
-    var count = 0;
-    /*计数*/
+    var oNext = document.getElementById('next');
+    var oPrev = document.getElementById('prev');
+    var count = 0;/*计数 48*/
+
     for (var i = 0; i < 24; i++) {
         var oImg = new Image();
         oImg.onload = function () {/*预加载*/
-            count++;
+            count++;/*总共四十八张图*/
             if (count == 48) {/*如果加载完成 执行函数*/
                 loadSuccess();
             }
         };
-        oImg.src = 'img/thumbs/' + (i + 1) + '.jpg';
+        oImg.src = 'img/thumbs/' + (i + 1) + '.jpg';/*小图*/
+        /*src写在下面 解决ie6不好用问题*/
     }
     for (var i = 0; i < 24; i++) {
         var oImg = new Image();
@@ -88,109 +92,93 @@
         oImg.src = 'img/' + (i + 1) + '.jpg';
     }
 
-    var index = 0;
-    /*计数 循环次数*/
+    var index = 0;/*计数 循环24次*/
     function loadSuccess() {
-        for (var i = 0; i < 4; i++) { //行
+        for (var i = 0; i < 4; i++) { //行/*双层for循环  外层行 里层列*/
             for (j = 0; j < 6; j++) {  //列
-                index++;
-                var oDiv = document.createElement('div');
-                oDiv.innerHTML = `<span class="span"></span>`;
-                oDiv.row = i;
-                oDiv.col = j;
-                /*自定义属性 行 列*/
+                index++;/*1-24*/
+                var oDiv = document.createElement('div');/*创建一个元素 class=‘img’ 放图片*/
                 oDiv.className = 'img';
-                oDiv.style.background = 'url(img/thumbs/' + index + '.jpg)';
-                oDiv.index = index;
-                /*自定义属性 索引 1-24*/
-                oDiv.onclick = fn;
-                oContainer.appendChild(oDiv);
-                /*插入元素*/
+                oDiv.innerHTML = `<span class="span"></span>`;/*div中插入span（存放合并后的大图）*/
+                oDiv.row = i;/*自定义属性 行 列*/
+                oDiv.col = j;
+                oDiv.style.background = 'url(img/thumbs/' + index + '.jpg)';/*根据index插入图片*/
+                oDiv.index = index;/*把index设置为自定义属性 索引 1-24*/
+                oDiv.onclick = fn;  /*点击事件*/
+                oContainer.appendChild(oDiv);/*注意位置在iSpaceXiSpaceY上*/
+
+                var iSpaceX = (oContainer.offsetWidth - 135 * 6) / 7;/*列空隙*/
+                var iSpaceY = (oContainer.offsetHeight - 135 * 4) / 5; /*行空隙*/
+                oDiv.style.webkitTransitionDelay = (24-index) * 100 + 'ms';/*动画延迟 最后一个先出来所以 24-index*/
+                oDiv.style.webkitTransform = 'rotate(' + (Math.random() - 0.5) * 40 + 'deg)'; /*随机角度 -20到20*/
+                oDiv.style.left = (oDiv.col + 1) * iSpaceX + oDiv.col * 135 + "px";
+                oDiv.style.top = (oDiv.row + 1) * iSpaceY + oDiv.row * 135 + "px";
+                /*第一张left 零个图片width一个空隙  列数*图片width+（列数+1）*空隙
+                * 第二张left 一个图片width两个空隙
+                * 。。。。。
+                * */
             }
+        }
 
-            var iSpaceX = (oContainer.offsetWidth - 135 * 6) / 7;
-            /*列空隙*/
-            var iSpaceY = (oContainer.offsetHeight - 135 * 4) / 5;
-            /*行空隙*/
-            /*这两个语句位置不能变 在两个循环之间 否则transition不能执行*/
+        var iLeft = (oContainer.offsetWidth - 127 * 6) / 2;/*border变为1px 只有两个空隙  左右*/
+        var iTop = (oContainer.offsetHeight - 127 * 4) / 2;/*上下空隙*/
+        var aDiv=oContainer.getElementsByTagName('div');/*重新获取div 已经变成数组*/
+        var aSpan = oContainer.getElementsByTagName('span');/*重新获取span 数组*/
+        var flag = true;/*判断是否打开 true打开*/
+        var iNow = 0;/*记录当前索引*/
 
-            var aDiv = oContainer.getElementsByTagName('div');
-            /*重新获取元素 因为里面有图片并且插入到container中了*/
-            for (var k = 0; k < aDiv.length; k++) {
-                aDiv[k].style.webkitTransitionDelay = (23 - k) * 100 + 'ms';
-                /*动画延迟 最后一个先出来所以 23-k*/
-                aDiv[k].style.webkitTransform = 'rotate(' + (Math.random() - 0.5) * 40 + 'deg)';
-                /*随机角度 -20到20*/
-                aDiv[k].style.left = (aDiv[k].col + 1) * iSpaceX + aDiv[k].col * 135 + "px";
-                aDiv[k].style.top = (aDiv[k].row + 1) * iSpaceY + aDiv[k].row * 135 + "px";
+        function fn() {/*点击事件  函数提升*/
+            for (i = 0; i < aDiv.length; i++) {
+                var oSpan = aDiv[i].getElementsByTagName('span')[0];/*[0]是让数组变成每一个元素*/
+                if (flag) {/*if是真（打开）  让他合并*/
+                    aDiv[i].style.webkitTransitionDelay = '0ms';/*取消动画延迟*/
+                    aDiv[i].style.webkitTransform = 'rotate(0deg)';/*取消随机角度*/
+                    aDiv[i].style.left = aDiv[i].col * 127 + iLeft + "px";
+                    aDiv[i].style.top = aDiv[i].row * 127 + iTop + "px";
+                    aDiv[i].style.border = '1px solid #fff';/*修改border*/
+                    oSpan.style.opacity = 1;/*显示span span存放定位的大图*/
 
+                    /* var spanRow=-aDiv[i].row;*/
+                    var posTop = -aDiv[i].row * 125;/*position-top*/
+                    var posLeft = -aDiv[i].col * 125;/*position-left*/
+                    oSpan.style.background = 'url(img/' + this.index + '.jpg)'
+                        + posLeft + 'px ' + posTop + 'px no-repeat';/*注意两个值之间空格*/
+                    oNext.style.display = 'block';/*显示两个按钮*/
+                    oPrev.style.display = 'block';
+                    iNow = this.index;/*记录索引*/
+                } else {/*打开*/
+                    aSpan[i].style.webkitTransitionDelay = '0ms';
+                    aDiv[i].style.border = '5px solid #fff';
+                    aDiv[i].style.webkitTransform = 'rotate(' + (Math.random() - 0.5) * 40 + 'deg)';
+                    aDiv[i].style.left = (aDiv[i].col + 1) * iSpaceX + aDiv[i].col * 135 + "px";
+                    aDiv[i].style.top = (aDiv[i].row + 1) * iSpaceY + aDiv[i].row * 135 + "px";
+                    oSpan.style.opacity = 0;
+                    oNext.style.display = 'none';
+                    oPrev.style.display = 'none';
+                }
             }
+            flag = !flag;/*取反*/
+        }
 
-            var iLeft = (oContainer.offsetWidth - 127 * 6) / 2;
-            /*border变为1px 两个空隙*/
-            /*左右空隙*/
-            var iTop = (oContainer.offsetHeight - 127 * 4) / 2;
-            /*上下空隙*/
-
-            var aSpan=oContainer.getElementsByTagName('span');/*重新获取span*/
-            var flag = true;
-            var iNow=0;
-            /*判断是否打开 打开*/
-            function fn() {
-                for (i = 0; i < aDiv.length; i++) {
-                    var oSpan = aDiv[i].getElementsByTagName('span')[0];/*每一个span*/
-                    if (flag) {/*合并*/
-                        aDiv[i].style.webkitTransitionDelay = '0ms';
-                        /*取消动画延迟*/
-                        aDiv[i].style.webkitTransform = 'rotate(0deg)';
-                        /*取消随机角度*/
-                        aDiv[i].style.left = aDiv[i].col * 127 + iLeft + "px";
-                        aDiv[i].style.top = aDiv[i].row * 127 + iTop + "px";
-                        aDiv[i].style.border = '1px solid #fff';
-                        oSpan.style.opacity = 1;
-
-                        /* var spanRow=-aDiv[i].row;*/
-                        var posTop = -aDiv[i].row * 125;
-                        var posLeft = -aDiv[i].col * 125;
-                        oSpan.style.background = 'url(img/' + this.index + '.jpg)'
-                            + posLeft + 'px ' + posTop + 'px no-repeat';
-                        /*注意两个值之间空格*/
-                        oNext.style.display='block';
-                        oPrev.style.display='block';
-                        iNow=this.index;/*之前自定义的索引属性 1-24*/
-                    } else {
-                        aSpan[i].style.webkitTransitionDelay = '0ms';
-                        aDiv[i].style.border = '5px solid #fff';
-                        aDiv[i].style.webkitTransform = 'rotate(' + (Math.random() - 0.5) * 40 + 'deg)';
-                        aDiv[i].style.left = (aDiv[i].col + 1) * iSpaceX + aDiv[i].col * 135 + "px";
-                        aDiv[i].style.top = (aDiv[i].row + 1) * iSpaceY + aDiv[i].row * 135 + "px";
-                        oSpan.style.opacity = 0;
-                        oNext.style.display='none';
-                        oPrev.style.display='none';
-                    }
-                }
-                flag = !flag;
+        oNext.onclick = function () {/*下一个*/
+            iNow++;
+            if (iNow == aDiv.length+1) {
+                iNow = 1;
             }
-            oNext.onclick=function () {
-                iNow++;
-                if(iNow==25){
-                    iNow=1;
-                }
-                for(i=0;i<aSpan.length;i++){
-                    aSpan[i].style.webkitTransitionDelay=Math.random()*500+'ms';
-                    aSpan[i].style.backgroundImage='url(img/'+iNow+'.jpg)';
-                }
-            };
-            oPrev.onclick=function () {
-                iNow--;
-                if(iNow==0){
-                    iNow=24;
-                }
-                for(i=0;i<aSpan.length;i++){
-                    aSpan[i].style.webkitTransitionDelay=Math.random()*500+'ms';
-                    aSpan[i].style.backgroundImage='url(img/'+iNow+'.jpg)';
-                }
-            };
+            change(iNow);
+        };
+        oPrev.onclick = function () {
+            iNow--;
+            if (iNow == 0) {
+                iNow = aDiv.length;
+            }
+           change(iNow);
+        };
+        function change() {/*更换图片*/
+            for (i = 0; i < aSpan.length; i++) {
+                aSpan[i].style.webkitTransitionDelay = Math.random() * 500 + 'ms';/*随机延迟显示*/
+                aSpan[i].style.backgroundImage = 'url(img/' + iNow + '.jpg)';/*换图片*/
+            }
         }
     }
 

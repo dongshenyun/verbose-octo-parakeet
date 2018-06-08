@@ -11,7 +11,7 @@
         }
         body{
             background: black;
-            perspective:600px;
+            perspective:600px;/*角度*/
         }
         #container {
             margin: 100px auto ;
@@ -19,8 +19,8 @@
             height: 200px;
             position: relative;
             -webkit-transform-style: preserve-3d;/*<!--子元素也可以实现动画的语句-->*/
-            /*-webkit-transform: rotateY(50deg);*/
-            -webkit-animation: run 4s linear infinite ;
+            /*-webkit-transform: rotateY(50deg);*//*transform实现旋转*/
+            -webkit-animation: run 4s linear infinite ;/*animation实现旋转*/
         }
         @keyframes run {/*<!--和animation配合使用  -->*/
             /*0%{*/
