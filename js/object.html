@@ -68,10 +68,10 @@
             name:"zz"
         }
     }
-    function clone(obj) {
+    function clone(obj) {/*面试*/
         var obj1={};
         for (key in obj){
-            if (obj[key] instanceof Object){/*判断obj[key]（值才是对象）是否是对象的实例化*/
+            if (obj[key] instanceof Object){/*判断obj[key]是否是对象的实例化(对象)*/
                 obj1[key]=clone(obj[key]);
             }else {
                 obj1[key]=obj[key];
@@ -80,7 +80,7 @@
         return obj1;
     }
 
-    var  per1=clone(per);
+    var per1=clone(per);
     per.father.name="cc";
     console.log(per1.father.name);
 
