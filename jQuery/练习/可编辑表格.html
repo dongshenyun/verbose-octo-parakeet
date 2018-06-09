@@ -59,7 +59,7 @@
 <script src="jquery-2.1.0.min.js"></script>
 <script>
     $('.editable').on('click',function(){
-        if(  $(this).find('input').size() == 0     ){
+        if(  $(this).find('input').size() == 0     ){/*size输入字段的宽度*/
             var $val = $(this).text();
             $(this).html('<input class="name" type="text" value="'+$val+'"/>');/*value="'+$val+'" 拼接*/
         }

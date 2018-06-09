@@ -4,28 +4,6 @@
     <meta charset="UTF-8">
     <title>buy</title>
     <style>
-        /*#addToCart {*/
-            /*position: absolute;*/
-            /*cursor: pointer;*/
-            /*width: 100px;*/
-            /*height: 40px;*/
-            /*line-height: 40px;*/
-            /*border: 1px solid #ff75b0;*/
-            /*text-align: center;*/
-            /*color: #ff9bad;*/
-            /*top: 450px;*/
-            /*left: 740px;*/
-        /*}*/
-
-        #add:hover {
-            color: #fff;
-            background-color: #ffd4c7;
-        }
-        #add:active{
-            color: #fff;
-            background-color: #ff75b0;
-        }
-
         /*nav开始*/
         #nav {
             background: #313131;
@@ -130,43 +108,50 @@
         }
 
         /*搜索结束*/
-/*详情开始*/
-        #commodity{
+        /*详情开始*/
+        #commodity {
             width: 520px;
-            margin:60px auto;
+            margin: 60px auto;
         }
-        #left>img{
+
+        #left > img {
             width: 200px;
             height: 200px;
             border: 1px solid #8f8f8f;
             display: block;
         }
-        #detail{
+
+        #detail {
             float: right;
             color: #999;
             font-size: 12px;
             text-align: left;
             margin: -200px 0 0 8px;
         }
-        #detail>div{
+
+        #detail > div {
             margin-bottom: 10px;
         }
-        .price>span{
+
+        .price > span {
             text-decoration: line-through;
             font-size: 14px;
         }
-        .discount>span{
+
+        .discount > span {
             font-size: 30px;
             color: #FF0036;
             font-weight: bolder;
         }
-        .fee>span,.color>span,.size>span{
+
+        .fee > span, .color > span, .size > span {
             color: #333;
         }
-/*详情结束*/
+
+        /*详情结束*/
 
         /*gwc*/
-        #add{
+        #add {
             height: 30px;
             width: 100px;
             line-height: 30px;
@@ -177,9 +162,10 @@
             left: 745px;
             background: palegoldenrod;
             color: white;
+            overflow: hidden;
         }
 
-        .u-flyer{
+        .u-flyer {
             display: block;
             width: 50px;
             height: 50px;
@@ -187,9 +173,10 @@
             position: fixed;
             z-index: 9999;
         }
-        .m-sidebar{
+
+        .m-sidebar {
             position: fixed;
-            top:0;
+            top: 0;
             right: 0;
             background: #000000;
             z-index: 2000;
@@ -198,37 +185,82 @@
             font-size: 12px;
             color: #fff;
         }
-        .cart{
+
+        .cart {
             color: #fff;
-            text-align:center;
+            text-align: center;
             line-height: 20px;
-            padding: 200px 0 0 0px;
+            padding: 200px 0 0 0;
             margin: 200px 0;
         }
-        .cart span{
-            display:block;
-            width:20px;
-            margin:0 auto;
-        }
-        /*放大镜*/
 
-        #left{
+        .cart span {
+            display: block;
+            width: 20px;
+            margin: 0 auto;
+        }
+
+        #add span {
+            display: inline-block; /*必须写 否则span不生效*/
+            transition: 0.5s;
+        }
+
+        #add span:nth-child(odd) {
+            transform: translateY(100%);
+        }
+
+        #add span:nth-child(even) {
+            transform: translateY(-100%);
+        }
+
+        #add span::before {
+            content: attr(data-text); /*data-*属性*/
+            position: absolute;
+            color: red;
+        }
+        #add span:nth-child(odd):before {
+            transform: translateY(-100%);
+        }
+
+        #add span:nth-child(even):before{
+            transform: translateY(100%);
+        }
+
+        #add:hover span {
+            transform: translateY(0);
+        }
+
+        #add:hover {
+            color: #fff;
+            background-color: #ffd4c7;
+        }
+
+        #add:active {
+            color: #fff;
+            background-color: #ff75b0;
+        }
+
+        /*gwc结束*/
+
+        /*放大镜*/
+        #left {
             width: 200px;
-            height:200px;
+            height: 200px;
             position: relative;
         }
 
-        #mask1{
+        #mask1 {
             width: 100px;
             height: 100px;
-            background:white;
+            background: white;
             opacity: 0.5;
             position: absolute;
             left: 0;
-            top:0;
+            top: 0;
             display: none;
         }
-        #right{
+
+        #right {
             background: url(m.jpg) no-repeat;
             background-size: 400px 400px;
             width: 200px;
@@ -368,7 +400,7 @@
             <!--<img src="../shiyanke1/photo/i.jpg" alt="">-->
         </div>
     </div>
-    <div id="detail"  class="box">
+    <div id="detail" class="box">
         <div class="price">价格 &nbsp;&nbsp; <span>380.00</span></div>
         <div class="discount">促销价 &nbsp;&nbsp; <span>199.00</span></div>
         <div class="fee">运费 &nbsp;&nbsp; <span>江苏苏州至哈尔滨 包邮</span></div>
@@ -386,7 +418,13 @@
                 <input type="radio" name="sex1"/>3号秋香绿
             </span>
         </div>
-        <a href="#" class="button orange addcar" id="add">加入购物车</a>
+        <a href="#" id="add">
+            <span data-text="加">加</span>
+            <span data-text="入">入</span>
+            <span data-text="购">购</span>
+            <span data-text="物">物</span>
+            <span data-text="车">车</span>
+        </a>
     </div>
 </div><!--商品-->
 <div class="after-sell">
@@ -399,22 +437,22 @@
 <script>
     //购物车
     $(function () {
-        var offset=$('#end').offset();
+        var offset = $('#end').offset();
 
-        $('#add').on('click',function () {
-            var addcar=$(this);
-            var img=addcar.parent().find('img').attr('src');
-            var flyer=$('<img class="u-flyer" src="m.jpg">');
+        $('#add').on('click', function () {
+            var addcar = $(this);
+            var img = addcar.parent().find('img').attr('src');
+            var flyer = $('<img class="u-flyer" src="m.jpg">');
             flyer.fly({
-                start:{
-                    left:event.pageX,
-                    top:event.pageY
+                start: {
+                    left: event.pageX,
+                    top: event.pageY
                 },
-                end:{
-                    left:offset.left,
-                    top:offset.top,
-                    width:0,
-                    height:0
+                end: {
+                    left: offset.left,
+                    top: offset.top,
+                    width: 0,
+                    height: 0
                 }
 
             })
@@ -422,47 +460,47 @@
     });
 
     //放大镜
-    var oLeft=document.getElementById("left");
-    var oRight=document.getElementById("right");
-    var oMask1=document.getElementById("mask1");
-    oLeft.onmouseover=function () {
-        oMask1.style.display="block";
-        oRight.style.display="block";
+    var oLeft = document.getElementById("left");
+    var oRight = document.getElementById("right");
+    var oMask1 = document.getElementById("mask1");
+    oLeft.onmouseover = function () {
+        oMask1.style.display = "block";
+        oRight.style.display = "block";
     }
-    oLeft.onmousemove=function (e) {
-        var left=e.clientX-oLeft.offsetLeft;
-        var top=e.clientY-oLeft.offsetTop;
+    oLeft.onmousemove = function (e) {
+        var left = e.clientX - oLeft.offsetLeft;
+        var top = e.clientY - oLeft.offsetTop;
         console.log(e.clientX);
 
-        if (left<=0){
-            left=0;
+        if (left <= 0) {
+            left = 0;
         }
-        var leftMax=oLeft.offsetWidth-oMask1.offsetWidth;
-        if(left>leftMax){
-            left=leftMax;
+        var leftMax = oLeft.offsetWidth - oMask1.offsetWidth;
+        if (left > leftMax) {
+            left = leftMax;
         }
-        if (top<=0){
-            top=0;
+        if (top <= 0) {
+            top = 0;
         }
-        var topMax=oLeft.offsetHeight-oMask1.offsetHeight;
-        if(top>topMax){
-            top=topMax;
+        var topMax = oLeft.offsetHeight - oMask1.offsetHeight;
+        if (top > topMax) {
+            top = topMax;
         }
-        oMask1.style.left=left+"px";
-        oMask1.style.top=top+"px";
+        oMask1.style.left = left + "px";
+        oMask1.style.top = top + "px";
 
-        var ratioX=left/leftMax;
-        var ratioY=top/topMax;
+        var ratioX = left / leftMax;
+        var ratioY = top / topMax;
 
-        var bleft=ratioX*leftMax*2;
-        var btop=ratioY*topMax*2;
+        var bleft = ratioX * leftMax * 2;
+        var btop = ratioY * topMax * 2;
 
-        oRight.style.backgroundPositionX=-bleft+"px";
-        oRight.style.backgroundPositionY=-btop+"px";
+        oRight.style.backgroundPositionX = -bleft + "px";
+        oRight.style.backgroundPositionY = -btop + "px";
     }
-    oLeft.onmouseout=function () {
-        oMask1.style.display="none";
-        oRight.style.display="none";
+    oLeft.onmouseout = function () {
+        oMask1.style.display = "none";
+        oRight.style.display = "none";
     }
 
     //skin
