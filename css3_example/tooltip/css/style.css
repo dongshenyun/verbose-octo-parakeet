@@ -20,6 +20,7 @@ a{
     color: rgba(0, 0, 0, 0.3);
     display: inline-block;
     font-weight: 700;
+    transition: color 0.3s;
 }
 
 a:hover, .nav a:focus {
@@ -55,63 +56,57 @@ a:hover, .nav a:focus {
     opacity: 0;
     margin-bottom: 20px;
     cursor: pointer;
+    transition: opacity 0.3s, transform 0.3s;/*过渡 定义才能动画显示*/
 }
-
+.tooltip-content i{
+    opacity: 0;
+    transition: all 0.3s;
+}
 .tooltip-effect-1 .tooltip-content {
     -webkit-transform: translate3d(0, 10px, 0) rotate3d(1, 1, 1, 45deg);/*translateY(10px)*//*rotate3d 0-1*/
-    -webkit-transform-origin: 50% 100%;
-    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+    -webkit-transform-origin: 50% 100%;/*center bottom*//*scale和rotate 涉及中心点*/
 }
 
 .tooltip-effect-1 .tooltip-content i {
-    -webkit-transform: scale3d(0, 0, 1);
-    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+    -webkit-transform: scale3d(0, 0, 1);/*x，y设置为0 相当于隐藏*/
 }
 
 .tooltip-effect-2 .tooltip-content {
     -webkit-transform: translate3d(0, 10px, 0);
-    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
 }
 
 .tooltip-effect-2 .tooltip-content i {
     -webkit-transform: translate3d(0, 15px, 0);
-    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
 }
 
 .tooltip-effect-3 .tooltip-content {
     -webkit-transform: translate3d(0, 10px, 0) rotate3d(0, 1, 0, 90deg);
-    -webkit-transform-origin: 50% 100%;
-    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+    /*-webkit-transform-origin: 50% 100%;*/
 }
 
 .tooltip-effect-3 .tooltip-content i {
     -webkit-transform: scale3d(0, 0, 1);
-    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
 }
 
 .tooltip-effect-4 .tooltip-content {
     -webkit-transform: translate3d(0, -20px, 0);
-    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
 }
 
 .tooltip-effect-4 .tooltip-content i {
     -webkit-transform: translate3d(0, 20px, 0);
-    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
 }
 
 .tooltip-effect-5 .tooltip-content {
     -webkit-transform: scale3d(0, 0, 1);
     -webkit-transform-origin: 50% 100%;
-    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
 }
 
 .tooltip-effect-5 .tooltip-content i {
     -webkit-transform: translate3d(0, 20px, 0);
-    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
 }
 
 .tooltip:hover .tooltip-content,
-.tooltip:hover .tooltip-content i {
+.tooltip:hover .tooltip-content i {/*恢复*/
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
 }
