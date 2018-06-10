@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #btn {
+            position: fixed;
+            top: 0;
+            left: 30px;
+        }
+
+        #div1 {
+            height: 500px;
+            background: #ff0000;
+        }
+
+        #div2 {
+            height: 500px;
+            background: #00ff00;
+        }
+
+        #div3 {
+            height: 700px;
+            background: #0000ff;
+        }
+    </style>
+</head>
+<body>
+<div id="btn">
+    <a href="javascript:;" class="btns">div1</a>
+    <a href="javascript:;" class="btns">div2</a>
+    <a href="javascript:;" class="btns">div3</a>
+</div>
+<div id="div">
+    <div class="div" id="div1">
+
+    </div>
+    <div class="div" id="div2">
+
+    </div>
+    <div class="div" id="div3">
+    </div>
+
+</div>
+<script src="../tmall/js/jquery-2.1.0.min.js"></script>
+<script>
+
+    $('.btns').on('click', function () {
+        var idx = $(this).index();
+//        var top = $('.div')[idx].offsetTop;/*[]是原生语法*/
+        var top = $('.div').eq(idx).offset().top;
+        console.log(top);
+        $('html').animate({
+            scrollTop: top
+        });
+        history.pushState(top,'');
+    });
+    window.onpopstate=function (e) {
+        var newTop=e.state;
+        $('html').animate({
+            scrollTop: newTop
+        });
+    }
+
+
+</script>
+
+
+</body>
+</html>

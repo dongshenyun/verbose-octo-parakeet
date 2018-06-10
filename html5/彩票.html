@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+
+<button id="btn">随机彩票</button>
+<div id="container"></div>
+<script>
+    var oContainer=document.getElementById('container');
+    var oBtn=document.getElementById('btn');
+    var obj={};
+
+    oBtn.onclick=function () {
+        var arr=[];
+        for (var i=0;i<7;i++){
+            arr.push(Math.floor(Math.random()*35+1));/*彩票1-35*/
+        }
+        var random=Math.random();
+        location.hash=random;/*给hash设置一个随机数 用来区分页面内容*/
+        obj[random]=arr;/*存为变量属性*/
+        oContainer.innerHTML=arr;/*放到页面*/
+//        console.log(obj);
+    };
+
+    window.onhashchange=function () {/*hash值改变事件*/
+        var str=location.hash.substring(1);/*取hash值  1到最后  去掉# */
+        if(str){/*如果有值*/
+            oContainer.innerHTML=obj[str];/*取值*/
+        }
+    }
+</script>
+</body>
+</html>

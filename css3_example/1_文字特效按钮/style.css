@@ -32,13 +32,13 @@ html, body {
 }
 
 .box span::before {
-	content: attr(data-text);/*data-*属性*/
+	content: attr(data-text);/*data-*属性  利用伪元素复制一份span*/
 	position: absolute;
 	color: red;
 }
 
 .box span:nth-child(odd)::before {
-	transform: translateY(100%);
+	transform: translateY(100%);/*奇数*/
 }
 
 .box span:nth-child(even)::before {

@@ -23,7 +23,10 @@ $(".com-nav1").hover(function () {
     isMouseOver = false;//不执行hover
     $(this).addClass('spe-com-nav' + $(this).index() + ' active')
         .siblings().removeClass().siblings().addClass('com-nav com-nav1');
-    $(window).scrollTop(arr[$(this).index()]);
+    var top=arr[$(this).index()];
+    $('html').animate({
+        scrollTop:top
+    })
 });
 
 //页面滚动事件
@@ -33,7 +36,7 @@ $(window).scroll(function (i) {
         $('#ver-nav').css({
             display: 'block'
         });
-        $(arr).each(function (idx,ele) {
+        $(arr).each(function (idx,ele) {/*当前索引和当前元素*/
             if(windowHeight>(ele-200)&&windowHeight<(arr[idx+1]-600)){
                 $('.com-nav1').eq(idx).addClass('spe-com-nav' +idx + ' active')
                     .siblings().removeClass().siblings().addClass('com-nav com-nav1');

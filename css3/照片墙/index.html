@@ -48,7 +48,7 @@
         #prev {
             background: #fff url("img/prev.png") center center no-repeat;
             left: 0;
-            border-radius: 0px 10px 10px 0;
+            border-radius: 0 10px 10px 0;
         }
 
         #next {
@@ -105,7 +105,7 @@
                 oDiv.style.background = 'url(img/thumbs/' + index + '.jpg)';/*根据index插入图片*/
                 oDiv.index = index;/*把index设置为自定义属性 索引 1-24*/
                 oDiv.onclick = fn;  /*点击事件*/
-                oContainer.appendChild(oDiv);/*注意位置在iSpaceXiSpaceY上*/
+                oContainer.appendChild(oDiv);/*注意位置在iSpaceXiSpaceY上 给transition一些时间*/
 
                 var iSpaceX = (oContainer.offsetWidth - 135 * 6) / 7;/*列空隙*/
                 var iSpaceY = (oContainer.offsetHeight - 135 * 4) / 5; /*行空隙*/
