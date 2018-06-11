@@ -149,17 +149,13 @@
     width: 100%;
     position: absolute;
     height: 50%;
-    -webkit-animation-name: shake;
-    -webkit-animation-duration: 40s;
-    -webkit-animation-direction: alternate;
-    -webkit-anination-timing-function: linear;
-    -webkit-animation-iteration-count: infinite;
+    -webkit-animation: shake 40s alternate linear infinite;/*alternate轮流反向播放*/
     
-    -moz-animation-name: shake;
-    -moz-animation-duration: 40s;
-    -moz-animation-direction: alternate;
-    -moz-anination-timing-function: linear;
-    -moz-animation-iteration-count: infinite;
+    /*-moz-animation-name: shake;*/
+    /*-moz-animation-duration: 40s;*/
+    /*-moz-animation-direction: alternate;*/
+    /*-moz-anination-timing-function: linear;*/
+    /*-moz-animation-iteration-count: infinite;*/
 }
 
 .water_1 {

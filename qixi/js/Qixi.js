@@ -3,34 +3,34 @@
  * 七夕主题效果
  * @type {Object}
  */
-var Qixi = function() {
+var Qixi = function () {
 
     //走过的位置
     var instanceX;
-    
+
     //页面容器
-    var container    = $("#content");
+    var container = $("#content");
     //页面可视区域
-    var visualWidth  = container.width()
+    var visualWidth = container.width()
     var visualHeight = container.height()
 
     //时间设置(时间毫秒）
     var setTime = {
-        walkToThird  : 6000, //走第一段路，2/3屏幕宽度所用的时间，走完毕背景动
-        walkToMiddle : 6500, //走第二段路，1/2屏幕宽度所用的时间，走到商店
-        walkToEnd    : 6500, //走第三段路，走到桥
-        
-        walkTobridge : 2000, //上桥
-        bridgeWalk   : 2000, //桥上走路到中间
+        walkToThird: 6000, //走第一段路，2/3屏幕宽度所用的时间，走完毕背景动
+        walkToMiddle: 6500, //走第二段路，1/2屏幕宽度所用的时间，走到商店
+        walkToEnd: 6500, //走第三段路，走到桥
 
-        walkToShop   : 1000, //进商店时间
-        walkOutShop  : 1000, //出商店时间
-        
-        openDoorTime : 800, //开门时间
-        shutDoorTime : 500, //关门时间
-        
-        waitRotate   : 850,//男女等待转身的时间
-        waitFlower   : 800 //模拟取花的等待时间
+        walkTobridge: 2000, //上桥
+        bridgeWalk: 2000, //桥上走路到中间
+
+        walkToShop: 1000, //进商店时间
+        walkOutShop: 1000, //出商店时间
+
+        openDoorTime: 800, //开门时间
+        shutDoorTime: 500, //关门时间
+
+        waitRotate: 850,//男女等待转身的时间
+        waitFlower: 800 //模拟取花的等待时间
     }
 
     //
@@ -45,26 +45,26 @@ var Qixi = function() {
     /////////
     //背景音乐 //
     /////////
-    var audio1 = Hmlt5Audio('music/happy.wav');
-    audio1.end(function() {
-        Hmlt5Audio('music/circulation.wav' , true);
-    });
-/*    var audioConfig = {
-        enable: true, // 是否开启音乐
-        playURl: 'music/happy.wav', // 正常播放地址
-        cycleURL: 'music/circulation.wav' // 正常循环播放地址
-    };
-    var audio1 = Hmlt5Audio(audioConfig.playURl);
-    audio1.end(function() {
-        Hmlt5Audio(audioConfig.cycleURL, true);
-    });*/
+    // var audio1 = Hmlt5Audio('music/happy.wav');
+    // audio1.end(function () {
+    //     Hmlt5Audio('music/circulation.wav', true);
+    // });
+    // var audioConfig = {
+    //     enable: true, // 是否开启音乐
+    //     playURl: 'music/happy.wav', // 正常播放地址
+    //     cycleURL: 'music/circulation.wav' // 正常循环播放地址
+    // };
+    // var audio1 = Hmlt5Audio(audioConfig.playURl);
+    // audio1.end(function () {
+    //     Hmlt5Audio(audioConfig.cycleURL, true);
+    // });
 
     ///////////
     //场景页面滑动对象 //
     ///////////
     var swipe = Swipe(container);
     //页面滚动到指定的位置
-    function scrollTo(time,proportionX) {
+    function scrollTo(time, proportionX) {
         var distX = visualWidth * proportionX
         swipe.scrollTo(distX, time)
     }
@@ -75,23 +75,23 @@ var Qixi = function() {
     ////////
     var girl = {
         elem: $('.girl'),
-        getHeight: function() {
+        getHeight: function () {
             return this.elem.height();
         },
         // 转身动作
-        rotate: function() {
+        rotate: function () {
             this.elem.addClass('girl-rotate');
         },
-        setOffset: function() {
+        setOffset: function () {
             this.elem.css({
                 left: visualWidth / 2,
                 top: bridgeY - this.getHeight()
             });
         },
-        getOffset: function() {
+        getOffset: function () {
             return this.elem.offset();
         },
-        getWidth: function() {
+        getWidth: function () {
             return this.elem.width();
         }
     };
@@ -100,12 +100,12 @@ var Qixi = function() {
     //右边飞鸟 //
     /////////
     var bird = {
-        elem:$(".bird"),
-        fly:function(){
+        elem: $(".bird"),
+        fly: function () {
             this.elem.addClass('birdFly')
             this.elem.transition({
                 right: visualWidth
-            }, 15000, 'linear');            
+            }, 15000, 'linear');
         }
     }
 
@@ -114,9 +114,9 @@ var Qixi = function() {
     ///////////
     var logo = {
         elem: $('.logo'),
-        run: function() {
+        run: function () {
             this.elem.addClass('logolightSpeedIn')
-                .on('animationend', function() {
+                .on('animationend', function () {
                     $(this).addClass('logoshake').off();
                 })
         }
@@ -129,8 +129,8 @@ var Qixi = function() {
     function BoyWalk() {
 
         //走路对象
-        var $boy      = $("#boy");
-        var boyWidth  = $boy.width();
+        var $boy = $("#boy");
+        var boyWidth = $boy.width();
         var boyHeight = $boy.height();
 
         //暂停走路
@@ -158,14 +158,14 @@ var Qixi = function() {
                 options,
                 runTime,
                 'linear',
-                function() {
+                function () {
                     dfdPlay.resolve(); //动画完成
                 });
             return dfdPlay;
         }
 
         //开始走路
-        function walkRun(time,dist, disY) {
+        function walkRun(time, dist, disY) {
             time = time || 3000;
             //脚动作
             slowWalk();
@@ -179,31 +179,31 @@ var Qixi = function() {
 
         //走进商店
         function walkToShop(doorObj, runTime) {
-            var defer       = $.Deferred();
+            var defer = $.Deferred();
             //门的坐标
-            var offsetDoor     = doorObj.offset();
+            var offsetDoor = doorObj.offset();
             var doorOffsetLeft = offsetDoor.left;
-            var doorOffsetTop  = offsetDoor.top;
+            var doorOffsetTop = offsetDoor.top;
             //小孩当前的坐标
-            var posBoy      = $boy.position();
-            var boyPoxLeft  = posBoy.left;
-            var boyPoxTop   = posBoy.top;
+            var posBoy = $boy.position();
+            var boyPoxLeft = posBoy.left;
+            var boyPoxTop = posBoy.top;
 
             //中间位置
-            var boyMiddle   = $boy.width()/2
-            var doorMiddle = doorObj.width()/2;
-            var doorTopMiddle = doorObj.height()/2;
+            var boyMiddle = $boy.width() / 2
+            var doorMiddle = doorObj.width() / 2;
+            var doorTopMiddle = doorObj.height() / 2;
 
             //当前需要移动的坐标
-            instanceX = (doorOffsetLeft + doorMiddle) - (boyPoxLeft +boyMiddle) ;
-            var instanceY = boyPoxTop  - doorOffsetTop ;
+            instanceX = (doorOffsetLeft + doorMiddle) - (boyPoxLeft + boyMiddle);
+            var instanceY = boyPoxTop - doorOffsetTop;
             //开始走路
             var walkPlay = stratRun({
-                transform : 'translate3d(' + instanceX + 'px, -' + instanceY + 'px, 0)',
-                opacity   : 0.1
+                transform: 'translate3d(' + instanceX + 'px, -' + instanceY + 'px, 0)',
+                opacity: 0.1
             }, runTime);
             //走路完毕
-            walkPlay.done(function() {
+            walkPlay.done(function () {
                 $boy.css({
                     opacity: 0
                 })
@@ -218,11 +218,11 @@ var Qixi = function() {
             restoreWalk();
             //开始走路
             var walkPlay = stratRun({
-                    transform:'translate3d('+ instanceX +'px,0px,0px)',
-                    opacity: 1
-                }, runTime)
-                //走路完毕
-            walkPlay.done(function() {
+                transform: 'translate3d(' + instanceX + 'px,0px,0px)',
+                opacity: 1
+            }, runTime)
+            //走路完毕
+            walkPlay.done(function () {
                 defer.resolve();
             })
             return defer;
@@ -231,56 +231,56 @@ var Qixi = function() {
         //计算移动距离
         function calculateDist(direction, proportion) {
             return (direction == "x" ?
-                visualWidth : visualHeight) * proportion;
+                    visualWidth : visualHeight) * proportion;
         }
 
         return {
             //开始走路
-            walkTo: function(time,proportionX, proportionY) {
+            walkTo: function (time, proportionX, proportionY) {
                 var distX = calculateDist('x', proportionX)
                 var distY = calculateDist('y', proportionY)
                 return walkRun(time, distX, distY);
             },
             //停止走路
-            stopWalk: function() {
+            stopWalk: function () {
                 pauseWalk();
             },
             //复位初始状态
-            resetOriginal:function(){
+            resetOriginal: function () {
                 this.stopWalk();
                 //恢复图片
                 $boy.removeClass('slowWalk slowFlolerWalk').addClass('boyOriginal')
             },
             //走进商店
-            toShop: function() {
+            toShop: function () {
                 return walkToShop.apply(null, arguments);
             },
             //走出商店
-            outShop: function() {
+            outShop: function () {
                 return walkOutShop.apply(null, arguments);
             },
             //转身动作
-            rotate: function(callback) {
+            rotate: function (callback) {
                 restoreWalk()
                 $boy.addClass('boy-rotate')
-                    //监听转身完毕
+                //监听转身完毕
                 if (callback) {
-                    $boy.on('animationend', function() {
+                    $boy.on('animationend', function () {
                         callback()
                         $(this).off();
                     })
                 }
             },
             //获取男孩的宽度
-            getWidth:function(){
-                return  $boy.width();
+            getWidth: function () {
+                return $boy.width();
             },
             //获取人物走过的距离
-            getDistance: function() {
+            getDistance: function () {
                 return $boy.offset().left
             },
             //取花
-            talkFlower: function() {
+            talkFlower: function () {
                 $boy.addClass('slowFlolerWalk')
             }
 
@@ -291,18 +291,18 @@ var Qixi = function() {
      * 商店
      * @return {[type]} [description]
      */
-    var BoyToShop = function(boyObj) {
+    var BoyToShop = function (boyObj) {
 
-        var defer     = $.Deferred();
-        var $door     = $('.door');
-        var doorLeft  = $('.door-left');
+        var defer = $.Deferred();
+        var $door = $('.door');
+        var doorLeft = $('.door-left');
         var doorRight = $('.door-right')
 
         function doorAction(left, right, time) {
             var defer = $.Deferred();
             var count = 2;
             //等待开门完成
-            var complete = function() {
+            var complete = function () {
                 if (count == 1) {
                     defer.resolve();
                     return;
@@ -334,7 +334,7 @@ var Qixi = function() {
             var defer = $.Deferred();
             //取花
             boyObj.talkFlower();
-            setTimeout(function() {
+            setTimeout(function () {
                 defer.resolve()
             }, setTime.waitFlower)
             return defer
@@ -345,10 +345,10 @@ var Qixi = function() {
         ///////////
         var lamp = {
             elem: $('.b_background'),
-            bright: function() {
+            bright: function () {
                 this.elem.addClass('lamp-bright')
             },
-            dark: function() {
+            dark: function () {
                 this.elem.removeClass('lamp-bright')
             }
         }
@@ -359,27 +359,26 @@ var Qixi = function() {
         //等待开门
         //开始执行一系列动作
         waitOpen
-            .then(function() {
+            .then(function () {
                 lamp.bright();
                 //小孩进入商店
                 return boyObj.toShop($door, setTime.walkToShop)
-            }).then(function() {
-                //取花
-                return talkFlower();
-            }).then(function() {
-                //走出商店
-                return boyObj.outShop(setTime.walkOutShop)
-            }).then(function() {
-                //商店关门
-                shutDoor(setTime.shutDoorTime);
-                lamp.dark();
-                //开始下一套动作
-                defer.resolve();
-            })
+            }).then(function () {
+            //取花
+            return talkFlower();
+        }).then(function () {
+            //走出商店
+            return boyObj.outShop(setTime.walkOutShop)
+        }).then(function () {
+            //商店关门
+            shutDoor(setTime.shutDoorTime);
+            lamp.dark();
+            //开始下一套动作
+            defer.resolve();
+        })
 
         return defer;
     }
-
 
 
     ///////
@@ -394,19 +393,20 @@ var Qixi = function() {
         };
         //创建一个花元素
         function createSnowBox() {
-                var url = 'images/snowflake/' + getImagesName() + '.png';
-                return $('<div class="snowbox" />').css({
-                    'width': 41,
-                    'height': 41,
-                    'position': 'absolute',
-                    'backgroundSize': 'cover',
-                    'zIndex': 100000,
-                    'top': '-41px',
-                    'backgroundImage': 'url(' + url + ')'
-                }).addClass('snowRoll')
-            }
-            //开始飘花
-        setInterval(function() {
+            var url = 'images/snowflake/' + getImagesName() + '.png';
+            return $('<div class="snowbox" />').css({
+                'width': 41,
+                'height': 41,
+                'position': 'absolute',
+                'backgroundSize': 'cover',
+                'zIndex': 100000,
+                'top': '-41px',
+                'backgroundImage': 'url(' + url + ')'
+            }).addClass('snowRoll')
+        }
+
+        //开始飘花
+        setInterval(function () {
             //运动的轨迹
             var startPositionLeft = Math.random() * visualWidth - 100,
                 startOpacity = 1
@@ -422,17 +422,17 @@ var Qixi = function() {
             var $flake = createSnowBox();
             //设计起点位置
             $flake.css({
-                    left: startPositionLeft,
-                    opacity: randomStart
-                })
-                //加入到容器
+                left: startPositionLeft,
+                opacity: randomStart
+            })
+            //加入到容器
             $flakeContainer.append($flake)
-                //开始执行动画
+            //开始执行动画
             $flake.transition({
                 top: endPositionTop,
                 left: endPositionLeft,
                 opacity: 0.7
-            }, duration, 'ease-out', function() {
+            }, duration, 'ease-out', function () {
                 $(this).remove() //结束后删除
             })
         }, 200);
@@ -442,14 +442,14 @@ var Qixi = function() {
     /////////
     //背景音乐 //
     /////////
-    function Hmlt5Audio(url,loop) {
+    function Hmlt5Audio(url, loop) {
         var audio = new Audio(url);
         audio.autoplay = true;
-        audio.loop = loop|| false; //是否循环
+        audio.loop = loop || false; //是否循环
         audio.play();
         return {
-            end: function(callback) {
-                audio.addEventListener('ended', function() {
+            end: function (callback) {
+                audio.addEventListener('ended', function () {
                     callback()
                 }, false);
             }
@@ -458,7 +458,7 @@ var Qixi = function() {
 
 
     // 获取数据
-    var getValue = function(className) {
+    var getValue = function (className) {
         var $elem = $('' + className + '')
         // 走路的路线坐标
         return {
@@ -468,7 +468,7 @@ var Qixi = function() {
     };
 
     // 桥的Y轴
-    var bridgeY = function() {
+    var bridgeY = function () {
         var data = getValue('.c_background_middle');
         return data.top;
     }();
@@ -480,20 +480,20 @@ var Qixi = function() {
 
     //开始走路
     boy.walkTo(setTime.walkToThird, 0.6)
-        .then(function() {
+        .then(function () {
             //开始滚动页面
             scrollTo(setTime.walkToMiddle, 1)
             //第二次走路
             return boy.walkTo(setTime.walkToMiddle, 0.5)
-        }).then(function(){
+        }).then(function () {
         //飞鸟
         bird.fly();
-    }).then(function() {
+    }).then(function () {
         //暂停走路
         boy.stopWalk();
         //去商店
         return BoyToShop(boy);
-    }).then(function() {
+    }).then(function () {
         //自适应分辨率
         //修正小女孩的坐标,位于中间
         girl.setOffset();
@@ -501,21 +501,21 @@ var Qixi = function() {
         scrollTo(setTime.walkToEnd, 2);
         //人物要往回走1/10处
         return boy.walkTo(setTime.walkToEnd, 0.1)
-    }).then(function() {
+    }).then(function () {
         //上桥
         return boy.walkTo(setTime.walkTobridge, 0.25, 0.25);
-    }).then(function() {
+    }).then(function () {
         //实际走路的比例
         var proportionX = (girl.getOffset().left - boy.getWidth() - instanceX + girl.getWidth() / 5) / visualWidth;
         //桥上走路
         return boy.walkTo(setTime.bridgeWalk, proportionX)
-    }).then(function() {
+    }).then(function () {
         //复位初始状态
         boy.resetOriginal();
         //增加转身动作
-        setTimeout(function() {
+        setTimeout(function () {
             girl.rotate();
-            boy.rotate(function() {
+            boy.rotate(function () {
                 //开始logo动画
                 logo.run()
                 //如果转身完毕
@@ -526,7 +526,7 @@ var Qixi = function() {
     });
 };
 
-$(function() {
+$(function () {
     //七夕主题效果，开始
     Qixi()
 })

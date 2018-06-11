@@ -82,10 +82,8 @@ ul.box li:after {
     content: '';
     right: 20px;
     bottom: 8px;
-
     -webkit-transform: skew(12deg) rotate(4deg);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
-
 }
 
 .box li img {
