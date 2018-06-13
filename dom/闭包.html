@@ -16,8 +16,13 @@
 
 <script>
 
-    var aLi=document.getElementsByTagName("li");
-    for (var i=0;i<aLi.length;i++){(function (idx) {aLi[idx].onclick=function () {console.log(idx);}})(i);
+    var aLi = document.getElementsByTagName("li");
+    for (var i = 0; i < aLi.length; i++) {
+        (function (idx) {
+            aLi[idx].onclick = function () {
+                console.log(idx);
+            }
+        })(i);
     }
 
 </script>
