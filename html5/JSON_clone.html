@@ -14,11 +14,14 @@
             'age':'19'
         }
     };
+    console.log(per);
     var str=JSON.stringify(per);/*对象转字符串*/
     var per1=JSON.parse(str);/*字符串转对象*/
 
     per1.name='lele';
     per.father.name='yulele';
+    console.log(str);
+    console.log(per);
     console.log(per.name,per1.name);/*互不影响*/
     console.log(per.father.name,per1.father.name);/*互不影响*/
 

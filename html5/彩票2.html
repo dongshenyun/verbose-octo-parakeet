@@ -15,16 +15,14 @@
 <script>
     var oContainer=document.getElementById('container');
     var oBtn=document.getElementById('btn');
-
     oBtn.onclick=function () {
         var arr=[];
         for (var i=0;i<7;i++){
             arr.push(Math.floor(Math.random()*35+1));
         }
-        oContainer.innerHTML=arr;/*放到页面*/
+        oContainer.innerHTML=arr;
         history.pushState(arr,'');/*存历史记录*/
     };
-
     window.onpopstate=function (e) {/*浏览器回退触发事件*/
         oContainer.innerHTML=e.state;/*设置*/
     }

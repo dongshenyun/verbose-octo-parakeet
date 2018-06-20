@@ -50,10 +50,9 @@
 </div>
 <script src="../tmall/js/jquery-2.1.0.min.js"></script>
 <script>
-
     $('.btns').on('click', function () {
         var idx = $(this).index();
-//        var top = $('.div')[idx].offsetTop;/*[]是原生语法*/
+//        var top = $('.div')[idx].offsetTop;/*[]转化成原生语法*/
         var top = $('.div').eq(idx).offset().top;
         console.log(top);
         $('html').animate({
@@ -66,11 +65,7 @@
         $('html').animate({
             scrollTop: newTop
         });
-    }
-
-
+    };
 </script>
-
-
 </body>
 </html>

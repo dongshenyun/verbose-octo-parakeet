@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<canvas id="cvs" width="500" height="500"></canvas>
+<canvas id="cvs1" width="200" height="300"></canvas>
+<script>
+    var cvs=document.getElementById('cvs');
+    var cvs1=document.getElementById('cvs1');
+    cvs.style.background='green';
+    cvs1.style.background='gold';
+    var context=cvs.getContext('2d');/*可用画布*/
+    var context1=cvs1.getContext('2d');/*可用画布*/
+    context.moveTo(50,30);
+    context.lineTo(400,400);
+    context.lineTo(40,400);
+    context.strokeStyle='red';
+    context.lineWidth=10;
+    context.stroke();/*描边显示*/
+
+    context1.arc(100,100,100,0*Math.PI,2*Math.PI,false)/*圆心（x,y），半径，起始角，结束角，顺时针（false）*/
+    context1.fillStyle='blue';
+    context1.fill();/*填充显示*/
+</script>
+</body>
+</html>
