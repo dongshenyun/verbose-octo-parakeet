@@ -21,8 +21,8 @@ html, body {
 	border: 1px solid darkgoldenrod;
 	border-radius: 2em;
 	transform: perspective(500px) rotateY(-15deg);
-	text-shadow: 6px 3px 2px rgba(0, 0, 0, 0.2);
-	box-shadow: 2px 0 0 5px rgba(0, 0, 0, 0.2);
+	text-shadow: 6px 3px 2px rgba(0, 0, 0, 0.2);/*文字阴影*/
+	box-shadow: 2px 0 0 5px rgba(0, 0, 0, 0.2);/*边框阴影*/
 	transition: 0.5s;
 	position: relative;
 	overflow: hidden;
@@ -39,11 +39,11 @@ html, body {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: linear-gradient(to right, transparent, white, transparent);
+	background: linear-gradient(to right, transparent, red, transparent);
 	left: -100%;
 	transition: 0.5s;
 }
 
-.box:hover::before {
+.box:hover::before {/*划过效果*/
 	left: 100%;
 }
