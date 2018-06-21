@@ -11,8 +11,8 @@
     z-index: 100;
 }
 #header .logo { 
-	float:left; 
-	margin:0 0 0 10px; 
+	float:left;
+    margin: 20px 0 0 10px;
 	color:#FFF; 
 	line-height:80px;
 }

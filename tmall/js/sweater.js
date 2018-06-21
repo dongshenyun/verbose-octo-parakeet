@@ -33,7 +33,7 @@ var t=0,a=20,v=t*a,s=5,updown=true;// s路程,a加速度,t时间,updown判断上
 var aSpeWw=document.getElementsByClassName("spe-ww");
 // var aSpeWw=document.getElementById("skip");
 
-console.log(aSpeWw)
+console.log(aSpeWw);
 function jump(){
     if(t<=0){
         updown=true;

@@ -1,0 +1,2594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>shirt</title>
+    <link rel="stylesheet" href="../css/sweater.css">
+    <link rel="stylesheet" href="../css/com.css">
+    <link rel="stylesheet" href="../css/iconfont.css" type="text/css">
+
+    <style>
+        #skin-ul li {
+            list-style: none;
+            float: left;
+            background: url('theme.gif');
+            width: 15px;
+            height: 15px;
+            margin: 7px;
+        }
+
+        #skin {
+            width: 200px;
+            height: 30px;
+            line-height: 40px;
+            text-align: center;
+            position: absolute;
+            right: 99px;
+            top: 467px;
+        }
+
+        #skin-ul li:nth-child(1) {
+            background-position: 0 0;
+        }
+
+        #skin-ul li:nth-child(1).active {
+            background-position: 0 -15px;
+        }
+
+        #skin-ul li:nth-child(2) {
+            background-position: -20px 0;
+        }
+
+        #skin-ul li:nth-child(2).active {
+            background-position: -20px -15px;
+        }
+
+        #skin-ul li:nth-child(3) {
+            background-position: -40px 0;
+        }
+
+        #skin-ul li:nth-child(3).active {
+            background-position: -40px -15px;
+        }
+
+        #skin-ul li:nth-child(4) {
+            background-position: -60px 0;
+        }
+
+        #skin-ul li:nth-child(4).active {
+            background-position: -60px -15px;
+        }
+
+        #skin-ul li:nth-child(5) {
+            background-position: -80px 0;
+        }
+
+        #skin-ul li:nth-child(5).active {
+            background-position: -80px -15px;
+        }
+
+        #skin-ul li:nth-child(6) {
+            background-position: -100px 0;
+        }
+
+        #skin-ul li:nth-child(6).active {
+            background-position: -100px -15px;
+        }
+
+        #color {
+            width: 150px;
+            height: 40px;
+            margin: 5px;
+            line-height: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body><!--style="height: 2000px"-->
+<a href="javascript:;" id="fire"></a>
+<div id="mask"></div>
+<img id="mask-1" src="../img/erweima.png" alt=""> <!-- 手机版-->
+<div id="login">
+    <span style="cursor:pointer;position: absolute;color: red;width: 50px;height: 50px;font-size: 18px"
+          onClick="disappear();">关闭</span>
+    <img id="login-bg" src="../img/bgsaoma.png" alt="">
+    <div id="log">
+        <div id="login-code">
+            <div id="login-code-sao">扫码登录</div>
+            <img src="../img/saoma.png" alt="">
+            <div class="login-input"><a href="#" onclick="mima()">密码登录</a><a href="../login/agree.html">免费注册</a></div>
+        </div>
+        <div id="login-text">
+            <div id="login-code-mi">密码登录</div>
+            <input type="text" placeholder="用户名"/>
+            <input type="password" placeholder="密码"/>
+            <input id="denglu" type="submit" value="登录"/>
+            <div class="login-input"><a href="#" onclick="saoma()">扫码登录</a><a href="../login/agree.html">免费注册</a></div>
+        </div>
+    </div>
+</div><!--登录-->
+<div class="first">
+    <div class="second s-second">
+        <div class="s-login">
+            <span>喵，欢迎来天猫</span>
+            <a href="#" id="s-l-btn">请登录</a>
+            <a href="../login/agree.html">免费注册</a>
+        </div>
+        <ul class="s-menu">
+            <li class="s-menu-1 s-menu-2">
+                <a href="#">我的淘宝</a>
+                <ul class="sub-s-menu">
+                    <li class="sub-s-menu-1"><a href="#">已买到的宝贝</a></li>
+                    <li class="sub-s-menu-1"><a href="#">已卖出的宝贝</a></li>
+                </ul>
+            </li>
+            <li class="s-menu-1">
+                <a href="#" id="shopCart">
+                    <i class="iconfont icon-gouwuche-copy"></i>
+                    购物车<span>0</span>件
+                </a>
+            </li>
+            <li class="s-menu-1 s-menu-2"><a href="#">收藏夹</a></li>
+            <li class="s-menu-1" id="pop-up">
+                <a href="#">
+                    <i class="iconfont icon-phone"></i>
+                    手机版
+                </a>
+            </li>
+            <li class="s-menu-1"><a href="#">淘宝网</a></li>
+            <li class="s-menu-1 s-menu-2"><a href="#">商家支持</a></li>
+            <li class="s-menu-1 s-menu-2" id="s-menu-3">
+                <a href="#">
+                    <i class="iconfont icon-liebiao"></i>
+                    网站导航
+                </a>
+            </li>
+        </ul>
+    </div>
+</div><!--导航栏-->
+<div id="home_page"><a href="tmall.html"><img src="../s_img/home-page.png" alt=""></a></div>
+<div class="search">
+    <div class="search-1">
+        <form action="">
+            <input type="text" class="search-text" value="您好" id="name"/>
+            <input type="submit" class="search-btn" value="搜索"/>
+        </form>
+    </div>
+    <ul class="sub-nav">
+        <li id="no-border" class="sub-nav-1"><a href="#">毛衣女</a></li>
+        <li class="sub-nav-1 sub-nav-2"><a href="#">2017新</a></li>
+        <li class="sub-nav-1"><a href="#">针织衫男</a></li>
+        <li class="sub-nav-1 sub-nav-2"><a href="#">冰丝针织衫</a></li>
+        <li class="sub-nav-1"><a href="#">毛衣针织衫</a></li>
+        <li class="sub-nav-1"><a href="#">短袖针织衫</a></li>
+        <li class="sub-nav-1 sub-nav-2"><a href="#">针织衫短袖女</a></li>
+        <li class="sub-nav-1"><a href="#">运动鞋</a></li>
+    </ul>
+</div><!--搜索栏-->
+
+<div class="second">
+    <div id="table">
+        <div id="spe-lef">品牌</div>
+        <div id="img">
+            <img src="../img/shirt/1.png" alt="">
+            <img src="../img/shirt/2.png" alt="">
+            <img src="../img/shirt/3.jpg" alt="">
+            <img src="../img/shirt/4.jpg" alt="">
+            <img src="../img/shirt/5.png" alt="">
+            <img src="../img/shirt/6.png" alt="">
+            <img src="../img/shirt/7.png" alt="">
+            <img src="../img/shirt/8.jpg" alt="">
+            <img src="../img/shirt/1.png" alt="">
+            <img src="../img/shirt/2.png" alt="">
+            <img src="../img/shirt/3.jpg" alt="">
+            <img src="../img/shirt/4.jpg" alt="">
+            <img src="../img/shirt/5.png" alt="">
+            <img src="../img/shirt/6.png" alt="">
+            <img src="../img/shirt/7.png" alt="">
+            <img src="../img/shirt/8.jpg" alt="">
+            <img src="../img/shirt/1.png" alt="">
+            <img src="../img/shirt/2.png" alt="">
+            <img src="../img/shirt/3.jpg" alt="">
+            <img src="../img/shirt/4.jpg" alt="">
+            <img src="../img/shirt/5.png" alt="">
+            <img src="../img/shirt/6.png" alt="">
+            <img src="../img/shirt/7.png" alt="">
+            <img src="../img/shirt/8.jpg" alt="">
+            <img src="../img/shirt/1.png" alt="">
+            <img src="../img/shirt/2.png" alt="">
+            <img src="../img/shirt/3.jpg" alt="">
+            <img src="../img/shirt/4.jpg" alt="">
+            <img src="../img/shirt/5.png" alt="">
+            <img src="../img/shirt/6.png" alt="">
+            <img src="../img/shirt/7.png" alt="">
+            <img src="../img/shirt/8.jpg" alt="">
+            <img src="../img/shirt/1.png" alt="">
+            <img src="../img/shirt/2.png" alt="">
+            <img src="../img/shirt/3.jpg" alt="">
+            <img src="../img/shirt/4.jpg" alt="">
+            <img src="../img/shirt/5.png" alt="">
+            <img src="../img/shirt/6.png" alt="">
+            <img src="../img/shirt/7.png" alt="">
+            <img src="../img/shirt/8.jpg" alt="">
+            <img src="../img/shirt/1.png" alt="">
+            <img src="../img/shirt/2.png" alt="">
+            <img src="../img/shirt/3.jpg" alt="">
+            <img src="../img/shirt/4.jpg" alt="">
+            <img src="../img/shirt/5.png" alt="">
+            <img src="../img/shirt/6.png" alt="">
+            <img src="../img/shirt/7.png" alt="">
+            <img src="../img/shirt/8.jpg" alt="">
+            <img src="../img/shirt/1.png" alt="">
+            <img src="../img/shirt/2.png" alt="">
+            <img src="../img/shirt/3.jpg" alt="">
+            <img src="../img/shirt/4.jpg" alt="">
+            <img src="../img/shirt/5.png" alt="">
+            <img src="../img/shirt/6.png" alt="">
+            <img src="../img/shirt/7.png" alt="">
+            <img src="../img/shirt/8.jpg" alt="">
+            <img src="../img/shirt/1.png" alt="">
+            <img src="../img/shirt/2.png" alt="">
+            <img src="../img/shirt/3.jpg" alt="">
+            <img src="../img/shirt/4.jpg" alt="">
+            <img src="../img/shirt/5.png" alt="">
+            <img src="../img/shirt/6.png" alt="">
+            <img src="../img/shirt/7.png" alt="">
+            <img src="../img/shirt/8.jpg" alt="">
+        </div><!--photo-->
+        <a href="javascript:;" id="more1">更多</a>
+        <a href="javascript:;" style="display: none">收起</a>
+    </div><!--table-->
+    <div id="text">
+        <div class="text-1">
+            <div class="left">品牌男装</div>
+            <ul>
+                <li>家居服</li>
+                <li>运动服</li>
+            </ul>
+        </div>
+        <div class="text-1">
+            <div class="left">其他分类</div>
+            <ul>
+                <li>精品女装</li>
+                <li>T恤</li>
+                <li>童装/亲子装</li>
+            </ul>
+        </div>
+        <div class="text-1">
+            <div class="left">衣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;长</div>
+            <ul>
+                <li>常规</li>
+                <li>中长款</li>
+                <li>短款</li>
+            </ul>
+        </div>
+        <div class="text-1">
+            <div class="left">厚&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;薄</div>
+            <ul>
+                <li>常规</li>
+                <li>薄款</li>
+                <li>加厚</li>
+            </ul>
+        </div>
+        <div class="text-1">
+            <div class="left">领&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型</div>
+            <ul>
+                <li>圆领</li>
+                <li>V领</li>
+                <li>半高领</li>
+            </ul>
+        </div>
+    </div><!--text-->
+    <div id="tit">
+        <div id="pattern-box">
+            <span class="button spe-button">大图</span>
+            <span class="button">小图</span>
+            <span class="button">店铺</span>
+        </div>
+        <!--<span id="num">/100</span>-->
+        <!--<div id="arrow-box">-->
+        <!--<span id="prev">&lt;</span>-->
+        <!--<span id="next">&gt;</span>-->
+        <!--</div>-->
+        <div id="skin">
+            <ul id="skin-ul">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div><!--sub-nav-->
+    <div id="photo-box">
+        <div class="block spe-block">
+            <div class="padding">
+                <div class="pho">
+                    <a href="detail.html"><img class="big-img" src="../img/shirt/11.jpg" alt=""></a>
+                    <div class="price"><span>¥</span>199.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子纯棉短袖t恤男衬衫领夏季新款polo衫青年男士条纹体恤潮">
+                            花花公子纯棉衬衫领青年条纹polo衫</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            playboy飘娜专卖店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">3320笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8170</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/22.jpg" alt="">
+                    <div class="price"><span>¥</span>208.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子七分袖衬衫男夏季男士薄款韩版青年免烫休闲短袖白衬衣潮">
+                            花花公子七分袖青年免烫休闲白衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            莎瑞奇鞋类专营店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4501笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/33.jpg" alt="">
+                    <div class="price"><span>¥</span>419.00</div>
+                    <div class="depict">
+                        <a href="" title="衬衫男士短袖夏季寸纯棉休闲修身韩版长袖2018新款潮7七分袖衬衣">
+                            男士夏季纯棉休闲修身韩版七分袖衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            法牧澜旗舰店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4290笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/44.jpg" alt="">
+                    <div class="price"><span>¥</span>159.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子衬衫男短袖休闲夏季韩版修身商务白色职业衬衣免烫男装潮">
+                            花花公子休闲韩版商务白色免烫衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            花花公子韩风专卖店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4501笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/55.jpg" alt="">
+                    <div class="price"><span>¥</span>399.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子短袖t恤男衬衫领夏季韩版潮流修身青年有带领白色POLO衫">
+                            花花公子衬衫领韩版潮流青年polo衫</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            联创服饰专营店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4201笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <a href="detail.html"><img class="big-img" src="../img/shirt/11.jpg" alt=""></a>
+                    <div class="price"><span>¥</span>199.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子纯棉短袖t恤男衬衫领夏季新款polo衫青年男士条纹体恤潮">
+                            花花公子纯棉衬衫领青年条纹polo衫</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            playboy飘娜专卖店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">3320笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8170</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/22.jpg" alt="">
+                    <div class="price"><span>¥</span>208.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子七分袖衬衫男夏季男士薄款韩版青年免烫休闲短袖白衬衣潮">
+                            花花公子七分袖青年免烫休闲白衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            莎瑞奇鞋类专营店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4501笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/33.jpg" alt="">
+                    <div class="price"><span>¥</span>419.00</div>
+                    <div class="depict">
+                        <a href="" title="衬衫男士短袖夏季寸纯棉休闲修身韩版长袖2018新款潮7七分袖衬衣">
+                            男士夏季纯棉休闲修身韩版七分袖衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            法牧澜旗舰店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4290笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/44.jpg" alt="">
+                    <div class="price"><span>¥</span>159.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子衬衫男短袖休闲夏季韩版修身商务白色职业衬衣免烫男装潮">
+                            花花公子休闲韩版商务白色免烫衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            花花公子韩风专卖店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4501笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/55.jpg" alt="">
+                    <div class="price"><span>¥</span>399.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子短袖t恤男衬衫领夏季韩版潮流修身青年有带领白色POLO衫">
+                            花花公子衬衫领韩版潮流青年polo衫</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            联创服饰专营店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4201笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <a href="detail.html"><img class="big-img" src="../img/shirt/11.jpg" alt=""></a>
+                    <div class="price"><span>¥</span>199.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子纯棉短袖t恤男衬衫领夏季新款polo衫青年男士条纹体恤潮">
+                            花花公子纯棉衬衫领青年条纹polo衫</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            playboy飘娜专卖店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">3320笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8170</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/22.jpg" alt="">
+                    <div class="price"><span>¥</span>208.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子七分袖衬衫男夏季男士薄款韩版青年免烫休闲短袖白衬衣潮">
+                            花花公子七分袖青年免烫休闲白衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            莎瑞奇鞋类专营店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4501笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/33.jpg" alt="">
+                    <div class="price"><span>¥</span>419.00</div>
+                    <div class="depict">
+                        <a href="" title="衬衫男士短袖夏季寸纯棉休闲修身韩版长袖2018新款潮7七分袖衬衣">
+                            男士夏季纯棉休闲修身韩版七分袖衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            法牧澜旗舰店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4290笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/44.jpg" alt="">
+                    <div class="price"><span>¥</span>159.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子衬衫男短袖休闲夏季韩版修身商务白色职业衬衣免烫男装潮">
+                            花花公子休闲韩版商务白色免烫衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            花花公子韩风专卖店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4501笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/55.jpg" alt="">
+                    <div class="price"><span>¥</span>399.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子短袖t恤男衬衫领夏季韩版潮流修身青年有带领白色POLO衫">
+                            花花公子衬衫领韩版潮流青年polo衫</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            联创服饰专营店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4201笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <a href="detail.html"><img class="big-img" src="../img/shirt/11.jpg" alt=""></a>
+                    <div class="price"><span>¥</span>199.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子纯棉短袖t恤男衬衫领夏季新款polo衫青年男士条纹体恤潮">
+                            花花公子纯棉衬衫领青年条纹polo衫</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            playboy飘娜专卖店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">3320笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8170</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/22.jpg" alt="">
+                    <div class="price"><span>¥</span>208.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子七分袖衬衫男夏季男士薄款韩版青年免烫休闲短袖白衬衣潮">
+                            花花公子七分袖青年免烫休闲白衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            莎瑞奇鞋类专营店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4501笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/33.jpg" alt="">
+                    <div class="price"><span>¥</span>419.00</div>
+                    <div class="depict">
+                        <a href="" title="衬衫男士短袖夏季寸纯棉休闲修身韩版长袖2018新款潮7七分袖衬衣">
+                            男士夏季纯棉休闲修身韩版七分袖衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            法牧澜旗舰店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4290笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/44.jpg" alt="">
+                    <div class="price"><span>¥</span>159.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子衬衫男短袖休闲夏季韩版修身商务白色职业衬衣免烫男装潮">
+                            花花公子休闲韩版商务白色免烫衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            花花公子韩风专卖店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4501笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/55.jpg" alt="">
+                    <div class="price"><span>¥</span>399.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子短袖t恤男衬衫领夏季韩版潮流修身青年有带领白色POLO衫">
+                            花花公子衬衫领韩版潮流青年polo衫</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            联创服饰专营店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4201笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <a href="detail.html"><img class="big-img" src="../img/shirt/11.jpg" alt=""></a>
+                    <div class="price"><span>¥</span>199.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子纯棉短袖t恤男衬衫领夏季新款polo衫青年男士条纹体恤潮">
+                            花花公子纯棉衬衫领青年条纹polo衫</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            playboy飘娜专卖店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">3320笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8170</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/22.jpg" alt="">
+                    <div class="price"><span>¥</span>208.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子七分袖衬衫男夏季男士薄款韩版青年免烫休闲短袖白衬衣潮">
+                            花花公子七分袖青年免烫休闲白衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            莎瑞奇鞋类专营店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4501笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/33.jpg" alt="">
+                    <div class="price"><span>¥</span>419.00</div>
+                    <div class="depict">
+                        <a href="" title="衬衫男士短袖夏季寸纯棉休闲修身韩版长袖2018新款潮7七分袖衬衣">
+                            男士夏季纯棉休闲修身韩版七分袖衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            法牧澜旗舰店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4290笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/44.jpg" alt="">
+                    <div class="price"><span>¥</span>159.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子衬衫男短袖休闲夏季韩版修身商务白色职业衬衣免烫男装潮">
+                            花花公子休闲韩版商务白色免烫衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            花花公子韩风专卖店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4501笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/55.jpg" alt="">
+                    <div class="price"><span>¥</span>399.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子短袖t恤男衬衫领夏季韩版潮流修身青年有带领白色POLO衫">
+                            花花公子衬衫领韩版潮流青年polo衫</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            联创服饰专营店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4201笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <a href="detail.html"><img class="big-img" src="../img/shirt/11.jpg" alt=""></a>
+                    <div class="price"><span>¥</span>199.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子纯棉短袖t恤男衬衫领夏季新款polo衫青年男士条纹体恤潮">
+                            花花公子纯棉衬衫领青年条纹polo衫</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            playboy飘娜专卖店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">3320笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8170</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/22.jpg" alt="">
+                    <div class="price"><span>¥</span>208.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子七分袖衬衫男夏季男士薄款韩版青年免烫休闲短袖白衬衣潮">
+                            花花公子七分袖青年免烫休闲白衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            莎瑞奇鞋类专营店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4501笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/33.jpg" alt="">
+                    <div class="price"><span>¥</span>419.00</div>
+                    <div class="depict">
+                        <a href="" title="衬衫男士短袖夏季寸纯棉休闲修身韩版长袖2018新款潮7七分袖衬衣">
+                            男士夏季纯棉休闲修身韩版七分袖衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            法牧澜旗舰店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4290笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/44.jpg" alt="">
+                    <div class="price"><span>¥</span>159.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子衬衫男短袖休闲夏季韩版修身商务白色职业衬衣免烫男装潮">
+                            花花公子休闲韩版商务白色免烫衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            花花公子韩风专卖店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4501笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/55.jpg" alt="">
+                    <div class="price"><span>¥</span>399.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子短袖t恤男衬衫领夏季韩版潮流修身青年有带领白色POLO衫">
+                            花花公子衬衫领韩版潮流青年polo衫</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            联创服饰专营店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4201笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <a href="detail.html"><img class="big-img" src="../img/shirt/11.jpg" alt=""></a>
+                    <div class="price"><span>¥</span>199.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子纯棉短袖t恤男衬衫领夏季新款polo衫青年男士条纹体恤潮">
+                            花花公子纯棉衬衫领青年条纹polo衫</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            playboy飘娜专卖店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">3320笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8170</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/22.jpg" alt="">
+                    <div class="price"><span>¥</span>208.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子七分袖衬衫男夏季男士薄款韩版青年免烫休闲短袖白衬衣潮">
+                            花花公子七分袖青年免烫休闲白衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            莎瑞奇鞋类专营店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4501笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/33.jpg" alt="">
+                    <div class="price"><span>¥</span>419.00</div>
+                    <div class="depict">
+                        <a href="" title="衬衫男士短袖夏季寸纯棉休闲修身韩版长袖2018新款潮7七分袖衬衣">
+                            男士夏季纯棉休闲修身韩版七分袖衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            法牧澜旗舰店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4290笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/44.jpg" alt="">
+                    <div class="price"><span>¥</span>159.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子衬衫男短袖休闲夏季韩版修身商务白色职业衬衣免烫男装潮">
+                            花花公子休闲韩版商务白色免烫衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            花花公子韩风专卖店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4501笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/55.jpg" alt="">
+                    <div class="price"><span>¥</span>399.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子短袖t恤男衬衫领夏季韩版潮流修身青年有带领白色POLO衫">
+                            花花公子衬衫领韩版潮流青年polo衫</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            联创服饰专营店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4201笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <a href="detail.html"><img class="big-img" src="../img/shirt/11.jpg" alt=""></a>
+                    <div class="price"><span>¥</span>199.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子纯棉短袖t恤男衬衫领夏季新款polo衫青年男士条纹体恤潮">
+                            花花公子纯棉衬衫领青年条纹polo衫</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            playboy飘娜专卖店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">3320笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8170</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/22.jpg" alt="">
+                    <div class="price"><span>¥</span>208.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子七分袖衬衫男夏季男士薄款韩版青年免烫休闲短袖白衬衣潮">
+                            花花公子七分袖青年免烫休闲白衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            莎瑞奇鞋类专营店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4501笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/33.jpg" alt="">
+                    <div class="price"><span>¥</span>419.00</div>
+                    <div class="depict">
+                        <a href="" title="衬衫男士短袖夏季寸纯棉休闲修身韩版长袖2018新款潮7七分袖衬衣">
+                            男士夏季纯棉休闲修身韩版七分袖衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            法牧澜旗舰店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4290笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/44.jpg" alt="">
+                    <div class="price"><span>¥</span>159.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子衬衫男短袖休闲夏季韩版修身商务白色职业衬衣免烫男装潮">
+                            花花公子休闲韩版商务白色免烫衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            花花公子韩风专卖店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4501笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/55.jpg" alt="">
+                    <div class="price"><span>¥</span>399.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子短袖t恤男衬衫领夏季韩版潮流修身青年有带领白色POLO衫">
+                            花花公子衬衫领韩版潮流青年polo衫</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            联创服饰专营店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4201笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <a href="detail.html"><img class="big-img" src="../img/shirt/11.jpg" alt=""></a>
+                    <div class="price"><span>¥</span>199.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子纯棉短袖t恤男衬衫领夏季新款polo衫青年男士条纹体恤潮">
+                            花花公子纯棉衬衫领青年条纹polo衫</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            playboy飘娜专卖店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">3320笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8170</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/22.jpg" alt="">
+                    <div class="price"><span>¥</span>208.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子七分袖衬衫男夏季男士薄款韩版青年免烫休闲短袖白衬衣潮">
+                            花花公子七分袖青年免烫休闲白衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            莎瑞奇鞋类专营店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4501笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/33.jpg" alt="">
+                    <div class="price"><span>¥</span>419.00</div>
+                    <div class="depict">
+                        <a href="" title="衬衫男士短袖夏季寸纯棉休闲修身韩版长袖2018新款潮7七分袖衬衣">
+                            男士夏季纯棉休闲修身韩版七分袖衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            法牧澜旗舰店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4290笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/44.jpg" alt="">
+                    <div class="price"><span>¥</span>159.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子衬衫男短袖休闲夏季韩版修身商务白色职业衬衣免烫男装潮">
+                            花花公子休闲韩版商务白色免烫衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            花花公子韩风专卖店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4501笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/55.jpg" alt="">
+                    <div class="price"><span>¥</span>399.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子短袖t恤男衬衫领夏季韩版潮流修身青年有带领白色POLO衫">
+                            花花公子衬衫领韩版潮流青年polo衫</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            联创服饰专营店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4201笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <a href="detail.html"><img class="big-img" src="../img/shirt/11.jpg" alt=""></a>
+                    <div class="price"><span>¥</span>199.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子纯棉短袖t恤男衬衫领夏季新款polo衫青年男士条纹体恤潮">
+                            花花公子纯棉衬衫领青年条纹polo衫</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            playboy飘娜专卖店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">3320笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8170</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/22.jpg" alt="">
+                    <div class="price"><span>¥</span>208.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子七分袖衬衫男夏季男士薄款韩版青年免烫休闲短袖白衬衣潮">
+                            花花公子七分袖青年免烫休闲白衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            莎瑞奇鞋类专营店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4501笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/33.jpg" alt="">
+                    <div class="price"><span>¥</span>419.00</div>
+                    <div class="depict">
+                        <a href="" title="衬衫男士短袖夏季寸纯棉休闲修身韩版长袖2018新款潮7七分袖衬衣">
+                            男士夏季纯棉休闲修身韩版七分袖衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            法牧澜旗舰店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4290笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/44.jpg" alt="">
+                    <div class="price"><span>¥</span>159.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子衬衫男短袖休闲夏季韩版修身商务白色职业衬衣免烫男装潮">
+                            花花公子休闲韩版商务白色免烫衬衣</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            花花公子韩风专卖店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4501笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <div class="pho">
+                    <img class="big-img" src="../img/shirt/55.jpg" alt="">
+                    <div class="price"><span>¥</span>399.00</div>
+                    <div class="depict">
+                        <a href="" title="花花公子短袖t恤男衬衫领夏季韩版潮流修身青年有带领白色POLO衫">
+                            花花公子衬衫领韩版潮流青年polo衫</a>
+                    </div>
+                    <div class="store">
+                        <a href="#">
+                            联创服饰专营店</a>
+                    </div>
+                    <div class="comment">
+                    <span class="month">月成交
+                        <span class="gold">4201笔</span>
+                    </span>
+                        <span class="com-com">评价<a href="">8980</a></span>
+                        <a href=""><img class="ww" src="../s_img/wangwang.png"
+                                        title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                    </div>
+                </div>
+            </div>
+        </div><!--大-->
+        <div class="block">
+            <div class="padding-1">
+                <div class="pho-1">
+                    <div class="lay1">
+                        <img src="../img/shirt/11.jpg" alt="">
+                        <div class="lay1-right">
+                            <div class="depict">
+                                <a href="" title="花花公子七分袖衬衫男夏季男士薄款韩版青年免烫休闲短袖白衬衣潮">
+                                    花花公子七分袖青年免烫休闲白衬衣</a>
+                            </div>
+                            <div class="price"><span>¥</span>259.00</div>
+                            <div class="store">
+                                <a href="#">莎瑞奇鞋类专营店</a>
+                            </div>
+                            <div class="comment">
+                                 <span class="month">月成交:
+                                    <span class="gold">4501笔</span>
+                                 </span>
+                                <span class="com-com spe-com"><a href="">评价 8980</a></span>
+                                <a href=""><img id="skip" class="ww spe-ww" src="../s_img/wangwang.png"
+                                                title="点此可以直接和卖家交流选好的宝贝，
+                                   或相互交流网购体验，还支持语音视频噢。"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lay2">
+                        <a href="">PLAYBOY/花花公子</a> |
+                        <a href="">青年</a> |
+                        <a href="">青春活力</a> |
+                        <a href="">修身型</a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding-1">
+                <div class="pho-1">
+                    <div class="lay1">
+                        <img src="../img/shirt/22.jpg" alt="">
+                        <div class="lay1-right">
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="price"><span>¥</span>799.00</div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment">
+                                 <span class="month">月成交:
+                                    <span class="gold">4501笔</span>
+                                 </span>
+                                <span class="com-com spe-com"><a href="">评价 8980</a></span>
+                                <a href=""><img class="ww spe-ww" src="../s_img/wangwang.png"
+                                                title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lay2">
+                        <a href="">恒源祥</a> |
+                        <a href="">中长款</a> |
+                        <a href="">薄款</a> |
+                        <a href="">修身</a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding-1">
+                <div class="pho-1">
+                    <div class="lay1">
+                        <img src="../img/shirt/33.jpg" alt="">
+                        <div class="lay1-right">
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="price"><span>¥</span>569.00</div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment">
+                                 <span class="month">月成交:
+                                    <span class="gold">4501笔</span>
+                                 </span>
+                                <span class="com-com spe-com"><a href="">评价 8980</a></span>
+                                <a href=""><img class="ww spe-ww" src="../s_img/wangwang.png"
+                                                title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lay2">
+                        <a href="">恒源祥</a> |
+                        <a href="">中长款</a> |
+                        <a href="">薄款</a> |
+                        <a href="">修身</a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding-1">
+                <div class="pho-1">
+                    <div class="lay1">
+                        <img src="../img/shirt/44.jpg" alt="">
+                        <div class="lay1-right">
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="price"><span>¥</span>189.00</div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment">
+                                 <span class="month">月成交:
+                                    <span class="gold">4501笔</span>
+                                 </span>
+                                <span class="com-com spe-com"><a href="">评价 8980</a></span>
+                                <a href=""><img class="ww spe-ww" src="../s_img/wangwang.png"
+                                                title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lay2">
+                        <a href="">恒源祥</a> |
+                        <a href="">中长款</a> |
+                        <a href="">薄款</a> |
+                        <a href="">修身</a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding-1">
+                <div class="pho-1">
+                    <div class="lay1">
+                        <img src="../img/shirt/55.jpg" alt="">
+                        <div class="lay1-right">
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="price"><span>¥</span>269.00</div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment">
+                                 <span class="month">月成交:
+                                    <span class="gold">4501笔</span>
+                                 </span>
+                                <span class="com-com spe-com"><a href="">评价 8980</a></span>
+                                <a href=""><img class="ww spe-ww" src="../s_img/wangwang.png"
+                                                title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lay2">
+                        <a href="">恒源祥</a> |
+                        <a href="">中长款</a> |
+                        <a href="">薄款</a> |
+                        <a href="">修身</a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding-1">
+                <div class="pho-1">
+                    <div class="lay1">
+                        <img src="../img/shirt/66.jpg" alt="">
+                        <div class="lay1-right">
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="price"><span>¥</span>259.00</div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment">
+                                 <span class="month">月成交:
+                                    <span class="gold">4501笔</span>
+                                 </span>
+                                <span class="com-com spe-com"><a href="">评价 8980</a></span>
+                                <a href=""><img class="ww spe-ww" src="../s_img/wangwang.png"
+                                                title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lay2">
+                        <a href="">恒源祥</a> |
+                        <a href="">中长款</a> |
+                        <a href="">薄款</a> |
+                        <a href="">修身</a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding-1">
+                <div class="pho-1">
+                    <div class="lay1">
+                        <img src="../img/shirt/77.jpg" alt="">
+                        <div class="lay1-right">
+                            <div class="depict">
+                                <a href="" title="花花公子纯棉短袖t恤男衬衫领夏季新款polo衫青年男士条纹体恤潮">
+                                    花花公子纯棉衬衫领青年条纹polo衫</a>
+                            </div>
+                            <div class="price"><span>¥</span>799.00</div>
+                            <div class="store">
+                                <a href="#">playboy飘娜专卖店</a>
+                            </div>
+                            <div class="comment">
+                                 <span class="month">月成交:
+                                    <span class="gold">4501笔</span>
+                                 </span>
+                                <span class="com-com spe-com"><a href="">评价 8980</a></span>
+                                <a href=""><img class="ww spe-ww" src="../s_img/wangwang.png"
+                                                title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lay2">
+                        <a href="">PLAYBOY/花花公子</a> |
+                        <a href="">青年</a> |
+                        <a href="">棉</a> |
+                        <a href="">基础大众</a>
+                    </div>
+                </div>
+            </div>
+            <!--</div>-->
+        </div><!--小-->
+        <div class="block">
+            <div class="padding-2">
+                <div class="pho-2">
+                    <div class="lay1">
+                        <div class="shop-img">
+                            <img src="../s_img/gd.jpg" alt="">
+                        </div>
+                        <div class="shop-fir">
+                            <a href="" class="flagshop">哥弟官方旗舰店</a>
+                            <span class="band"></span>
+                            <p>主营品牌： Girdear/哥弟</p>
+                            <p>所在地：广东 广州 </p>
+                        </div>
+                        <div class="shop-sec">
+                            <p>店铺动态评分&nbsp;&nbsp;&nbsp;&nbsp;与同行业相比</p>
+                            <ul>
+                                <li>
+                                    描述相符：
+                                    <em>4.8</em>
+                                    <b>高于</b>
+                                    <em>29.88%</em>
+                                </li>
+                                <li>
+                                    服务态度：
+                                    <em>4.8</em>
+                                    <b>高于</b>
+                                    <em>29.88%</em>
+                                </li>
+                                <li>
+                                    物流服务：
+                                    <em>4.8</em>
+                                    <b>高于</b>
+                                    <em>29.88%</em>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="shop-thi">
+                            <div class="enter"><a href="">进入店铺</a></div>
+                            <div class="relevant">
+                                <a href=""><span>227</span>件相关商品</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lay2">
+                        <div class="pho">
+                            <img class="big-img" src="../s_img/1.jpg" alt="">
+                            <div class="price"><span>¥</span>199.00</div>
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment store-com1">
+                                    <span class="month">
+                                         <div class="gold">4501笔</div>
+                                         <div>月成交</div>
+                                    </span>
+                                <span class="pingjia">
+                                        <div><a href="">8980</a></div>
+                                        <div>评价</div>
+                                    </span>
+                                <a href="">
+                                    <img class="ww" src="../s_img/wangwang.png"
+                                         title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pho">
+                            <img class="big-img" src="../s_img/gd2.jpg" alt="">
+                            <div class="price"><span>¥</span>199.00</div>
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment store-com1">
+                                    <span class="month">
+                                         <div class="gold">4501笔</div>
+                                         <div>月成交</div>
+                                    </span>
+                                <span class="pingjia">
+                                        <div><a href="">8980</a></div>
+                                        <div>评价</div>
+                                    </span>
+                                <a href="">
+                                    <img class="ww" src="../s_img/wangwang.png"
+                                         title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pho">
+                            <img class="big-img" src="../s_img/gd4.jpg" alt="">
+                            <div class="price"><span>¥</span>199.00</div>
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment store-com1">
+                                    <span class="month">
+                                         <div class="gold">4501笔</div>
+                                         <div>月成交</div>
+                                    </span>
+                                <span class="pingjia">
+                                        <div><a href="">8980</a></div>
+                                        <div>评价</div>
+                                    </span>
+                                <a href="">
+                                    <img class="ww" src="../s_img/wangwang.png"
+                                         title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pho">
+                            <img class="big-img" src="../s_img/gd1.jpg" alt="">
+                            <div class="price"><span>¥</span>199.00</div>
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment store-com1">
+                                    <span class="month">
+                                         <div class="gold">4501笔</div>
+                                         <div>月成交</div>
+                                    </span>
+                                <span class="pingjia">
+                                        <div><a href="">8980</a></div>
+                                        <div>评价</div>
+                                    </span>
+                                <a href="">
+                                    <img class="ww" src="../s_img/wangwang.png"
+                                         title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pho">
+                            <img class="big-img" src="../s_img/2.jpg" alt="">
+                            <div class="price"><span>¥</span>199.00</div>
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment store-com1">
+                                    <span class="month">
+                                         <div class="gold">4501笔</div>
+                                         <div>月成交</div>
+                                    </span>
+                                <span class="pingjia">
+                                        <div><a href="">8980</a></div>
+                                        <div>评价</div>
+                                    </span>
+                                <a href="">
+                                    <img class="ww" src="../s_img/wangwang.png"
+                                         title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="padding-2">
+                <div class="pho-2">
+                    <div class="lay1">
+                        <div class="shop-img">
+                            <img src="../s_img/gd.jpg" alt="">
+                        </div>
+                        <div class="shop-fir">
+                            <a href="" class="flagshop">哥弟官方旗舰店</a>
+                            <span class="band"></span>
+                            <p>主营品牌： Girdear/哥弟</p>
+                            <p>所在地：广东 广州 </p>
+                        </div>
+                        <div class="shop-sec">
+                            <p>店铺动态评分&nbsp;&nbsp;&nbsp;&nbsp;与同行业相比</p>
+                            <ul>
+                                <li>
+                                    描述相符：
+                                    <em>4.8</em>
+                                    <b>高于</b>
+                                    <em>29.88%</em>
+                                </li>
+                                <li>
+                                    服务态度：
+                                    <em>4.8</em>
+                                    <b>高于</b>
+                                    <em>29.88%</em>
+                                </li>
+                                <li>
+                                    物流服务：
+                                    <em>4.8</em>
+                                    <b>高于</b>
+                                    <em>29.88%</em>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="shop-thi">
+                            <div class="enter"><a href="">进入店铺</a></div>
+                            <div class="relevant">
+                                <a href=""><span>227</span>件相关商品</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lay2">
+                        <div class="pho">
+                            <img class="big-img" src="../s_img/1.jpg" alt="">
+                            <div class="price"><span>¥</span>199.00</div>
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment store-com1">
+                                    <span class="month">
+                                         <div class="gold">4501笔</div>
+                                         <div>月成交</div>
+                                    </span>
+                                <span class="pingjia">
+                                        <div><a href="">8980</a></div>
+                                        <div>评价</div>
+                                    </span>
+                                <a href="">
+                                    <img class="ww" src="../s_img/wangwang.png"
+                                         title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pho">
+                            <img class="big-img" src="../s_img/gd2.jpg" alt="">
+                            <div class="price"><span>¥</span>199.00</div>
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment store-com1">
+                                    <span class="month">
+                                         <div class="gold">4501笔</div>
+                                         <div>月成交</div>
+                                    </span>
+                                <span class="pingjia">
+                                        <div><a href="">8980</a></div>
+                                        <div>评价</div>
+                                    </span>
+                                <a href="">
+                                    <img class="ww" src="../s_img/wangwang.png"
+                                         title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pho">
+                            <img class="big-img" src="../s_img/gd4.jpg" alt="">
+                            <div class="price"><span>¥</span>199.00</div>
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment store-com1">
+                                    <span class="month">
+                                         <div class="gold">4501笔</div>
+                                         <div>月成交</div>
+                                    </span>
+                                <span class="pingjia">
+                                        <div><a href="">8980</a></div>
+                                        <div>评价</div>
+                                    </span>
+                                <a href="">
+                                    <img class="ww" src="../s_img/wangwang.png"
+                                         title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pho">
+                            <img class="big-img" src="../s_img/gd1.jpg" alt="">
+                            <div class="price"><span>¥</span>199.00</div>
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment store-com1">
+                                    <span class="month">
+                                         <div class="gold">4501笔</div>
+                                         <div>月成交</div>
+                                    </span>
+                                <span class="pingjia">
+                                        <div><a href="">8980</a></div>
+                                        <div>评价</div>
+                                    </span>
+                                <a href="">
+                                    <img class="ww" src="../s_img/wangwang.png"
+                                         title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pho">
+                            <img class="big-img" src="../s_img/2.jpg" alt="">
+                            <div class="price"><span>¥</span>199.00</div>
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment store-com1">
+                                    <span class="month">
+                                         <div class="gold">4501笔</div>
+                                         <div>月成交</div>
+                                    </span>
+                                <span class="pingjia">
+                                        <div><a href="">8980</a></div>
+                                        <div>评价</div>
+                                    </span>
+                                <a href="">
+                                    <img class="ww" src="../s_img/wangwang.png"
+                                         title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="padding-2">
+                <div class="pho-2">
+                    <div class="lay1">
+                        <div class="shop-img">
+                            <img src="../s_img/gd.jpg" alt="">
+                        </div>
+                        <div class="shop-fir">
+                            <a href="" class="flagshop">哥弟官方旗舰店</a>
+                            <span class="band"></span>
+                            <p>主营品牌： Girdear/哥弟</p>
+                            <p>所在地：广东 广州 </p>
+                        </div>
+                        <div class="shop-sec">
+                            <p>店铺动态评分&nbsp;&nbsp;&nbsp;&nbsp;与同行业相比</p>
+                            <ul>
+                                <li>
+                                    描述相符：
+                                    <em>4.8</em>
+                                    <b>高于</b>
+                                    <em>29.88%</em>
+                                </li>
+                                <li>
+                                    服务态度：
+                                    <em>4.8</em>
+                                    <b>高于</b>
+                                    <em>29.88%</em>
+                                </li>
+                                <li>
+                                    物流服务：
+                                    <em>4.8</em>
+                                    <b>高于</b>
+                                    <em>29.88%</em>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="shop-thi">
+                            <div class="enter"><a href="">进入店铺</a></div>
+                            <div class="relevant">
+                                <a href=""><span>227</span>件相关商品</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lay2">
+                        <div class="pho">
+                            <img class="big-img" src="../s_img/1.jpg" alt="">
+                            <div class="price"><span>¥</span>199.00</div>
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment store-com1">
+                                    <span class="month">
+                                         <div class="gold">4501笔</div>
+                                         <div>月成交</div>
+                                    </span>
+                                <span class="pingjia">
+                                        <div><a href="">8980</a></div>
+                                        <div>评价</div>
+                                    </span>
+                                <a href="">
+                                    <img class="ww" src="../s_img/wangwang.png"
+                                         title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pho">
+                            <img class="big-img" src="../s_img/gd2.jpg" alt="">
+                            <div class="price"><span>¥</span>199.00</div>
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment store-com1">
+                                    <span class="month">
+                                         <div class="gold">4501笔</div>
+                                         <div>月成交</div>
+                                    </span>
+                                <span class="pingjia">
+                                        <div><a href="">8980</a></div>
+                                        <div>评价</div>
+                                    </span>
+                                <a href="">
+                                    <img class="ww" src="../s_img/wangwang.png"
+                                         title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pho">
+                            <img class="big-img" src="../s_img/gd4.jpg" alt="">
+                            <div class="price"><span>¥</span>199.00</div>
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment store-com1">
+                                    <span class="month">
+                                         <div class="gold">4501笔</div>
+                                         <div>月成交</div>
+                                    </span>
+                                <span class="pingjia">
+                                        <div><a href="">8980</a></div>
+                                        <div>评价</div>
+                                    </span>
+                                <a href="">
+                                    <img class="ww" src="../s_img/wangwang.png"
+                                         title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pho">
+                            <img class="big-img" src="../s_img/gd1.jpg" alt="">
+                            <div class="price"><span>¥</span>199.00</div>
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment store-com1">
+                                    <span class="month">
+                                         <div class="gold">4501笔</div>
+                                         <div>月成交</div>
+                                    </span>
+                                <span class="pingjia">
+                                        <div><a href="">8980</a></div>
+                                        <div>评价</div>
+                                    </span>
+                                <a href="">
+                                    <img class="ww" src="../s_img/wangwang.png"
+                                         title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pho">
+                            <img class="big-img" src="../s_img/2.jpg" alt="">
+                            <div class="price"><span>¥</span>199.00</div>
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment store-com1">
+                                    <span class="month">
+                                         <div class="gold">4501笔</div>
+                                         <div>月成交</div>
+                                    </span>
+                                <span class="pingjia">
+                                        <div><a href="">8980</a></div>
+                                        <div>评价</div>
+                                    </span>
+                                <a href="">
+                                    <img class="ww" src="../s_img/wangwang.png"
+                                         title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="padding-2">
+                <div class="pho-2">
+                    <div class="lay1">
+                        <div class="shop-img">
+                            <img src="../s_img/gd.jpg" alt="">
+                        </div>
+                        <div class="shop-fir">
+                            <a href="" class="flagshop">哥弟官方旗舰店</a>
+                            <span class="band"></span>
+                            <p>主营品牌： Girdear/哥弟</p>
+                            <p>所在地：广东 广州 </p>
+                        </div>
+                        <div class="shop-sec">
+                            <p>店铺动态评分&nbsp;&nbsp;&nbsp;&nbsp;与同行业相比</p>
+                            <ul>
+                                <li>
+                                    描述相符：
+                                    <em>4.8</em>
+                                    <b>高于</b>
+                                    <em>29.88%</em>
+                                </li>
+                                <li>
+                                    服务态度：
+                                    <em>4.8</em>
+                                    <b>高于</b>
+                                    <em>29.88%</em>
+                                </li>
+                                <li>
+                                    物流服务：
+                                    <em>4.8</em>
+                                    <b>高于</b>
+                                    <em>29.88%</em>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="shop-thi">
+                            <div class="enter"><a href="">进入店铺</a></div>
+                            <div class="relevant">
+                                <a href=""><span>227</span>件相关商品</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lay2">
+                        <div class="pho">
+                            <img class="big-img" src="../s_img/1.jpg" alt="">
+                            <div class="price"><span>¥</span>199.00</div>
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment store-com1">
+                                    <span class="month">
+                                         <div class="gold">4501笔</div>
+                                         <div>月成交</div>
+                                    </span>
+                                <span class="pingjia">
+                                        <div><a href="">8980</a></div>
+                                        <div>评价</div>
+                                    </span>
+                                <a href="">
+                                    <img class="ww" src="../s_img/wangwang.png"
+                                         title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pho">
+                            <img class="big-img" src="../s_img/gd2.jpg" alt="">
+                            <div class="price"><span>¥</span>199.00</div>
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment store-com1">
+                                    <span class="month">
+                                         <div class="gold">4501笔</div>
+                                         <div>月成交</div>
+                                    </span>
+                                <span class="pingjia">
+                                        <div><a href="">8980</a></div>
+                                        <div>评价</div>
+                                    </span>
+                                <a href="">
+                                    <img class="ww" src="../s_img/wangwang.png"
+                                         title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pho">
+                            <img class="big-img" src="../s_img/gd4.jpg" alt="">
+                            <div class="price"><span>¥</span>199.00</div>
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment store-com1">
+                                    <span class="month">
+                                         <div class="gold">4501笔</div>
+                                         <div>月成交</div>
+                                    </span>
+                                <span class="pingjia">
+                                        <div><a href="">8980</a></div>
+                                        <div>评价</div>
+                                    </span>
+                                <a href="">
+                                    <img class="ww" src="../s_img/wangwang.png"
+                                         title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pho">
+                            <img class="big-img" src="../s_img/gd1.jpg" alt="">
+                            <div class="price"><span>¥</span>199.00</div>
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment store-com1">
+                                    <span class="month">
+                                         <div class="gold">4501笔</div>
+                                         <div>月成交</div>
+                                    </span>
+                                <span class="pingjia">
+                                        <div><a href="">8980</a></div>
+                                        <div>评价</div>
+                                    </span>
+                                <a href="">
+                                    <img class="ww" src="../s_img/wangwang.png"
+                                         title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pho">
+                            <img class="big-img" src="../s_img/2.jpg" alt="">
+                            <div class="price"><span>¥</span>199.00</div>
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment store-com1">
+                                    <span class="month">
+                                         <div class="gold">4501笔</div>
+                                         <div>月成交</div>
+                                    </span>
+                                <span class="pingjia">
+                                        <div><a href="">8980</a></div>
+                                        <div>评价</div>
+                                    </span>
+                                <a href="">
+                                    <img class="ww" src="../s_img/wangwang.png"
+                                         title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="padding-2">
+                <div class="pho-2">
+                    <div class="lay1">
+                        <div class="shop-img">
+                            <img src="../s_img/gd.jpg" alt="">
+                        </div>
+                        <div class="shop-fir">
+                            <a href="" class="flagshop">哥弟官方旗舰店</a>
+                            <span class="band"></span>
+                            <p>主营品牌： Girdear/哥弟</p>
+                            <p>所在地：广东 广州 </p>
+                        </div>
+                        <div class="shop-sec">
+                            <p>店铺动态评分&nbsp;&nbsp;&nbsp;&nbsp;与同行业相比</p>
+                            <ul>
+                                <li>
+                                    描述相符：
+                                    <em>4.8</em>
+                                    <b>高于</b>
+                                    <em>29.88%</em>
+                                </li>
+                                <li>
+                                    服务态度：
+                                    <em>4.8</em>
+                                    <b>高于</b>
+                                    <em>29.88%</em>
+                                </li>
+                                <li>
+                                    物流服务：
+                                    <em>4.8</em>
+                                    <b>高于</b>
+                                    <em>29.88%</em>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="shop-thi">
+                            <div class="enter"><a href="">进入店铺</a></div>
+                            <div class="relevant">
+                                <a href=""><span>227</span>件相关商品</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lay2">
+                        <div class="pho">
+                            <img class="big-img" src="../s_img/1.jpg" alt="">
+                            <div class="price"><span>¥</span>199.00</div>
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment store-com1">
+                                    <span class="month">
+                                         <div class="gold">4501笔</div>
+                                         <div>月成交</div>
+                                    </span>
+                                <span class="pingjia">
+                                        <div><a href="">8980</a></div>
+                                        <div>评价</div>
+                                    </span>
+                                <a href="">
+                                    <img class="ww" src="../s_img/wangwang.png"
+                                         title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pho">
+                            <img class="big-img" src="../s_img/gd2.jpg" alt="">
+                            <div class="price"><span>¥</span>199.00</div>
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment store-com1">
+                                    <span class="month">
+                                         <div class="gold">4501笔</div>
+                                         <div>月成交</div>
+                                    </span>
+                                <span class="pingjia">
+                                        <div><a href="">8980</a></div>
+                                        <div>评价</div>
+                                    </span>
+                                <a href="">
+                                    <img class="ww" src="../s_img/wangwang.png"
+                                         title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pho">
+                            <img class="big-img" src="../s_img/gd4.jpg" alt="">
+                            <div class="price"><span>¥</span>199.00</div>
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment store-com1">
+                                    <span class="month">
+                                         <div class="gold">4501笔</div>
+                                         <div>月成交</div>
+                                    </span>
+                                <span class="pingjia">
+                                        <div><a href="">8980</a></div>
+                                        <div>评价</div>
+                                    </span>
+                                <a href="">
+                                    <img class="ww" src="../s_img/wangwang.png"
+                                         title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pho">
+                            <img class="big-img" src="../s_img/gd1.jpg" alt="">
+                            <div class="price"><span>¥</span>199.00</div>
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment store-com1">
+                                    <span class="month">
+                                         <div class="gold">4501笔</div>
+                                         <div>月成交</div>
+                                    </span>
+                                <span class="pingjia">
+                                        <div><a href="">8980</a></div>
+                                        <div>评价</div>
+                                    </span>
+                                <a href="">
+                                    <img class="ww" src="../s_img/wangwang.png"
+                                         title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pho">
+                            <img class="big-img" src="../s_img/2.jpg" alt="">
+                            <div class="price"><span>¥</span>199.00</div>
+                            <div class="depict">
+                                <a href="" title="恒源祥防晒开衫外套女冰丝针织衫中长款春夏外搭镂空薄宽松空调衫">
+                                    恒源祥冰丝春夏外搭镂空宽松空调衫</a>
+                            </div>
+                            <div class="store">
+                                <a href="#">恒源祥羽绒服饰旗舰店</a>
+                            </div>
+                            <div class="comment store-com1">
+                                    <span class="month">
+                                         <div class="gold">4501笔</div>
+                                         <div>月成交</div>
+                                    </span>
+                                <span class="pingjia">
+                                        <div><a href="">8980</a></div>
+                                        <div>评价</div>
+                                    </span>
+                                <a href="">
+                                    <img class="ww" src="../s_img/wangwang.png"
+                                         title="点此可以直接和卖家交流选好的宝贝，
+                                    或相互交流网购体验，还支持语音视频噢。">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--店铺-->
+    </div><!--middle-->
+    <ul id="ul1">
+        <li>在新标签页打开链接</li>
+        <li>在新窗口打开链接</li>
+        <li>在隐藏窗口打开链接</li>
+        <li>连接另存为</li>
+        <li>复制链接地址</li>
+        <li>刷新</li>
+    </ul><!--右键菜单-->
+    <div class="after-sell">
+        <span>感谢观看</span>
+    </div><!--底部-->
+
+    <script src="../js/jquery-2.1.0.min.js"></script>
+    <script src="../js/com.js"></script>
+    <script src="../js/sweater.js"></script>
+    <script src="../js/cookie.js"></script>
+    <script src="../js/input.js"></script>
+
+    <script>
+        var color=["#9e9e9e",'#b2d600','#f8b646','#08bece','#e3165c','#bb3bd9'];
+        $('#skin-ul li').on('click',function () {
+            $(this).addClass('active').siblings().removeClass('active');
+            $("#tit").css('background',color[$(this).index()]);
+            setCookie('skin',$(this).index(),7);
+        }).eq(getCookie('skin')).trigger('click');;
+    </script>
+</body>
+</html>
