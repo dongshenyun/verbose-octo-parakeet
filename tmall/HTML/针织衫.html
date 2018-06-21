@@ -3407,8 +3407,8 @@
 
     <script src="../js/jquery-2.1.0.min.js"></script>
     <script src="../js/com.js"></script>
-    <script src="../js/sweater.js"></script>
     <script src="../js/cookie.js"></script>
+    <script src="../js/sweater.js"></script>
     <script src="../js/input.js"></script>
 
     <script>
@@ -3417,7 +3417,7 @@
             $(this).addClass('active').siblings().removeClass('active');
             $("#tit").css('background',color[$(this).index()]);
             setCookie('skin',$(this).index(),7);
-        }).eq(getCookie('skin')).trigger('click');;
+        }).eq(getCookie('skin')).trigger('click');
     </script>
 </body>
 </html>

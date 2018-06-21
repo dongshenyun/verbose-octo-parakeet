@@ -87,7 +87,6 @@ for (i = 0; i < aSpan.length; i++) {/*页面加载时先绑定事件 i++=3 数�
             aBlock[j].className="block";
         }
        this.className = "button spe-button";
-
         var ind=this.index;
         aBlock[ind].className = "block spe-block";
     }
