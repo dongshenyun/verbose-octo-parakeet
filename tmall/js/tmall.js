@@ -77,17 +77,18 @@ function auto() {
     change(iNow);
 }
 run();
+var timer;
 function run() {
     timer = setInterval(function () {
         auto();
-    }, 1400);
+    }, 1000);
 }
 oTit.onmouseover = function () {
     clearInterval(timer);
-}
+};
 oTit.onmouseout = function () {
     run();
-}
+};
 //选项卡结束
 
 //隐藏列表开始

@@ -7,7 +7,7 @@ $(function(){
 		var pro_color =  $(".color_change strong").text();
 		var pro_num = $product.find("#num_sort").val();
 	    var pro_price = $product.find(".pro_price strong").text();
-		var dialog = "感谢您的购买。<div style='font-size:12px;font-weight:400;'>您购买的产品是："+pro_name+"；"+
+		var dialog = "您好。<div style='font-size:12px;font-weight:400;'>您加购的产品是："+pro_name+"；"+
 				"尺寸是："+pro_size+"；"+
 				"颜色是："+pro_color+"；"+
 				"数量是："+pro_num+"；"+

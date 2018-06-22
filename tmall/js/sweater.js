@@ -53,22 +53,6 @@ function jump(){
 }
 setInterval(function(){jump()},1);
 
-//图标闪烁
-// var hot=document.getElementsByTagName('b');
-// console.log(hot[3]);
-//
-//     function running(){
-//         for(i=0;i<hot.length;i++){
-//         if(hot[i].style.display=="none"){
-//             hot[i].style.display="block";
-//         }else{
-//             hot[i].style.display="none";
-//         }
-//     }
-// }
-//
-// setInterval("running()",5);/*图标闪烁*/
-
 //ww图标跳动
 
 /*大小店铺开始*/
@@ -93,3 +77,16 @@ for (i = 0; i < aSpan.length; i++) {/*页面加载时先绑定事件 i++=3 数�
 }
 
 /*大小店铺结束*/
+
+/*图片闪烁开始*/
+var hot = document.getElementById('home_page');
+function run() {
+    if (hot.style.display == "none") {
+        hot.style.display = "block";
+    } else {
+        hot.style.display = "none";
+    }
+}
+setInterval("run();", 500);
+
+/*图片闪烁结束*/

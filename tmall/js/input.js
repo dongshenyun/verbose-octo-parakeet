@@ -10,5 +10,7 @@ $(function(){
         if ($(this).val() == '') {
             $(this).val(this.defaultValue);
         }
+    }).on('click',function () {
+        $(this).select();
     })
 });

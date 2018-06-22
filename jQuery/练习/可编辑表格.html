@@ -59,12 +59,12 @@
 <script src="jquery-2.1.0.min.js"></script>
 <script>
     $('.editable').on('click',function(){
-        if(  $(this).find('input').size() == 0     ){/*size输入字段的宽度*/
+        if(  $(this).find('input').size() == 0     ){/*size 输入字段的宽度*/
             var $val = $(this).text();
             $(this).html('<input class="name" type="text" value="'+$val+'"/>');/*value="'+$val+'" 拼接*/
         }
         $(this).find('input').trigger('select');
-    }).on('keyup','input',function(e){/*链式*/
+    }).on('keyup','input',function(e){
         if(e.which == 13){
             var $iVal = $(this).val();
             $(this).parent().html($iVal);

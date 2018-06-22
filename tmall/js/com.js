@@ -2,7 +2,7 @@
  * Created by Administrator on 2018/4/27 0027.
  */
 // document.getElementById('name').focus();
-// /*获取焦点*/
+/*获取焦点*/
 
 
 //右键菜单开始
@@ -130,15 +130,3 @@ oBtn.onclick = function () {/*方法*/
 }
 /*小火箭结束*/
 
-/*图片闪烁开始*/
-var hot = document.getElementById('home_page');
-function run() {
-    if (hot.style.display == "none") {
-        hot.style.display = "block";
-    } else {
-        hot.style.display = "none";
-    }
-}
-setInterval("run();", 500);
-
-/*图片闪烁结束*/
