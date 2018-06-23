@@ -8,16 +8,16 @@ body {
 }
 
 :root {
-    --color1: deepskyblue;
-    --color2: steelblue;
-    --color3: royalblue;
+    --color1: #ff9bad;
+    --color2: #ff9a1c;
+    --color3: #6f6f6f;
     --color4: dodgerblue;
 }
 
 .diamond {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    transform: rotate(45deg);
+    grid-template-columns: 1fr 1fr;/*栅格*/
+    transform: rotate(45deg);/*旋转*/
 }
 
 .diamond span {
