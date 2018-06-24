@@ -8,7 +8,7 @@ body {
 }
 
 .box {
-	display: flex;
+	display: flex;/*使其在一行*/
 }
 
 .box .inner {
@@ -25,15 +25,15 @@ body {
 .box .inner:first-child {
 	background-color: indianred;
 	color: darkred;
-	transform-origin: right;
-	transform: perspective(100px) rotateY(-15deg);
+	/*transform-origin: right;*/
+	transform: perspective(100px);
 }
 
 .box .inner:last-child {
 	background-color: lightcoral;
 	color: antiquewhite;
-	transform-origin: left;
-	transform: perspective(100px) rotateY(15deg);
+	/*transform-origin: right;*/
+	transform: perspective(100px);
 }
 
 .box .inner span {
