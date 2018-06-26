@@ -10,7 +10,7 @@ html, body {
 	font-size: 5em;
 	font-family: "arial black";
 	position: relative;
-	color: transparent;
+	/*color: transparent;*/
 }
 
 .text::before,
@@ -20,7 +20,7 @@ html, body {
 	top: 0;
 	left: 0;
 	color: lightyellow;
-	transition: 0.2s;
+	transition: 0.5s;
 }
 
 .text::before {

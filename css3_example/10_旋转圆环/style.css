@@ -37,6 +37,7 @@ body,
 .circle::before {
 	width: 70%;
 	height: 70%;
+	/*background: red;*/
 	border-top-color: orange;
 	border-bottom-color: cyan;
 	animation-duration: 8s;

@@ -73,7 +73,7 @@ html, body {
 
 .box:hover::after,
 .box:hover span:not(:first-child) {
-	animation: aim 1s linear infinite alternate;
+	animation: aim 1s linear infinite alternate;/*轮流反向播放*/
 }
 
 @keyframes aim {
