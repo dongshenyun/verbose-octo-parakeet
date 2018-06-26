@@ -18,7 +18,7 @@ html, body {
 }
 
 .card h2 {
-	text-transform: uppercase;
+	text-transform: uppercase;/*仅有大写字母*/
 	text-align: center;
 }
 
@@ -36,7 +36,7 @@ html, body {
 
 .card .skill .level {
 	text-align: right;
-	transform: translateY(-1em);
+	/*transform: translateY(-1em);*/
 	position: relative;
 }
 

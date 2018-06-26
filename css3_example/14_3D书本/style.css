@@ -11,7 +11,7 @@ html, body {
 .books {
 	display: flex;
 	width: calc(12rem * 3 + 3rem * 2);
-	justify-content: space-between;
+	justify-content: space-between;/*均分*/
 	margin-top: 6rem;
 }
 
@@ -38,7 +38,7 @@ html, body {
 }
 
 .book::before,
-.book span::before {
+.book span::before {/*立体效果*/
 	content: '';
 	position: absolute;
 	width: 1.5rem;
@@ -46,12 +46,12 @@ html, body {
 	background: linear-gradient(navy, deeppink, tomato);
 	top: 0;
 	left: -1.5rem;
-	transform-origin: right;
-	transform: skewY(45deg);
+	transform-origin: right;/*调整位置*/
+	transform: skewY(45deg);/*扭曲旋转*/
 	filter: brightness(0.6);
 }
 
-.book::after {
+.book::after {/*立体效果*/
 	content: '';
 	position: absolute;
 	width: 100%;
@@ -59,9 +59,9 @@ html, body {
 	background: white;
 	top: -1.5rem;
 	left: 0;
-	transform-origin: bottom;
+	transform-origin: bottom;/*调整位置*/
 	transform: skewX(45deg);
-	filter: brightness(0.9);
+	filter: brightness(0.9);/*亮度*/
 }
 
 .book span {
@@ -99,7 +99,7 @@ html, body {
 	font-size: 1rem;
 }
 
-.book.html span:after {
+.book.html span::after {
 	content: '<devolopment />';
 }
 

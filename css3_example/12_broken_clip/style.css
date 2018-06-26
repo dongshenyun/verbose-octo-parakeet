@@ -10,7 +10,7 @@ html, body {
 	font-size: 5em;
 	font-family: "arial black";
 	position: relative;
-	/*color: transparent;*/
+	color: transparent;
 }
 
 .text::before,
@@ -24,11 +24,13 @@ html, body {
 }
 
 .text::before {
-	clip-path: polygon(0 0, 60% 0, 30% 100%, 0 100%);
+	clip-path: polygon(0 0, 60% 0, 30% 100%, 0 100%);/*??????????*/
+	/*background:#fdb08e;*/
 }
 
 .text::after {
 	clip-path: polygon(60% 0, 100% 0, 100% 100%, 30% 100%);
+	/*background: #ffdddd;;*/
 }
 
 .text:hover::before {

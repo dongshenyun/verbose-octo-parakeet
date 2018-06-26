@@ -16,7 +16,7 @@ html, body {
 	line-height: 3em;
 	letter-spacing: 0.2em;
 	position: relative;
-	filter: blur(2px);
+	filter: blur(2px);/*值越大越模糊*/
 	transition: 0.5s;
 }
 

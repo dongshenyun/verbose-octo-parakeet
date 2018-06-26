@@ -23,7 +23,7 @@ html, body {
 	position: relative;
 }
 
-.coffee .cup::before {
+.coffee .cup::before {/*coffee*/
 	content: '';
 	position: absolute;
 	width: 100%;
@@ -42,7 +42,7 @@ html, body {
 	width: 3em;
 	height: 3.5em;
 	border: 0.8em solid white;
-	border-radius: 50%;
+	border-radius: 27%;
 	top: 20%;
 	left: 80%;
 }
@@ -61,7 +61,7 @@ html, body {
 	width: 7em;
 	height: 2em;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-between;/*均分*/
 }
 
 .coffee .vapor span {
