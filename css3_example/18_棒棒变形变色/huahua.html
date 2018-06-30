@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        span{
+            display: inline-block;
+            width: 60px;
+            height: 10px;
+            background: red;
+        }
+        span:nth-child(1){
+            width: 120px;
+        }
+        span:nth-child(2){
+            transform: rotate(65deg) translate(-55px,110px);
+        }
+        span:nth-child(3){
+            transform: rotate(-65deg) translate(-52px,-119px);
+        }
+        span:nth-child(4){
+            width: 45px;
+            transform: rotate(-45deg) translate(-213px,-152px);
+        }
+        span:nth-child(5){
+            transform: rotate(90deg) translate(72px,313px);
+        }
+        span:nth-child(6){
+            width: 70px;
+            transform:rotate(90deg) translate(67px,329px);
+        }
+        span:nth-child(7){
+            width: 46px;
+            transform: translate(-374px,97px);
+        }
+        span:nth-child(8){
+            transform: rotate(90deg) translate(333px,392px);
+            width: 30px;
+            position: absolute;
+            z-index: 1;
+        }
+        span:nth-child(9){
+            transform: rotate(-45deg) translate(-525px,-91px);
+            position: absolute;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+<div style="height: 100%;background: black">
+  <div style="width: 500px;margin: 0 auto;height: 500px;line-height: 500px">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+  </div>
+</div>
+</body>
+</html>
