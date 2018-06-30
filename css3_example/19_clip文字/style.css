@@ -16,7 +16,7 @@ body {
 	color: transparent;
 	font-size: 3em;
 	font-weight: bold;
-	text-transform: uppercase;
+	text-transform: uppercase;/*都大写*/
 	text-align: center;
 	line-height: 1em;
 	width: 7em;
@@ -38,7 +38,7 @@ body {
 	left: 0;
 	width: 100%;
 	color: silver;
-	transition: 0.3s ease-out;
+	/*transition: 0.3s ease-out;*/
 }
 
 .menu li::before {

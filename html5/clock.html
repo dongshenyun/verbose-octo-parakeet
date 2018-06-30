@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<canvas id="cvs" width="600" height="600"></canvas>
+
+<script>
+    var oCanvas=document.getElementById('cvs');
+    var oCtx=oCanvas.getContext('2d');
+
+    oCtx.beginPath();
+    for(i=0;i<60;i++){
+        oCtx.moveTo(300,300);
+        oCtx.arc(300,300,100,i*6*Math.PI/180,(i+1)*6*Math.PI/180,false);
+    }
+    oCtx.stroke();
+    oCtx.closePath();
+
+    //第一个圆
+    oCtx.beginPath();
+    oCtx.arc(300,300,95,0*Math.PI,2*Math.PI,false);
+    oCtx.fillStyle="#fff";
+    oCtx.fill();
+    oCtx.closePath();
+
+    oCtx.beginPath();
+    for(i=0;i<12;i++){
+        oCtx.moveTo(300,300);
+//        oCtx.arc(300,300,100,i*30*Math.PI/180,(i+1)*30*Math.PI/180,false);
+        oCtx.arc(300,300,95,i*30*Math.PI/180,i*30*Math.PI/180,false);/*不重新画一个圆 从当前弧度到当前弧度*/
+    }
+    oCtx.stroke();
+    oCtx.closePath();
+
+    //第二个圆
+    oCtx.beginPath();
+    oCtx.arc(300,300,90,0*Math.PI,2*Math.PI,false);
+    oCtx.fillStyle="#fff";
+    oCtx.fill();
+    oCtx.closePath();
+
+    run();
+    setInterval(function(){
+        run();
+    },1000)
+    function run() {
+        oCtx.clearRect(230,230,140,140);
+
+        var oDate = new Date;
+        var iSeconds = oDate.getSeconds();
+        var iMinutes = oDate.getMinutes() + iSeconds/60;
+        var iHours = oDate.getHours() + iMinutes/60;
+
+        //时针
+        oCtx.beginPath();
+        oCtx.moveTo(300,300);
+        oCtx.lineWidth=5;
+        oCtx.strokeStyle="green";
+        oCtx.arc(300,300,40,iHours*30*Math.PI/180,iHours*30*Math.PI/180,false);/*不重新画一个圆 从当前弧度到当前弧度*/
+        oCtx.stroke();
+        oCtx.closePath();
+        //分针
+        oCtx.beginPath();
+        oCtx.moveTo(300,300);
+        oCtx.lineWidth=3;
+        oCtx.strokeStyle="black";
+        oCtx.arc(300,300,55,iMinutes*6*Math.PI/180,iMinutes*6*Math.PI/180,false);/*不重新画一个圆 从当前弧度到当前弧度*/
+        oCtx.stroke();
+        oCtx.closePath();
+        //秒针
+        oCtx.beginPath();
+        oCtx.moveTo(300,300);
+        oCtx.lineWidth=2;
+        oCtx.strokeStyle="red";
+        oCtx.arc(300,300,70,iSeconds*6*Math.PI/180,iSeconds*6*Math.PI/180,false);/*不重新画一个圆 从当前弧度到当前弧度*/
+        oCtx.stroke();
+        oCtx.closePath();
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    h3{
+        width: 960px;
+        height: 100px;
+        background: #eeeeee;
+        margin:0 auto;
+        margin-top:50px;
+        text-align: center;
+        line-height: 100px;
+    }
+    #img-box{
+        width: 960px;
+        margin: 50px auto 0px;
+    }
+    #img-box img{
+        width: 960px;
+        display: none;
+        margin-bottom: 20px;
+    }
+    #img-box .img_100{
+        display: block;
+    }
+    #content{
+        width: 960px;
+        margin:0 auto;
+        overflow: hidden;
+    }
+    #content div{
+        height: 300px;
+        display: table;
+    }
+    #content div p{
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+    #left{
+        width: 630px;
+        background: #ff0000;
+        float: left;
+    }
+    #right{
+        width: 300px;
+        float: right;
+        background: #00ffff;
+    }
+
+    @media screen and (max-width: 960px){
+        h3{
+            width: 100%;
+        }
+        #img-box{
+            width: 100%;
+        }
+        #img-box .img_100,#img-box .img_480{
+            display: none;
+        }
+        #img-box .img_960{
+            display: block;
+            width: 100%;
+        }
+        #content{
+            width: 100%;
+        }
+        #left{
+            width: 66%;
+        }
+        #right{
+            width: 31%;
+        }
+    }
+    @media screen and (max-width: 480px){
+        #img-box .img_100,#img-box .img_960{
+            display: none;
+        }
+        #img-box .img_480{
+            display: block;
+            width: 100%;
+        }
+        #left,#right{
+            /*float: none;*/
+            width: 100%;
+        }
+    }
+</style>
+<body>
+<h3>页头</h3>
+<h3>标题</h3>
+<div id="img-box">
+    <img class="img_100" src="海豹/img/01.jpg" alt=""/>
+    <img class="img_960" src="海豹/img/01_s_2x.jpg" alt=""/>
+    <img class="img_480" src="海豹/img/01_s.jpg" alt=""/>
+</div>
+<div id="content">
+    <div id="left">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut, rhoncus vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat. Cras pretium quam quis magna facilisis, eget feugiat nisi lacinia.
+        </p>
+    </div>
+    <div id="right">
+        <p>
+            Donec dolor arcu, interdum sed turpis faucibus, placerat ultricies felis. Donec pulvinar gravida rhoncus. Suspendisse vestibulum est eget dolor lobortis.
+        </p>
+    </div>
+</div>
+<h3>页尾</h3>
+
+</body>
+</html>

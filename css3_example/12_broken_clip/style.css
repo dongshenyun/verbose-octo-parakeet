@@ -24,7 +24,7 @@ html, body {
 }
 
 .text::before {
-	clip-path: polygon(0 0, 60% 0, 30% 100%, 0 100%);/*??????????*/
+	clip-path: polygon(0 0, 60% 0, 30% 100%, 0 100%);/*多边形  四个坐标  起点从左上角开始*/
 	/*background:#fdb08e;*/
 }
 
