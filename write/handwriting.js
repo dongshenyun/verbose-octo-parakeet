@@ -2,10 +2,10 @@ var canvasWidth = Math.min( 800 , $(window).width() - 20 );
 var canvasHeight = canvasWidth;
 
 var strokeColor = "black";
-var isMouseDown = false;
-var lastLoc = {x:0,y:0};
-var lastTimestamp = 0;
-var lastLineWidth = -1;
+var isMouseDown = false;/*记录鼠标按下事件*/
+var lastLoc = {x:0,y:0};/*上一次鼠标位置 初始0 0*/
+var lastTimestamp = 0;/*时间戳*/
+var lastLineWidth = -1;/*上一刻线条宽度*/
 
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
@@ -43,11 +43,11 @@ function endStroke(){
 function moveStroke(point){
 
     var curLoc = windowToCanvas( point.x , point.y );
-    var curTimestamp = new Date().getTime();
-    var s = calcDistance( curLoc , lastLoc );
-    var t = curTimestamp - lastTimestamp;
+    var curTimestamp = new Date().getTime();/*时间*/
+    var s = calcDistance( curLoc , lastLoc );/*两点间距离*/
+    var t = curTimestamp - lastTimestamp;/*时间差*/
 
-    var lineWidth = calcLineWidth( t , s );
+    var lineWidth = calcLineWidth( t , s );/*时间距离计算线条粗细*/
 
     //draw
     context.beginPath();
@@ -55,14 +55,14 @@ function moveStroke(point){
     context.lineTo( curLoc.x , curLoc.y );
 
     context.strokeStyle = strokeColor;
-    context.lineWidth = lineWidth;
-    context.lineCap = "round";
-    context.lineJoin = "round";
+    context.lineWidth = lineWidth;/*新width*/
+    context.lineCap = "round";/*填补空隙*/
+    context.lineJoin = "round";/*线条更平滑*/
     context.stroke();
 
-    lastLoc = curLoc;
-    lastTimestamp = curTimestamp;
-    lastLineWidth = lineWidth;
+    lastLoc = curLoc;/*当前点变为上一点*/
+    lastTimestamp = curTimestamp;/*时间*/
+    lastLineWidth = lineWidth;/*线粗*/
 }
 
 canvas.onmousedown = function(e){
@@ -79,7 +79,7 @@ canvas.onmouseout = function(e){
 };
 canvas.onmousemove = function(e){
     e.preventDefault();
-    if( isMouseDown ){
+    if( isMouseDown ){/*只有true 才有操作*/
         moveStroke({x: e.clientX , y: e.clientY})
     }
 };
@@ -105,10 +105,8 @@ var maxLineWidth = 30;
 var minLineWidth = 1;
 var maxStrokeV = 10;
 var minStrokeV = 0.1;
-function calcLineWidth( t , s ){
-
+function calcLineWidth( t , s ){/*线条粗细*/
     var v = s / t;
-
     var resultLineWidth;
     if( v <= minStrokeV )
         resultLineWidth = maxLineWidth;
@@ -117,26 +115,23 @@ function calcLineWidth( t , s ){
     else{
         resultLineWidth = maxLineWidth - (v-minStrokeV)/(maxStrokeV-minStrokeV)*(maxLineWidth-minLineWidth);
     }
-
-    if( lastLineWidth == -1 )
+    if( lastLineWidth == -1 ){
         return resultLineWidth;
-
+    }
     return resultLineWidth*1/3 + lastLineWidth*2/3;
 }
 
-function calcDistance( loc1 , loc2 ){
+function calcDistance( loc1 , loc2 ){/*距离*/
 
     return Math.sqrt( (loc1.x - loc2.x)*(loc1.x - loc2.x) + (loc1.y - loc2.y)*(loc1.y - loc2.y) );
 }
 
 function windowToCanvas( x , y ){
-    var bbox = canvas.getBoundingClientRect();
-    return {x:Math.round(x-bbox.left) , y:Math.round(y-bbox.top)}
+    var bbox = canvas.getBoundingClientRect();/*包围盒*/
+    return {x:Math.round(x-bbox.left) , y:Math.round(y-bbox.top)}/*函数返回一个数字四舍五入后最接近的整数。*/
 }
-function drawGrid(){
-
-    context.save();
-
+function drawGrid(){/*米字格*/
+    context.save();/*不影响其他绘制内容*/
     context.strokeStyle = "rgb(230,11,9)";
 
     context.beginPath();
