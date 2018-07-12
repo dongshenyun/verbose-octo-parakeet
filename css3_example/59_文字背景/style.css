@@ -1,0 +1,39 @@
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: black;
+}
+
+p {
+	font-size: 20vw;
+	margin: 0;
+	color: white;
+	/*color: transparent;*/
+	font-family: sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	background-image: linear-gradient(
+		to right,
+		orangered,
+		orange,
+		gold,
+		lightgreen,
+		cyan,
+		dodgerblue,
+		mediumpurple,
+		hotpink,
+		orangered);
+	background-size: 110vw;
+	animation: sliding 30s linear infinite;
+	-webkit-background-clip: text;/*只在文字内容显示 不兼容*/
+	-webkit-text-fill-color: transparent;/*检索或设置对象中的文字填充颜色 优先级高于color*/
+}
+
+@keyframes sliding {
+	to {
+		background-position: -2000vw;/*运动*/
+	}
+}
