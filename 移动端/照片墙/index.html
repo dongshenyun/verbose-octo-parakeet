@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../jQueryMobel/jquery.mobile-1.4.5.css">
+
+    <style>
+        body, html {
+            height: 100%;
+            background: #ffd4c7;
+            position: relative;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #small {
+            /*width: 400%;*/
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        #small img {
+            border: 1px solid black;
+            box-sizing: border-box;
+            width: 100%;
+            display: block;
+        }
+
+        #big {
+            height: 100%;
+            width: 100%;
+            background: black;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            display: none;
+        }
+
+        #container {
+            width: 100%;
+            height: 250px;
+            background-image: url("img/1.jpg");
+            background-size: contain;
+            position: absolute;
+            top: 208px;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="small">
+</div>
+<div id="big">
+    <div id="container">
+    </div>
+</div>
+
+<script src="../jQueryMobel/jquery-2.1.0.min.js"></script>
+<script src="../jQueryMobel/jquery.mobile-1.4.5.js"></script>
+
+<script>
+    var count = 0;
+
+    for (var i = 0; i < 24; i++) {
+        var oImg = new Image();
+        oImg.onload = function () {/*预加载*/
+            count++;
+            /*总共四十八张图*/
+            if (count == 48) {/*如果加载完成 执行函数*/
+                loadSuccess();
+            }
+        };
+        oImg.src = 'img/thumbs/' + (i + 1) + '.jpg';
+        /*小图*/
+        /*src写在下面 解决ie6不好用问题*/
+    }
+    for (var i = 0; i < 24; i++) {
+        var oImg = new Image();
+        oImg.onload = function () {
+            count++;
+            if (count == 48) {
+                loadSuccess();
+            }
+        };
+        oImg.src = 'img/' + (i + 1) + '.jpg';
+    }
+
+    function loadSuccess() {
+        var html = '';
+        for (i = 0; i < 24; i++) {
+            html += '<img src="img/thumbs/' + (i + 1) + '.jpg" />';
+        }
+        $('#small').append(html);
+
+        $('#small img').on('tap', function (e) {
+            $('#big').css('display', 'block');
+            $('#container').css('background-image', 'url(img/' + ($(this).index() + 1) + '.jpg');
+            iNow=$(this).index() + 1;
+            e.preventDefault();
+        })
+        $('#big').on('tap', function (e) {
+            $('#big').hide();
+            e.preventDefault();
+        }).on('swipeleft',function () {
+            iNow++;
+            if(iNow>=25){
+                iNow=1;
+            }
+            $('#container').css('background-image', 'url(img/' + iNow + '.jpg');
+        }).on('swiperight',function () {
+            iNow--;
+            if(iNow<=0){
+                iNow=24;
+            }
+            $('#container').css('background-image', 'url(img/' + iNow + '.jpg');
+        })
+    }
+
+    </script>
+    </body>
+    </html>
