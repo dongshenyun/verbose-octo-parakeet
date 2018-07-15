@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="css/iconfont.css">
+    <script src="js/rem.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-size: .28rem;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        /*search*/
+        #search {
+            display: flex;
+            height: 1.01rem;
+            color: #fff;
+            background: #06c1ae;
+            border-bottom: 1px solid #21897d;
+            align-items: center;
+        }
+
+        #city {
+            height: 1rem;
+            line-height: 1rem;
+            padding-left: .3rem;
+            /*padding-top: .8rem;*/
+            width: 1.5rem;
+            font-size: .32rem;
+        }
+
+        #city .icon-xiajiantou {
+            font-size: .23rem;
+        }
+
+        #sea {
+            color: #68dbce;
+            background: rgba(0, 0, 0, .15);
+            height: .6rem;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            flex: 1;
+            /*width: 100%;*/
+        }
+
+        .sea-input {
+            font-size: .25rem;
+            height: 1rem;
+            outline: none;
+            border: 0;
+            background: transparent;
+        }
+
+        .sea-input::-webkit-input-placeholder {
+            color: #68dbce;
+        }
+
+        #sea .icon-sousuo {
+            padding-right: .1rem;
+            padding-left: .1rem;
+            font-size: .23rem;
+        }
+
+        #my {
+            padding-left: .17rem;
+            width: .9rem;
+            height: .7rem;
+        }
+
+        #wode {
+            font-size: .3rem;
+            display: block;
+        }
+
+        #my .icon-wode {
+            padding-left: .15rem;
+            display: block;
+            font-size: .33rem;
+        }
+
+        /*bg*/
+        #bg img {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid #ddd8ce;
+        }
+
+        /*sort*/
+        #classify, #ad {
+            border-bottom: .2rem solid #f0efed;
+        }
+
+        #sort {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        .sort-icon {
+            padding-bottom: .15rem;
+            padding-top: .21rem;
+            font-size: .24rem;
+            text-align: center;
+        }
+
+        .icon-circle {
+            background: #fed030;
+            width: .8rem;
+            height: .8rem;
+            border-radius: 50%;
+            box-sizing: border-box;
+            padding-top: 0.1rem;
+            margin: 0 auto;
+        }
+
+        .icon-circle .iconfont {
+            font-size: .5rem;
+            margin-top: .2rem;
+            color: whitesmoke;
+        }
+
+        #btn {
+            display: flex;
+            padding: 0 2.8rem;
+            margin-bottom: .2rem;
+        }
+
+        #btn span {
+            margin: 0 auto;
+            display: block;
+            width: .15rem;
+            height: .15rem;
+            background: rgba(240, 239, 237, 0.8);
+            border-radius: 50%;
+        }
+
+        #btn .active {
+            background-color: #06c1ae;
+        }
+
+        /*ad*/
+        #ad {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding: .12rem;
+        }
+
+        #ad .recommend {
+            height: 2.26rem;
+            border-right: 1px solid #ddd8ce;
+            text-align: center;
+        }
+
+        #ad .recommend:nth-child(3) {
+            border: none;
+        }
+
+        h4 {
+            color: #55a40f;
+            font-size: .3rem;
+            margin-top: .12rem;
+            margin-bottom: .16rem;
+        }
+
+        .recommend .rec-detail {
+            font-size: smaller;
+            color: #666;
+        }
+
+        .recommend .rec-img {
+            width: 1.24rem;
+            height: 1.24rem;
+        }
+
+        /*like*/
+        #like {
+            padding-left: .2rem;
+        }
+
+        #guess {
+            font-size: .24rem;
+            color: #333;
+            border-bottom: 1px solid #DDD8CE;
+            padding: .1rem 0;
+        }
+
+        .commodity {
+            padding: .15rem 0;
+            display: flex;
+            border-bottom: 1px solid #DDD8CE;
+        }
+
+        .commodity img {
+            width: 1.8rem;
+            height: 1.64rem;
+        }
+
+        .right {
+            margin-left: .2rem;
+        }
+
+        .right .tit1 {
+            font-size: .25rem;
+            margin-bottom: .12rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding-top: .1rem;
+        }
+
+        .right .tit2 {
+            font-size: .2rem;
+            margin-bottom: .32rem;
+            color: #666;
+        }
+
+        .right .price {
+            position: relative;
+            font-size: .28rem;
+            color: #06c1ae;
+        }
+
+        .right .price span {
+            font-size: .16rem;
+            color: #06c1ae;
+        }
+
+        .right .price span:nth-child(2) {
+            color: #666;
+        }
+
+        .right .price span:nth-child(3) {
+            position: absolute;
+            top: .04rem;
+            right: -1rem;
+            color: #666;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <div id="search">
+        <div id="city">哈尔滨
+            <i class="iconfont icon-xiajiantou"></i>
+        </div>
+        <div id="sea">
+            <i class="icon iconfont icon-sousuo"></i>
+            <input type="text" class="sea-input" placeholder="美食/电影/娱乐" autofocus="autofocus">
+        </div>
+        <div id="my">
+            <i class="icon iconfont icon-wode"></i>
+            <div id="wode">我的</div>
+        </div>
+    </div><!--search-->
+    <div id="bg">
+        <img src="img/bg.png" alt="">
+    </div><!--bg-->
+    <div id="classify">
+        <div id="sort">
+            <div class="sort-icon">
+                <div class="icon-circle"><i class="icon iconfont icon-shaozikuaizi"></i></div>
+                <div>美食</div>
+            </div>
+            <div class="sort-icon">
+                <div class="icon-circle"><i class="icon iconfont icon-maoyan"></i></div>
+                <div>电影</div>
+            </div>
+            <div class="sort-icon">
+                <div class="icon-circle"><i class="icon iconfont icon-jiudian"></i></div>
+                <div>酒店</div>
+            </div>
+            <div class="sort-icon">
+                <div class="icon-circle"><i class="icon iconfont icon-xiuxian"></i></div>
+                <div>休闲娱乐</div>
+            </div>
+            <div class="sort-icon">
+                <div class="icon-circle"><i class="icon iconfont icon-waimai"></i></div>
+                <div>外卖</div>
+            </div>
+            <div class="sort-icon">
+                <div class="icon-circle"><i class="icon iconfont icon-shaozikuaizi"></i></div>
+                <div>周边游</div>
+            </div>
+            <div class="sort-icon">
+                <div class="icon-circle"><i class="icon iconfont icon-shaozikuaizi"></i></div>
+                <div>周边游</div>
+            </div>
+            <div class="sort-icon">
+                <div class="icon-circle"><i class="icon iconfont icon-shaozikuaizi"></i></div>
+                <div>丽人</div>
+            </div>
+            <div class="sort-icon">
+                <div class="icon-circle"><i class="icon iconfont icon-shaozikuaizi"></i></div>
+                <div>小吃快餐</div>
+            </div>
+            <div class="sort-icon">
+                <div class="icon-circle"><i class="icon iconfont icon-shaozikuaizi"></i></div>
+                <div>机票/火车票</div>
+            </div>
+        </div>
+        <div id="btn">
+            <span class="active"></span>
+            <span></span>
+        </div>
+    </div><!--sort-->
+    <div id="ad">
+        <div class="recommend">
+            <h4 class="rec-title">我们约吧</h4>
+            <div class="rec-detail">恋人家人好朋友</div>
+            <img src="img/1.png" alt="" class="rec-img">
+        </div>
+        <div class="recommend">
+            <h4 class="rec-title">低价超值</h4>
+            <div class="rec-detail">十元惠生活</div>
+            <img src="img/2.jpg" alt="" class="rec-img"></div>
+        <div class="recommend">
+            <h4 class="rec-title">逛街必备</h4>
+            <div class="rec-detail">甜点奶茶随手找</div>
+            <img src="img/3.png" alt="" class="rec-img"></div>
+    </div><!--ad-->
+    <div id="like">
+        <div id="guess">猜你喜欢</div>
+        <div class="commodity">
+            <img src="img/4.jpg"/>
+            <div class="right">
+                <div class="tit1">凯利卡丁车俱乐部</div>
+                <div class="tit2">[江北万达城]单人卡丁车体验1次</div>
+                <div class="price">39.9
+                    <span>元</span>
+                    <span>门市价58元</span>
+                    <span>已售7239</span>
+                </div>
+            </div>
+        </div>
+        <div class="commodity">
+            <img src="img/4.jpg"/>
+            <div class="right">
+                <div class="tit1">凯利卡丁车俱乐部</div>
+                <div class="tit2">[江北万达城]单人卡丁车体验1次</div>
+                <div class="price">39.9
+                    <span>元</span>
+                    <span>门市价58元</span>
+                    <span>已售7239</span>
+                </div>
+            </div>
+        </div>
+        <div class="commodity">
+            <img src="img/4.jpg"/>
+            <div class="right">
+                <div class="tit1">凯利卡丁车俱乐部</div>
+                <div class="tit2">[江北万达城]单人卡丁车体验1次</div>
+                <div class="price">39.9
+                    <span>元</span>
+                    <span>门市价58元</span>
+                    <span>已售7239</span>
+                </div>
+            </div>
+        </div>
+        <div class="commodity">
+            <img src="img/4.jpg"/>
+            <div class="right">
+                <div class="tit1">凯利卡丁车俱乐部</div>
+                <div class="tit2">[江北万达城]单人卡丁车体验1次</div>
+                <div class="price">39.9
+                    <span>元</span>
+                    <span>门市价58元</span>
+                    <span>已售7239</span>
+                </div>
+            </div>
+        </div>
+        <div class="commodity">
+            <img src="img/4.jpg"/>
+            <div class="right">
+                <div class="tit1">凯利卡丁车俱乐部</div>
+                <div class="tit2">[江北万达城]单人卡丁车体验1次</div>
+                <div class="price">39.9
+                    <span>元</span>
+                    <span>门市价58元</span>
+                    <span>已售7239</span>
+                </div>
+            </div>
+        </div>
+        <div class="commodity">
+            <img src="img/4.jpg"/>
+            <div class="right">
+                <div class="tit1">凯利卡丁车俱乐部</div>
+                <div class="tit2">[江北万达城]单人卡丁车体验1次</div>
+                <div class="price">39.9
+                    <span>元</span>
+                    <span>门市价58元</span>
+                    <span>已售7239</span>
+                </div>
+            </div>
+        </div>
+        <div class="commodity">
+            <img src="img/4.jpg"/>
+            <div class="right">
+                <div class="tit1">凯利卡丁车俱乐部</div>
+                <div class="tit2">[江北万达城]单人卡丁车体验1次</div>
+                <div class="price">39.9
+                    <span>元</span>
+                    <span>门市价58元</span>
+                    <span>已售7239</span>
+                </div>
+            </div>
+        </div>
+        <div class="commodity">
+            <img src="img/4.jpg"/>
+            <div class="right">
+                <div class="tit1">凯利卡丁车俱乐部</div>
+                <div class="tit2">[江北万达城]单人卡丁车体验1次</div>
+                <div class="price">39.9
+                    <span>元</span>
+                    <span>门市价58元</span>
+                    <span>已售7239</span>
+                </div>
+            </div>
+        </div>
+        <div class="commodity">
+            <img src="img/4.jpg"/>
+            <div class="right">
+                <div class="tit1">凯利卡丁车俱乐部</div>
+                <div class="tit2">[江北万达城]单人卡丁车体验1次</div>
+                <div class="price">39.9
+                    <span>元</span>
+                    <span>门市价58元</span>
+                    <span>已售7239</span>
+                </div>
+            </div>
+        </div>
+        <div class="commodity">
+            <img src="img/4.jpg"/>
+            <div class="right">
+                <div class="tit1">凯利卡丁车俱乐部</div>
+                <div class="tit2">[江北万达城]单人卡丁车体验1次</div>
+                <div class="price">39.9
+                    <span>元</span>
+                    <span>门市价58元</span>
+                    <span>已售7239</span>
+                </div>
+            </div>
+        </div>
+        <div class="commodity">
+            <img src="img/4.jpg"/>
+            <div class="right">
+                <div class="tit1">凯利卡丁车俱乐部</div>
+                <div class="tit2">[江北万达城]单人卡丁车体验1次</div>
+                <div class="price">39.9
+                    <span>元</span>
+                    <span>门市价58元</span>
+                    <span>已售7239</span>
+                </div>
+            </div>
+        </div>
+        <div class="commodity">
+            <img src="img/4.jpg"/>
+            <div class="right">
+                <div class="tit1">凯利卡丁车俱乐部</div>
+                <div class="tit2">[江北万达城]单人卡丁车体验1次</div>
+                <div class="price">39.9
+                    <span>元</span>
+                    <span>门市价58元</span>
+                    <span>已售7239</span>
+                </div>
+            </div>
+        </div>
+        <div class="commodity">
+            <img src="img/4.jpg"/>
+            <div class="right">
+                <div class="tit1">凯利卡丁车俱乐部</div>
+                <div class="tit2">[江北万达城]单人卡丁车体验1次</div>
+                <div class="price">39.9
+                    <span>元</span>
+                    <span>门市价58元</span>
+                    <span>已售7239</span>
+                </div>
+            </div>
+        </div>
+        <div class="commodity">
+            <img src="img/4.jpg"/>
+            <div class="right">
+                <div class="tit1">凯利卡丁车俱乐部</div>
+                <div class="tit2">[江北万达城]单人卡丁车体验1次</div>
+                <div class="price">39.9
+                    <span>元</span>
+                    <span>门市价58元</span>
+                    <span>已售7239</span>
+                </div>
+            </div>
+        </div>
+        <div class="commodity">
+            <img src="img/4.jpg"/>
+            <div class="right">
+                <div class="tit1">凯利卡丁车俱乐部</div>
+                <div class="tit2">[江北万达城]单人卡丁车体验1次</div>
+                <div class="price">39.9
+                    <span>元</span>
+                    <span>门市价58元</span>
+                    <span>已售7239</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
