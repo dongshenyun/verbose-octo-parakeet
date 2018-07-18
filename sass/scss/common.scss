@@ -1,0 +1,8 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+@mixin border($col:#ccc){
+  border: 1px solid $col;
+  box-shadow: 0 0 3px 4px #fff9a8;
+}

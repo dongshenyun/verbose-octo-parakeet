@@ -2,13 +2,134 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Starbucks</title>
+    <!--<link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">-->
+    <link rel="stylesheet" href="css/style960.css" media="(min-width:960px)">
+    <script src="js/jquery-2.1.0.min.js"></script>
+    <!--<script src="../移动端/meituan/js/rem.js"></script>-->
+    <!--<script src="js/jquery.mobile-1.4.5.js"></script>-->
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: "Gotham", Helvetica, Arial, PingFangSC-Regular, "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+        }
+
+        /*left*/
+        #container {
+            height: 100%;
+        }
+
+        #left {
+            width: 30%;
+            height: 100%;
+        }
+
+        #header {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 24px;
+            height: 48px;
+        }
+        #header .menu{
+            margin-left: 10px;
+        }
+        #header .menu span {
+            font-size: 21px;
+            cursor: pointer;
+            font-weight: 600;
+            letter-spacing: 1px;
+            padding: 5px 10px 5px;
+        }
+
+        .logo-img {
+            width: 40px;
+        }
+
+        .hamburger-img {
+            height: 30px;
+            margin-right: 30px;
+            position: absolute;
+            top: 32px;
+            right: 0;
+        }
+        /*log*/
+        #log{
+            padding: 0 24px 0 84px;
+            height: calc(100% - 98px);
+            display: table;
+        }
+
+        #log .content{
+            overflow: hidden;
+            display: table-cell;
+            vertical-align: middle;
+        }
+        #log .content div{
+            color: #00A862;
+            float: left;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        h1{
+               margin-bottom: 24px;
+           }
+        #log .login{
+            display: flex;
+        }
+        #log .login img{
+            margin-right: 6px;
+            width: 32px;
+            height: 32px;
+        }
+        #log  .register{
+            padding: 4px 14px;
+            border-color:#00A862 ;
+            border-radius: 48px;
+            border-width: 1px;
+            border-style: solid;
+            height: 27px;
+            margin-left: 35px;
+            margin-top: -3px;
+        }
+    </style>
 </head>
 <body>
-<div id="left">
-    <div id="header">
-        <img src="img/logo.svg" alt="">
+<div id="container">
+    <div id="left">
+        <div id="header">
+            <img src="img/logo.svg" alt="" class="logo-img">
+            <span class="menu">
+                <span>门店</span>
+            <span>我的账户</span>
+            <span>菜单</span>`
+            </span>
+            <span><img src="img/icon-hamburger.svg" alt="" class="hamburger-img"></span>
+        </div>
+        <div id="log">
+            <div class="content">
+                <h1>心情惬意，来杯咖啡吧 ☕</h1>
+                <div class="login"><img src="img/login.svg" alt=""><span>登录</span></div>
+                <div class="register">注册</div>
+            </div>
+        </div>
     </div>
+    <div id="right"></div>
 </div>
 </body>
 </html>

@@ -1,0 +1,55 @@
+@import "common.scss";
+$color:#000;
+$a:header;
+$b:width;
+
+body{
+  background: $color;
+  color: $color;
+  width: 12px;
+  height: 19px;
+  position: absolute;
+  top: 12%;
+  left: 20px;
+}
+.#{$a}{
+  width: 120px;
+}
+.b{
+  #{$b}:12px;
+}
+
+.q{
+  width: 20%;
+  .w{
+    height: 20px;
+    .e{
+      background: red;
+    }
+  }
+}
+
+.c{
+  background: url("#{$a}.jpg");
+  @include border();/*先定义再引用*/
+}
+
+.e{
+  @include border(red);
+}
+
+@mixin  arrow($wid:50px,$col:red,$dir:top){
+  border-width: $wid;
+  border-style: solid;
+  @if($dir==left){  border-color:  transparent $col transparent transparent;
+  }
+  @if($dir==right){  border-color:  transparent transparent $col transparent;
+  }
+  @if($dir==top){  border-color:  transparent transparent transparent $col;
+  }
+  @if($dir==bottom){  border-color: $col transparent transparent transparent;
+  }
+}
+.arrow{
+  @include arrow(40px,yellow,left);
+}
