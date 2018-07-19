@@ -31,12 +31,15 @@
 
         /*left*/
         #container {
-            height: 100%;
+            height: 100%
         }
 
         #left {
-            width: 30%;
+            width: 30vw;
             height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
         }
 
         #header {
@@ -46,9 +49,11 @@
             padding: 24px;
             height: 48px;
         }
-        #header .menu{
+
+        #header .menu {
             margin-left: 10px;
         }
+
         #header .menu span {
             font-size: 21px;
             cursor: pointer;
@@ -68,44 +73,63 @@
             top: 32px;
             right: 0;
         }
+
         /*log*/
-        #log{
+        #log {
             padding: 0 24px 0 84px;
             height: calc(100% - 98px);
             display: table;
         }
 
-        #log .content{
+        #log .content {
             overflow: hidden;
             display: table-cell;
             vertical-align: middle;
         }
-        #log .content div{
+
+        #log .content div {
             color: #00A862;
             float: left;
             cursor: pointer;
             font-size: 20px;
         }
-        h1{
-               margin-bottom: 24px;
-           }
-        #log .login{
+
+        h1 {
+            margin-bottom: 24px;
+        }
+
+        #log .login {
             display: flex;
         }
-        #log .login img{
+
+        #log .login img {
             margin-right: 6px;
             width: 32px;
             height: 32px;
         }
-        #log  .register{
+
+        #log .register {
             padding: 4px 14px;
-            border-color:#00A862 ;
+            border-color: #00A862;
             border-radius: 48px;
             border-width: 1px;
             border-style: solid;
             height: 27px;
             margin-left: 35px;
             margin-top: -3px;
+        }
+
+        /*right*/
+        #right {
+            overflow: hidden;
+            margin-left: 30vw;
+        }
+        #slide{
+            /*float: right;*/
+        }
+        #slide li img {
+            width: 100%;
+            display: block;
         }
     </style>
 </head>
@@ -129,7 +153,32 @@
             </div>
         </div>
     </div>
-    <div id="right"></div>
+    <div id="right">
+        <ul id="slide">
+            <li>
+                <img src="img/lun1.jpg" alt="" class="slide-img">
+            </li>
+            <!--<li>-->
+                <!--<img src="img/lun2.jpg" alt="" class="slide-img">-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<img src="img/lun3.jpg" alt="" class="slide-img">-->
+            <!--</li>-->
+        </ul>
+        <div id="photo">
+            <div class="pho-1"></div>
+            <div class="pho-2"></div>
+            <div class="pho-3"></div>
+        </div>
+    </div>
 </div>
+<script>
+    var slide = document.getElementById('slide');
+    var slideImg = document.getElementsByClassName('slide-img');
+
+    //    slide.style.width = slide.offsetWidth * 3 + "px";
+    console.log(slide.offsetWidth);
+    console.log(slideImg.offsetWidth);
+</script>
 </body>
 </html>
