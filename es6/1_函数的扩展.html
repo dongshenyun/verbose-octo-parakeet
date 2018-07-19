@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>11</li>
+    <li>22</li>
+    <li>33</li>
+    <li>44</li>
+    <li>55</li>
+</ul>
+
+
+<script>
+    var ali = document.querySelectorAll('li');
+
+    //    for(i=0;i<ali.length;i++){
+    //        ali[i].onclick=function () {
+    //            var that=this;
+    //            setTimeout(function () {/*指向window*/
+    //                console.log(that);
+    //            })
+    //        }
+    //    }
+    //    for(i=0;i<ali.length;i++){
+    //        ali[i].onclick=function () {
+    //            setTimeout(()=> {
+    //                console.log(this);
+    //            })
+    //        }
+    //    }
+    //
+    //    var person={
+    //        name:'huahua',
+    //        age:10,
+    //        like:()=>{
+    //            aa = () => {
+    //                console.log(this);/*window*/
+    //            }
+    //            aa();
+    //        }
+    //    }
+    //    var person1={
+    //        name:'huahua',
+    //        age:10,
+    //        like:function () {
+    //            aa = () => {
+    //                console.log(this);/*person*/
+    //            }
+    //            aa();
+    //        }
+    //    }
+    //    person.like();
+    //    person1.like();
+
+   let bb = (...rest) => {
+//        console.log(arguments);/*不允许使用arguments*/
+        console.log(rest);
+    }
+    bb(1, 2, 3, 4);
+</script>
+</body>
+</html>

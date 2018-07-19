@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //数组去重
+
+    let a = [1, 2, 3, 4, 5, 5];
+
+    function aa() {
+        var obj = {};
+        var result = [];
+        for (i = 0;i < a.length;i++) {
+            var key = a[i];
+//            console.log(obj);
+            if (!(key in obj)) {
+                obj[key] = 1;
+                result.push(key);
+            }
+        }
+        return result;
+    }
+    console.log(aa(a));
+
+
+//    let arr=new Set(a);
+////    let result=[...arr];/*转为常规数组*/
+//    let result=Array.from(arr);/*转为常规数组*/
+//    console.log(result);
+
+</script>
+</body>
+</html>

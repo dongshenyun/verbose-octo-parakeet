@@ -18,7 +18,7 @@ body {
 }
 
 /* balls */
-.loader::before,
+.loader::before,/*两个球*/
 .loader::after {
     content: '';
     position: absolute;
@@ -37,8 +37,8 @@ body {
 }
 
 .loader::after {
-    left: 6em;
-    animation-delay: 2.5s;
+    left: 6em;/*7-1*/
+    animation-delay: 2.5s;/*2.5s*/
     --direction: -1;
 }
 
@@ -95,11 +95,11 @@ body {
     }
 }
 
-.loader span {
+.loader span {/*stairs*/
     width: 1em;
     height: calc(var(--n) * 1em);
     background-color: white;
-    animation: sort 5s infinite;
+    animation: sort 5s infinite;/*5s*/
     border-radius: 0.1em;
 }
 
