@@ -40,6 +40,7 @@
             position: fixed;
             top: 0;
             left: 0;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
         }
 
         #header {
@@ -55,7 +56,7 @@
         }
 
         #header .menu span {
-            font-size: 21px;
+            font-size: 20px;
             cursor: pointer;
             font-weight: 600;
             letter-spacing: 1px;
@@ -63,7 +64,7 @@
         }
 
         .logo-img {
-            width: 40px;
+            width: 45px;
         }
 
         .hamburger-img {
@@ -108,7 +109,7 @@
             height: 32px;
         }
 
-        #log .register {
+        .register {
             padding: 4px 14px;
             border-color: #00A862;
             border-radius: 48px;
@@ -125,22 +126,233 @@
             overflow: hidden;
             margin-left: 30vw;
         }
-        #slide{
+
+        #slide {
             /*float: right;*/
         }
+
         #slide li img {
             width: 100%;
             display: block;
         }
 
         /*pho*/
-        #photo .pho{
-            padding: 12px;
+        #photo {
+            padding: 24px;
+            display: flex;
+            justify-content: space-between;
+            background: #f7f7f7;
         }
-        #photo img{
+
+        #photo .pho {
+            padding: 8px 15px;
+        }
+
+        #photo img {
+            position: relative;
+            top: 0;
+            left: 0;
+            transition: .15s;
             box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
             border-radius: 2px;
             width: 100%;
+        }
+
+        #photo img:hover {
+            box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.12);
+            position: relative;
+            top: -5px;
+            left: 0;
+            transition: .15s;
+        }
+
+        /*club*/
+        #club {
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 24px;
+            max-width: 890px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .club-left {
+            width: 50%;
+            float: left;
+            padding-top: 36px;
+            padding-bottom: 36px;
+        }
+
+        h3 {
+            font-size: 29px;
+            font-weight: 500;
+            margin-bottom: 18px;
+        }
+
+        .describe {
+            color: rgba(0, 0, 0, 0.56);
+            margin: 0 0 40px;
+            font-size: 20px;
+            line-height: 207%;
+            letter-spacing: 1px;
+        }
+
+        .describe span {
+            color: #C2A661;
+        }
+
+        .btn {
+            display: flex;
+        }
+
+        .btn .reg {
+            padding: 9px 23px;
+            color: #00A862;
+            cursor: pointer;
+            font-size: 20px;
+            margin-left: 0;
+            margin-right: 10px;
+        }
+
+        .club-right {
+            width: 50%;
+            top: 20px;
+            position: absolute;
+            right: 0;
+        }
+
+        .club-right img {
+            height: 90px;
+            top: 78px;
+            right: 24px;
+            position: absolute;
+        }
+
+        /*tmall*/
+        #tmall {
+            height: 431px;
+            text-align: center;
+            padding: 36px 0px;
+            background: #f7f7f7;
+        }
+
+        .tmall-margin {
+            max-width: 890px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 24px;
+        }
+
+        #com {
+            padding-top: 48px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-column-gap: 30px;
+        }
+
+        #com li {
+            box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
+            background: white;
+            float: left;
+            position: relative;
+            top: 0;
+            left: 0;
+            padding: 12px;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: .15s;
+        }
+
+        #com li:hover {
+            box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.12);
+            position: relative;
+            top: -5px;
+            left: 0;
+            transition: .15s;
+        }
+
+        #com img {
+            margin-bottom: 20px;
+            margin-top: -50px;
+            height: 85px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        strong {
+            color: rgba(0, 0, 0, 0.87);
+            margin-top: 8px;
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+
+        p {
+            color: rgba(0, 0, 0, 0.56);
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .know {
+            font-size: 14px;
+            color: #C2A661;
+            font-weight: 400;
+            opacity: 0.7;
+            margin-bottom: 30px;
+        }
+
+        /*last*/
+        #last {
+            background-image: linear-gradient(-180deg, #FCFCFC 0%, #FFF 100%);
+            padding: 36px 0 36px 0;
+            overflow: hidden;
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        .picture {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 900px;
+            padding-left: 10px;
+        }
+        .hidden{
+            width: 2000px;
+        }
+        .pic {
+            position: relative;
+            background-size: contain;
+            float: left;
+            margin-right: 20px;
+            margin-bottom: 24px;
+            box-sizing: border-box;
+            background: #FFF;
+            border-radius: 2px;
+            box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
+        }
+
+        .pic img {
+            width: 370px;
+            height: 208px;
+        }
+
+        .pic .corner {
+            font-size: 17px;
+            background: #C2A661;
+            color: #FFF;
+            position: absolute;
+            padding: 8px 14px;
+            left: 0;
+            top: 6px;
+        }
+        .pic strong{
+            font-weight: 500;
+            display: block;
+            padding-bottom: 26px;
+            padding-left: 21px;
+            padding-top: 8px;
         }
     </style>
 </head>
@@ -163,19 +375,19 @@
                 <div class="register">注册</div>
             </div>
         </div>
-    </div>
-    <div id="right">
+    </div><!--left-->
+    <div id="right"><!--right-->
         <ul id="slide">
             <li>
                 <img src="img/lun1.jpg" alt="" class="slide-img">
             </li>
             <!--<li>-->
-                <!--<img src="img/lun2.jpg" alt="" class="slide-img">-->
+            <!--<img src="img/lun2.jpg" alt="" class="slide-img">-->
             <!--</li>-->
             <!--<li>-->
-                <!--<img src="img/lun3.jpg" alt="" class="slide-img">-->
+            <!--<img src="img/lun3.jpg" alt="" class="slide-img">-->
             <!--</li>-->
-        </ul>
+        </ul><!--轮播图-->
         <div id="photo">
             <div class="pho pho-1">
                 <img src="img/11.jpg" alt="">
@@ -185,6 +397,87 @@
             </div>
             <div class="pho pho-3">
                 <img src="img/33.jpg" alt="">
+            </div>
+        </div><!--ad-->
+        <div id="club">
+            <div class="club-left">
+                <h3>星享俱乐部</h3>
+                <div class="describe">
+                    开启您的星享之旅，星星越多、会员等级越高、好礼越丰富。
+                    <span>了解更多 ›</span>
+                </div>
+                <div class="btn">
+                    <div class="register reg">注册</div>
+                    <div class="register reg">登录</div>
+                </div>
+            </div>
+            <div class="club-right">
+                <img src="img/俱乐部.svg" alt="">
+            </div>
+        </div><!--登录-->
+        <div id="tmall">
+            <div class="tmall-margin">
+                <h3>星巴克精选</h3>
+                <div class="describe">在星巴克天猫旗舰店发现更多咖啡心意</div>
+                <div class="commodity">
+                    <ul id="com">
+                        <li>
+                            <img src="img/tmall-card-01.png" alt=""
+                                 style="height:120px;margin-top: -68px;margin-bottom: 2px">
+                            <strong>星享卡</strong>
+                            <p>开始您的<br>星巴克专属之旅</p>
+                            <div class="know">了解更多 ›</div>
+                        </li>
+                        <li>
+                            <img src="img/tmall-card-02.png" alt="">
+                            <strong>星礼卡</strong>
+                            <p>用一份心礼<br>让心意相随</p>
+                            <div class="know">了解更多 ›</div>
+                        </li>
+                        <li>
+                            <img src="img/tmall-eticket-1.png" alt="">
+                            <strong>电子产品券</strong>
+                            <p>心意<br>从这一杯开始</p>
+                            <div class="know">了解更多 ›</div>
+                        </li>
+                        <li>
+                            <img src="img/tmall-reserve-4.png" alt="">
+                            <strong>咖啡生活</strong>
+                            <p>星巴克<br>用心制作</p>
+                            <div class="know">了解更多 ›</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div><!--tmall_shop-->
+        <div id="last">
+            <div class="title">
+                <h3>1912 派克街 | 咖啡星讲堂</h3>
+                <div class="describe">了解更多星巴克咖啡文化</div>
+            </div>
+            <div class="picture">
+                <div class="hidden">
+                    <div class="pic pic1">
+                        <img src="img/q.jpg" alt="">
+                        <div class="corner">咖啡知识</div>
+                        <strong>咖啡的起源与培植</strong>
+                    </div>
+                    <div class="pic pic2">
+                        <img src="img/w.jpg" alt="">
+                        <div class="corner">咖啡知识</div>
+                        <strong>咖啡的起源与培植</strong>
+                    </div>
+                    <div class="pic pic3">
+                        <img src="img/e.jpg" alt="">
+                        <div class="corner">咖啡知识</div>
+                        <strong>咖啡的起源与培植</strong>
+                    </div>
+                    <div class="pic pic4">
+                        <img src="img/r.jpg" alt="">
+                        <div class="corner">咖啡知识</div>
+                        <strong>咖啡的起源与培植</strong>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

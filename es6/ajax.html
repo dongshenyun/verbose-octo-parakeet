@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+<button id="btn">click</button>
+<div id="div"></div>
+
+<script>
+    var oBtn=document.querySelector('#btn');
+    var oDiv=document.querySelector("#div");
+
+    oBtn.onclick=function () {
+
+        //创建 XMLHttpRequest 对象
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+        {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+        }
+        else
+        {// code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+        }else{// code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        //向服务器发送请求
+
+        //get
+        xmlhttp.open("GET","ajax.json?name=xx",true);
+        xmlhttp.send();
+
+        //post
+
+        xmlhttp.open("POST","ajax.json",true);
+        xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        xmlhttp.send("name=xx");
+
+        //服务器响应
+        xmlhttp.onreadystatechange=function()
+        {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+                var obj = JSON.parse(xmlhttp.responseText);
+                oDiv.innerHTML = obj.result;
+            }
+        }
+    }
+</script>
+</body>
+</html>
