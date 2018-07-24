@@ -5,356 +5,12 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Starbucks</title>
-    <!--<link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">-->
-    <link rel="stylesheet" href="css/style960.css" media="(min-width:960px)">
     <script src="js/jquery-2.1.0.min.js"></script>
-    <!--<script src="../移动端/meituan/js/rem.js"></script>-->
-    <!--<script src="js/jquery.mobile-1.4.5.js"></script>-->
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-        }
+    <link rel="stylesheet" href="css/com.css">
+    <link rel="stylesheet" href="css/style1025.css" media="(min-width:1025px)">
+    <link rel="stylesheet" href="css/style641.css" media="(min-width:641px)">
+    <link rel="stylesheet" href="css/style0.css" media="(min-width:0px)">
 
-        a {
-            text-decoration: none;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        html, body {
-            height: 100%;
-            font-family: "Gotham", Helvetica, Arial, PingFangSC-Regular, "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-        }
-
-        /*left*/
-        #container {
-            height: 100%
-        }
-
-        #left {
-            width: 30vw;
-            height: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
-        }
-
-        #header {
-            position: relative;
-            display: flex;
-            align-items: center;
-            padding: 24px;
-            height: 48px;
-        }
-
-        #header .menu {
-            margin-left: 10px;
-        }
-
-        #header .menu span {
-            font-size: 20px;
-            cursor: pointer;
-            font-weight: 600;
-            letter-spacing: 1px;
-            padding: 5px 10px 5px;
-        }
-
-        .logo-img {
-            width: 45px;
-        }
-
-        .hamburger-img {
-            height: 30px;
-            margin-right: 30px;
-            position: absolute;
-            top: 32px;
-            right: 0;
-        }
-
-        /*log*/
-        #log {
-            padding: 0 24px 0 84px;
-            height: calc(100% - 98px);
-            display: table;
-        }
-
-        #log .content {
-            overflow: hidden;
-            display: table-cell;
-            vertical-align: middle;
-        }
-
-        #log .content div {
-            color: #00A862;
-            float: left;
-            cursor: pointer;
-            font-size: 20px;
-        }
-
-        h1 {
-            margin-bottom: 24px;
-        }
-
-        #log .login {
-            display: flex;
-        }
-
-        #log .login img {
-            margin-right: 6px;
-            width: 32px;
-            height: 32px;
-        }
-
-        .register {
-            padding: 4px 14px;
-            border-color: #00A862;
-            border-radius: 48px;
-            border-width: 1px;
-            border-style: solid;
-            height: 27px;
-            margin-left: 35px;
-            margin-top: -3px;
-        }
-
-        /*right*/
-        /*slide*/
-        #right {
-            overflow: hidden;
-            margin-left: 30vw;
-        }
-
-        #slide {
-            /*float: right;*/
-        }
-
-        #slide li img {
-            width: 100%;
-            display: block;
-        }
-
-        /*pho*/
-        #photo {
-            padding: 24px;
-            display: flex;
-            justify-content: space-between;
-            background: #f7f7f7;
-        }
-
-        #photo .pho {
-            padding: 8px 15px;
-        }
-
-        #photo img {
-            position: relative;
-            top: 0;
-            left: 0;
-            transition: .15s;
-            box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
-            border-radius: 2px;
-            width: 100%;
-        }
-
-        #photo img:hover {
-            box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.12);
-            position: relative;
-            top: -5px;
-            left: 0;
-            transition: .15s;
-        }
-
-        /*club*/
-        #club {
-            margin-left: auto;
-            margin-right: auto;
-            padding: 0 24px;
-            max-width: 890px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .club-left {
-            width: 50%;
-            float: left;
-            padding-top: 36px;
-            padding-bottom: 36px;
-        }
-
-        h3 {
-            font-size: 29px;
-            font-weight: 500;
-            margin-bottom: 18px;
-        }
-
-        .describe {
-            color: rgba(0, 0, 0, 0.56);
-            margin: 0 0 40px;
-            font-size: 20px;
-            line-height: 207%;
-            letter-spacing: 1px;
-        }
-
-        .describe span {
-            color: #C2A661;
-        }
-
-        .btn {
-            display: flex;
-        }
-
-        .btn .reg {
-            padding: 9px 23px;
-            color: #00A862;
-            cursor: pointer;
-            font-size: 20px;
-            margin-left: 0;
-            margin-right: 10px;
-        }
-
-        .club-right {
-            width: 50%;
-            top: 20px;
-            position: absolute;
-            right: 0;
-        }
-
-        .club-right img {
-            height: 90px;
-            top: 78px;
-            right: 24px;
-            position: absolute;
-        }
-
-        /*tmall*/
-        #tmall {
-            height: 431px;
-            text-align: center;
-            padding: 36px 0px;
-            background: #f7f7f7;
-        }
-
-        .tmall-margin {
-            max-width: 890px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 0 24px;
-        }
-
-        #com {
-            padding-top: 48px;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-column-gap: 30px;
-        }
-
-        #com li {
-            box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
-            background: white;
-            float: left;
-            position: relative;
-            top: 0;
-            left: 0;
-            padding: 12px;
-            border-radius: 2px;
-            cursor: pointer;
-            transition: .15s;
-        }
-
-        #com li:hover {
-            box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.12);
-            position: relative;
-            top: -5px;
-            left: 0;
-            transition: .15s;
-        }
-
-        #com img {
-            margin-bottom: 20px;
-            margin-top: -50px;
-            height: 85px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        strong {
-            color: rgba(0, 0, 0, 0.87);
-            margin-top: 8px;
-            font-size: 20px;
-            letter-spacing: 1px;
-        }
-
-        p {
-            color: rgba(0, 0, 0, 0.56);
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-
-        .know {
-            font-size: 14px;
-            color: #C2A661;
-            font-weight: 400;
-            opacity: 0.7;
-            margin-bottom: 30px;
-        }
-
-        /*last*/
-        #last {
-            background-image: linear-gradient(-180deg, #FCFCFC 0%, #FFF 100%);
-            padding: 36px 0 36px 0;
-            overflow: hidden;
-        }
-
-        .title {
-            text-align: center;
-        }
-
-        .picture {
-            margin-left: auto;
-            margin-right: auto;
-            max-width: 900px;
-            padding-left: 10px;
-        }
-        .hidden{
-            width: 2000px;
-        }
-        .pic {
-            position: relative;
-            background-size: contain;
-            float: left;
-            margin-right: 20px;
-            margin-bottom: 24px;
-            box-sizing: border-box;
-            background: #FFF;
-            border-radius: 2px;
-            box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
-        }
-
-        .pic img {
-            width: 370px;
-            height: 208px;
-        }
-
-        .pic .corner {
-            font-size: 17px;
-            background: #C2A661;
-            color: #FFF;
-            position: absolute;
-            padding: 8px 14px;
-            left: 0;
-            top: 6px;
-        }
-        .pic strong{
-            font-weight: 500;
-            display: block;
-            padding-bottom: 26px;
-            padding-left: 21px;
-            padding-top: 8px;
-        }
-    </style>
 </head>
 <body>
 <div id="container">
@@ -363,8 +19,8 @@
             <img src="img/logo.svg" alt="" class="logo-img">
             <span class="menu">
                 <span>门店</span>
-            <span>我的账户</span>
-            <span>菜单</span>`
+                <span>我的账户</span>
+                <span>菜单</span>`
             </span>
             <span><img src="img/icon-hamburger.svg" alt="" class="hamburger-img"></span>
         </div>
@@ -377,17 +33,30 @@
         </div>
     </div><!--left-->
     <div id="right"><!--right-->
-        <ul id="slide">
-            <li>
-                <img src="img/lun1.jpg" alt="" class="slide-img">
-            </li>
-            <!--<li>-->
-            <!--<img src="img/lun2.jpg" alt="" class="slide-img">-->
-            <!--</li>-->
-            <!--<li>-->
-            <!--<img src="img/lun3.jpg" alt="" class="slide-img">-->
-            <!--</li>-->
-        </ul><!--轮播图-->
+        <div id="slide-hidden">
+            <ul id="slide">
+                <li>
+                    <img src="img/lun1.jpg" alt="" class="slide-img">
+                </li>
+                <li>
+                    <img src="img/lun2.jpg" alt="" class="slide-img">
+                </li>
+                <li>
+                    <img src="img/lun3.jpg" alt="" class="slide-img">
+                </li>
+            </ul>
+            <ul id="slide2">
+                <li>
+                    <img src="img/small1.jpg" alt="" class="slide-img">
+                </li>
+                <li>
+                    <img src="img/small2.jpg" alt="" class="slide-img">
+                </li>
+                <li>
+                    <img src="img/small3.jpg" alt="" class="slide-img">
+                </li>
+            </ul>
+        </div><!--轮播图-->
         <div id="photo">
             <div class="pho pho-1">
                 <img src="img/11.jpg" alt="">
@@ -421,9 +90,8 @@
                 <div class="describe">在星巴克天猫旗舰店发现更多咖啡心意</div>
                 <div class="commodity">
                     <ul id="com">
-                        <li>
-                            <img src="img/tmall-card-01.png" alt=""
-                                 style="height:120px;margin-top: -68px;margin-bottom: 2px">
+                        <li id="spe">
+                            <img src="img/tmall-card-01.png">
                             <strong>星享卡</strong>
                             <p>开始您的<br>星巴克专属之旅</p>
                             <div class="know">了解更多 ›</div>
@@ -479,16 +147,20 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div><!--last-->
     </div>
 </div>
 <script>
+    var right = document.getElementById('right');
     var slide = document.getElementById('slide');
-    var slideImg = document.getElementsByClassName('slide-img');
+    var slide2 = document.getElementById('slide2');
 
-    //    slide.style.width = slide.offsetWidth * 3 + "px";
-    console.log(slide.offsetWidth);
-    console.log(slideImg.offsetWidth);
+
+    var  timer1 = setInterval(function () {
+            slide.style.width = right.offsetWidth * 3 + "px";
+            slide2.style.width = right.offsetWidth * 3 + "px";
+            console.log(1);
+        }, 1);
 </script>
 </body>
 </html>

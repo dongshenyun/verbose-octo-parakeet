@@ -29,7 +29,7 @@ body {
   background: url("header.jpg");
   border: 1px solid #ccc;
   box-shadow: 0 0 3px 4px #fff9a8;
-  /*鍏堝畾涔夊啀寮曠敤*/ }
+  /*先定义再引用*/ }
 
 .e {
   border: 1px solid red;
@@ -39,5 +39,14 @@ body {
   border-width: 40px;
   border-style: solid;
   border-color: transparent yellow transparent transparent; }
+
+.qwe {
+  background: green;
+  right: 10px;
+  left: 10px;
+  top: 10px;
+  bottom: 1px;
+  color: inherit;
+  background-position: 1px 2px; }
 
 /*# sourceMappingURL=test.css.map */

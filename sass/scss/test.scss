@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import "common.scss";
 $color:#000;
 $a:header;
@@ -52,4 +53,14 @@ body{
 }
 .arrow{
   @include arrow(40px,yellow,left);
+}
+
+.qwe{
+  background: green;
+  right: 10px;
+  left: 10px;
+  top: 10px;
+  bottom: 1px;
+  color: inherit;
+  background-position: 1px 2px;
 }
