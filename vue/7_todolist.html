@@ -102,7 +102,7 @@
             },
             methods: {
                 change(product, idx) {
-                    if (product.isSelect) { //当前粉色  需要从数组移除 checkbox取消勾选
+                    if (product.isSelect) { //当前粉色  需要从数组移除 checkbox取消勾选  双向数据绑定
                         // var index = this.checke.indexOf(idx) ; 
                         this.checke.splice(this.checke.indexOf(idx), 1);
                     } else { //当前灰色 需要push到数组  checkbox 勾选o
