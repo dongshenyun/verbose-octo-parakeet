@@ -9,7 +9,11 @@
 <script>
     export default {
     
-    
+    data() {
+        return {
+            msg: 111
+        }
+    },
     
     }
 </script>
