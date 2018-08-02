@@ -3,6 +3,7 @@
     <img src="./assets/logo.png">
     <router-link to='/'>index</router-link>
     <router-link to='/test/'>test</router-link>
+    <router-link to='/vuex/'>page</router-link>
     <router-view/>
   </div>
 </template>
