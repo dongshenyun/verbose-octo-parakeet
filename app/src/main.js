@@ -6,6 +6,7 @@ import router from './router'
 import '@/assets/common.css'
 import '@/assets/rem.js'
 
+Vue.config.url = 'https://bird.ioliu.cn/v1?url='; //解决跨域//Vue.config下
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
