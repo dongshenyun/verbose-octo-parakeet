@@ -1,10 +1,10 @@
 <template>
     <div>
 <ul class="footer" :style="{'background':bg}">
-    <li>电影</li>
-    <li>音乐</li>
-    <li>书籍</li>
-    <li>图片</li>
+    <li><router-link to="/movie/movieList">电影</li>
+    <li><router-link to="/music/musicList">音乐</li>
+    <li><router-link to="/book/bookList">书籍</li>
+    <li><router-link to="/photo/photoList">图片</li>
 </ul>
     </div>
 </template>
