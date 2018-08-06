@@ -63,6 +63,7 @@ export default {
   -webkit-font-smoothing: antialiased;
 
   -moz-osx-font-smoothing: grayscale;
+  margin: 1rem 0;
 }
 
 body {

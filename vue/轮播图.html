@@ -102,15 +102,14 @@
                     this.nowIndex = index
                 }
             },
-            // created() {
-            //     setInterval(() => {
-            //         this.nowIndex++;
-            //         if (this.nowIndex == this.imgs.length) {
-            //             this.nowIndex = 0;
-            //         }
-            //     }, 2000);
-
-            // }
+            created() {
+                setInterval(() => {
+                    this.nowIndex++;
+                    if (this.nowIndex == this.imgs.length) {
+                        this.nowIndex = 0;
+                    }
+                }, 2000);
+            }
         });
     </script>
 

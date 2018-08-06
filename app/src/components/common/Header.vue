@@ -20,6 +20,9 @@ export default {
     height: 1rem;
     color: white;
     line-height: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
 .header-title{
     flex-grow: 1;

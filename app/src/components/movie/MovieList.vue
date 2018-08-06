@@ -57,8 +57,7 @@ export default {
     this.load();
     window.onscroll = () => {
       //取到滚动条滚动出去的高度（页面滚出去的高度 ）
-      let scrollTop =
-        document.documentElement.scrollTop || document.body.scrollTop;
+      let scrollTop =document.documentElement.scrollTop || document.body.scrollTop;//html
       //页面可视区的高度
       let clientHeight = document.documentElement.clientHeight;
       //整个页面的高度
