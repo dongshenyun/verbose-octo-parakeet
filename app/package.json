@@ -2,7 +2,7 @@
   "name": "app",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "huahuazuimeini <2233250059@qq.com>",
+  "author": "dongxiuling <dxl_web@163.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -11,8 +11,12 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "hls.js": "^0.10.1",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-aplayer": "^1.6.1",
+    "vue-router": "^3.0.1",
+    "vue-touch": "^2.0.0-beta.4",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

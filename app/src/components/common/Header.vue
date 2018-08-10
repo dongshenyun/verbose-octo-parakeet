@@ -1,37 +1,43 @@
 <template>
     <div>
-        <div class="header" :style="{'background':bg}">
+        <div class="header" :style="{'background':bg}"  :id="title" >
             <span class="header-home">首页</span>
-            <span class="header-title">{{title}}</span>
-            <span class="header-home"></span>
+            <span class="header-title">{{title}}  </span>
+            <span class="header-space"></span>
         </div>
     </div>
 </template>
 
 <script>
-export default {
-    props:['title','bg']
-};
+    export default {
+        props:['title','bg']
+        
+    }
 </script>
 
 <style scoped>
-.header{
-    display: flex;
-    height: 1rem;
-    color: white;
-    line-height: 1rem;
-    position: fixed;
-    width: 100%;
-    top: 0;
-}
-.header-title{
-    flex-grow: 1;
-    text-align: center;
-    font-size: .5rem;
-    font-weight: bold;
-}
-.header-home{
-    width: 1rem;
-    text-indent: .2rem;
-}
+    .header{
+        height: 1rem;
+        line-height: 1rem;
+        display: flex;
+        color: #fff;
+        position: fixed;
+        top:0px;
+        width:100%;
+    }
+    .header-home,.header-space{
+        width: 1rem;
+        text-indent: 0.2rem;
+    }
+    .header-title{
+        flex-grow: 1;
+        text-align: center;
+        font-size: 0.5rem;
+        font-weight: bold;
+    }
+
+
+
+
+
 </style>
