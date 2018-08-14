@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul>
+        <li class="bb">1</li>
+        <li class="aa bb cc">2</li>
+        <li class="b">3</li>
+        <li class="ab">4</li>
+    </ul>
+    <script>
+        function getEleBylass(name) {
+            var result = [];
+            var ele = document.getElementsByTagName('*');
+            for (var i = 0; i < ele.length; i++) {
+                //"aa bb cc"
+                var reg = new RegExp('\\b' + name + '\\b'); //转义
+                if (reg.test(ele[i].className)) {
+                    result.push(ele[i]);
+                }
+            }
+            return result;
+        }
+        console.log(getEleBylass('bb')); //[]
+
+        //document.getElementByClassName();
+    </script>
+
+</body>
+
+</html>
