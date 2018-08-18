@@ -1,7 +1,4 @@
 {
-  "control": {
-    "expires": 1800
-  },
   "status": 0,
   "data": {
     "hasNext": false,

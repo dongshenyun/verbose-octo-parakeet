@@ -5,7 +5,7 @@
 /*垂直导航栏开始*/
 var arr = ["1460", "2150", "2935", "3620", "4330", "5020", "5725", "6423", "0"];
 //index()获得第一个匹配元素相对于其同级元素的index位置 所有兄弟节点中的索引
-// var scroll = document.documentElement.scrollTop || document.body.scrollTop;
+// var scroll = document.documentElement.scrollTop || document.body.scrollTop;//错
 
 var isMouseOver = true; //控制鼠标移上移下事件和click事件的冲突
 $(".com-nav1").hover(function () {

@@ -1,11 +1,11 @@
-body {
-	margin: 0;
-	height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: radial-gradient(circle at center, navy, black);
-}
+/*body {*/
+	/*margin: 0;*/
+	/*height: 100vh;*/
+	/*display: flex;*/
+	/*align-items: center;*/
+	/*justify-content: center;*/
+	/*background: radial-gradient(circle at center, navy, black);*/
+/*}*/
 
 .heart {
 	width: 14em;
@@ -22,7 +22,7 @@ body {
 	border-radius: 0.5em;
 	position: relative;
 	top: var(--t);
-	animation: beating 4s infinite;
+	/*animation: beating 4s infinite;*/
 }
 
 .heart span:nth-child(1),
@@ -59,20 +59,20 @@ body {
 	--t: 1.6em;
 }
 
-@keyframes beating {
-	0%, 30% {
-		top: var(--t);
-		height: var(--h);
-		background-color: var(--c);
-		filter: blur(0);
-		width: 1em;
-	}
+/*@keyframes beating {*/
+	/*0%, 30% {*/
+		/*top: var(--t);*/
+		/*height: var(--h);*/
+		/*background-color: var(--c);*/
+		/*filter: blur(0);*/
+		/*width: 1em;*/
+	/*}*/
 
-	60%, 70% {
-		top: 25%;
-		height: 50%;
-		background-color: lightblue;
-		filter: blur(5px);
-		width: 0;
-	}
-}
+	/*60%, 70% {*/
+		/*top: 25%;*/
+		/*height: 50%;*/
+		/*background-color: lightblue;*/
+		/*filter: blur(5px);*/
+		/*width: 0;*/
+	/*}*/
+/*}*/
