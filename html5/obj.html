@@ -7,34 +7,60 @@
 <body>
 <script>
     var obj={
-        name:'huahua',
-        age:18
-//        length:2
+        0:'huahua',
+        1:18,
+        length:2
     };
+
+//    var toArray = function(s){
+//        try{
+//            return Array.prototype.slice.call(s);
+//            } catch(e){
+//            var arr = [];
+//            for(var i = 0,len = s.length; i < len; i++){
+//                //arr.push(s[i]);
+//                arr[i] = s[i];  //据说这样比push快
+//            }
+//            return arr;
+//            }
+//    }
+//    toArray(obj);
+
 //    var arr=[].slice.call(obj);//empty*2
+
+//    function test(a,b,c,d)
+//    {
+//        var arg = Array.prototype.slice.call(arguments,1);
+//        alert(arg);
+//    }
+//    test("a","b","c","d"); //b,c,d
+
+//    var arr=Array.prototype.slice.call(obj);
 //    let arr=Array.from(obj);//undefinded undefinded
-//    console.log(arr);
+//    console.log(arr[1]);
 
 //    Object.keys(obj).forEach(function (key,idx) {
 //        if(idx==1){
 //            console.log(obj[key]);
 //        }
 //    })
-      function object(obj) {
-          var str='';
-          for(key in obj){
-              str+=key+'='+obj[key]+';';
-          }
-          var arr=str.split(';');
-          for(i=0;i<arr.length;i++){
-//              console.log(arr[1]);
-                if(i==1){
-                    var arr1=arr[i].split('=');
-                    console.log(arr1[1]);
-                }
-          }
-      }
-      object(obj);
+
+
+//      function object(obj) {
+//          var str='';
+//          for(key in obj){
+//              str+=key+'='+obj[key]+';';
+//          }
+//          var arr=str.split(';');
+//          for(i=0;i<arr.length;i++){
+////              console.log(arr[1]);
+//                if(i==1){
+//                    var arr1=arr[i].split('=');
+//                    console.log(arr1[1]);
+//                }
+//          }
+//      }
+//      object(obj);
 </script>
 </body>
 </html>
