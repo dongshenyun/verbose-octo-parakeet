@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var obj={
+        name:'huahua',
+        age:18
+//        length:2
+    };
+//    var arr=[].slice.call(obj);//empty*2
+//    let arr=Array.from(obj);//undefinded undefinded
+//    console.log(arr);
+
+//    Object.keys(obj).forEach(function (key,idx) {
+//        if(idx==1){
+//            console.log(obj[key]);
+//        }
+//    })
+      function object(obj) {
+          var str='';
+          for(key in obj){
+              str+=key+'='+obj[key]+';';
+          }
+          var arr=str.split(';');
+          for(i=0;i<arr.length;i++){
+//              console.log(arr[1]);
+                if(i==1){
+                    var arr1=arr[i].split('=');
+                    console.log(arr1[1]);
+                }
+          }
+      }
+      object(obj);
+</script>
+</body>
+</html>
