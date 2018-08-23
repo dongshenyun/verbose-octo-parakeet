@@ -97,7 +97,8 @@ body {
     filter: opacity(0);
 }
 
-@keyframes cloudy {
+@keyframes cloudy
+{
     40% {
         transform: translate(-3em, -5em);
         filter: opacity(0.75);
