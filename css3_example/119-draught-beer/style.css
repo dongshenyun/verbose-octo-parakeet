@@ -219,7 +219,7 @@ body {
 
 @keyframes wave {
     from {
-        transform: skewY(-3deg);
+        transform: skewY(-3deg);/*抖动*/
     }
 
     to {
