@@ -21,7 +21,7 @@ body {
 }
 
 .container span::before,
-.container span::after 
+.container span::after
 {
     content: '';
     position: absolute;
