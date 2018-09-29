@@ -36,11 +36,11 @@ body {
 
 @keyframes cut {
     20%, 60% {
-        transform: rotate(calc(30deg * var(--direction))) scaleY(var(--direction));
+        transform: rotate(calc(40deg * var(--direction))) scaleY(var(--direction));
     }
 
     40%, 80% {
-        transform: rotate(calc(5deg * var(--direction))) scaleY(var(--direction));
+        transform: rotate(calc(10deg * var(--direction))) scaleY(var(--direction));
     }
 }
 
